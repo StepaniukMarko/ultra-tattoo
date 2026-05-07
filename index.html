@@ -4,323 +4,412 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ultra Tattoo — Premium Tattoo Studio</title>
-<meta name="description" content="Ultra Tattoo — premium tattoo studio with professional artists, custom designs and a modern approach.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Ultra Tattoo — premium tattoo studio with professional artists, custom designs and a modern approach. Book your session today.">
+<meta name="keywords" content="tattoo, tattoo studio, premium tattoo, custom tattoo, blackwork, realism, minimalist tattoo">
+<meta property="og:title" content="Ultra Tattoo — Premium Tattoo Studio">
+<meta property="og:description" content="Premium tattoo studio with professional artists and custom designs.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0a0a;--bg2:#111;--card:#161616;--glass:rgba(10,10,10,0.85);--w:#fff;--w9:rgba(255,255,255,.9);--w7:rgba(255,255,255,.7);--w5:rgba(255,255,255,.5);--w3:rgba(255,255,255,.3);--w1:rgba(255,255,255,.1);--w05:rgba(255,255,255,.05);--red:#DC143C;--red-d:#8B0000;--glow:rgba(220,20,60,.25);--ff:'Playfair Display',serif;--fb:'Inter',sans-serif;--r:12px;--tr:all .4s cubic-bezier(.25,.46,.45,.94)}
-html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:var(--bg);color:var(--w);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--w3);border-radius:3px}
-.ctn{max-width:1400px;margin:0 auto;padding:0 clamp(1.5rem,4vw,4rem)}
-.sec{padding:clamp(5rem,12vw,9rem) 0}
-.label{display:inline-flex;align-items:center;gap:.75rem;font-size:.75rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem}
-.label::before{content:'';width:40px;height:1px;background:var(--red)}
-.title{font-family:var(--ff);font-size:clamp(2.25rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:1.25rem;letter-spacing:-1px}
-.sub{font-size:1.05rem;color:var(--w7);max-width:550px;line-height:1.8}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 2.25rem;border:none;border-radius:50px;font-family:var(--fb);font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;transition:var(--tr)}
-.btn-p{background:linear-gradient(135deg,var(--red-d),var(--red));color:var(--w);box-shadow:0 4px 20px var(--glow)}
-.btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 40px var(--glow)}
-.btn-o{background:transparent;color:var(--w);border:1px solid var(--w3)}
-.btn-o:hover{border-color:var(--w);background:var(--w05);transform:translateY(-3px)}
+:root{
+--bg:#050505;--bg2:#0c0c0c;--bg3:#111;--card:#141414;--card-hover:#1a1a1a;
+--glass:rgba(8,8,8,0.88);--glass-border:rgba(255,255,255,0.06);
+--w:#fff;--w95:rgba(255,255,255,.95);--w8:rgba(255,255,255,.8);--w6:rgba(255,255,255,.6);
+--w4:rgba(255,255,255,.4);--w2:rgba(255,255,255,.2);--w1:rgba(255,255,255,.1);--w05:rgba(255,255,255,.04);
+--accent:#c41e3a;--accent-soft:rgba(196,30,58,.15);--accent-glow:rgba(196,30,58,.25);
+--gold:#d4a853;
+--serif:'Cormorant Garamond',serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+--r:10px;--r-lg:16px;--r-xl:24px;
+--ease:cubic-bezier(.25,.46,.45,.94);--spring:cubic-bezier(.34,1.56,.64,1);
+}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--w2) var(--bg)}
+body{font-family:var(--sans);background:var(--bg);color:var(--w);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--w2);border-radius:3px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 0;transition:var(--tr)}
-nav.scrolled{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--w05);padding:.875rem 0}
-nav .ctn{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--ff);font-size:1.4rem;font-weight:800;color:var(--w);text-decoration:none}
-.logo span{color:var(--red)}
-.nav-l{display:flex;gap:2rem;list-style:none}
-.nav-l a{color:var(--w7);text-decoration:none;font-size:.85rem;font-weight:500;transition:var(--tr);position:relative}
-.nav-l a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--red);transition:var(--tr)}
-.nav-l a:hover{color:var(--w)}.nav-l a:hover::after{width:100%}
-.nav-b{padding:.7rem 1.5rem;font-size:.8rem}
-.ham{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;z-index:1001}
-.ham span{display:block;width:100%;height:2px;background:var(--w);position:absolute;left:0;transition:var(--tr)}
-.ham span:nth-child(1){top:0}.ham span:nth-child(2){top:50%;transform:translateY(-50%)}.ham span:nth-child(3){bottom:0}
+/* === LAYOUT === */
+.ctn{max-width:1440px;margin:0 auto;padding:0 clamp(1.5rem,5vw,5rem)}
+.sec{padding:clamp(6rem,14vw,11rem) 0;position:relative}
+
+/* === TYPOGRAPHY === */
+.eyebrow{font-family:var(--mono);font-size:.7rem;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
+.eyebrow::before{content:'';width:32px;height:1px;background:var(--accent)}
+.heading{font-family:var(--serif);font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:300;line-height:1.08;letter-spacing:-1px;margin-bottom:1.5rem}
+.heading strong{font-weight:600}
+.heading em{font-style:italic;color:var(--accent)}
+.desc{font-size:1rem;color:var(--w6);max-width:520px;line-height:1.85;font-weight:300}
+
+/* === BUTTONS === */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 2.5rem;border:none;border-radius:50px;font-family:var(--sans);font-size:.85rem;font-weight:500;letter-spacing:.5px;cursor:pointer;text-decoration:none;transition:all .4s var(--ease);position:relative;overflow:hidden}
+.btn-p{background:var(--accent);color:var(--w);box-shadow:0 4px 24px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.1)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 40px var(--accent-glow);filter:brightness(1.1)}
+.btn-g{background:var(--glass);color:var(--w8);border:1px solid var(--glass-border);backdrop-filter:blur(12px)}
+.btn-g:hover{background:var(--w1);border-color:var(--w2);transform:translateY(-2px);color:var(--w)}
+
+/* === NAVIGATION === */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.5rem 0;transition:all .5s var(--ease)}
+.nav.scrolled{padding:.875rem 0;background:var(--glass);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid var(--glass-border)}
+.nav .ctn{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;letter-spacing:1px;color:var(--w)}
+.nav-logo span{color:var(--accent);font-weight:300}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--w6);font-size:.8rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:1.5px;background:var(--accent);transition:width .4s var(--ease)}
+.nav-links a:hover{color:var(--w)}.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:1.5rem}
+.nav-btn{padding:.7rem 1.75rem;font-size:.75rem;letter-spacing:.5px;text-transform:uppercase}
+.ham{display:none;background:none;border:none;cursor:pointer;width:32px;height:24px;position:relative;z-index:1001}
+.ham span{display:block;width:100%;height:1.5px;background:var(--w);position:absolute;left:0;transition:all .4s var(--ease)}
+.ham span:nth-child(1){top:2px}.ham span:nth-child(2){top:50%;transform:translateY(-50%)}.ham span:nth-child(3){bottom:2px}
 .ham.active span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg)}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){bottom:50%;transform:translateY(50%) rotate(-45deg)}
-.mob-menu{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:999;opacity:0;visibility:hidden;transition:var(--tr)}
-.mob-menu.active{opacity:1;visibility:visible}
-.mob-menu a{font-family:var(--ff);font-size:1.75rem;color:var(--w);text-decoration:none}
-.mob-menu a:hover{color:var(--red)}
+.mob{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:999;opacity:0;visibility:hidden;transition:all .5s var(--ease)}
+.mob.active{opacity:1;visibility:visible}
+.mob a{font-family:var(--serif);font-size:2.25rem;font-weight:300;color:var(--w8);transition:all .3s}.mob a:hover{color:var(--accent)}
 
-/* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a,#1a0808 50%,#0a0a0a)}
-.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(139,0,0,.12),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(139,0,0,.06),transparent 50%)}
-.hero-c{position:relative;z-index:2;text-align:center;max-width:900px;padding:0 2rem;animation:fadeUp 1.2s ease both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;border:1px solid var(--w1);border-radius:50px;font-size:.75rem;font-weight:500;color:var(--w7);margin-bottom:2rem;background:var(--w05)}
-.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:var(--ff);font-size:clamp(2.75rem,7vw,5.5rem);font-weight:800;line-height:1.05;margin-bottom:1.5rem;letter-spacing:-2px}
-.hero h1 em{font-style:italic;color:var(--red)}
-.hero-sub{font-size:clamp(1rem,1.8vw,1.15rem);color:var(--w7);max-width:600px;margin:0 auto 2.5rem;line-height:1.8}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--w5);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;animation:sB 2s infinite}
-@keyframes sB{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-.hero-scroll span{opacity:.7}.hero-scroll-l{width:1px;height:30px;background:linear-gradient(to bottom,var(--w5),transparent)}
+/* === HERO === */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(196,30,58,.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(196,30,58,.04) 0%,transparent 40%),radial-gradient(ellipse at 50% 100%,rgba(20,20,20,1) 0%,var(--bg) 100%)}
+.hero-noise{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--w05) 1px,transparent 1px),linear-gradient(90deg,var(--w05) 1px,transparent 1px);background-size:80px 80px;opacity:.3}
+.hero-content{position:relative;z-index:2;max-width:800px;animation:heroIn 1.4s var(--ease) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+.hero-tag{display:inline-flex;align-items:center;gap:.75rem;padding:.5rem 1.25rem;border:1px solid var(--w1);border-radius:50px;font-size:.7rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--w6);margin-bottom:2.5rem;background:var(--w05)}
+.hero-tag .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:blink 2.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-family:var(--serif);font-size:clamp(3rem,7.5vw,6rem);font-weight:300;line-height:1.02;letter-spacing:-2px;margin-bottom:2rem}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.hero-desc{font-size:clamp(.95rem,1.5vw,1.1rem);color:var(--w6);max-width:550px;line-height:1.9;margin-bottom:3rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.75rem}
+.hero-scroll-text{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--w4);writing-mode:vertical-rl}
+.hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--w4),transparent);animation:scrollLine 2s infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-side{position:absolute;right:5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:2rem;align-items:center}
+.hero-side a{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--w4);writing-mode:vertical-rl;transition:color .3s}.hero-side a:hover{color:var(--w)}
 </style>
 </head>
 <body>
 
-<nav id="navbar"><div class="ctn">
-<a href="#" class="logo">ULTRA<span>.</span></a>
-<ul class="nav-l"><li><a href="#about">About</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#artists">Artists</a></li><li><a href="#booking">Booking</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul>
-<a href="#booking" class="btn btn-p nav-b">Book Session</a>
+<!-- NAV -->
+<nav class="nav" id="nav"><div class="ctn">
+<a href="#" class="nav-logo">ULTRA<span>.</span></a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#artists">Artists</a></li>
+<li><a href="#booking">Booking</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="nav-right">
+<a href="#booking" class="btn btn-p nav-btn">Book Now</a>
+</div>
 <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></nav>
-<div class="mob-menu" id="mob-menu"><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#artists">Artists</a><a href="#booking">Booking</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+<div class="mob" id="mob"><a href="#about" onclick="closeM()">About</a><a href="#portfolio" onclick="closeM()">Portfolio</a><a href="#artists" onclick="closeM()">Artists</a><a href="#booking" onclick="closeM()">Booking</a><a href="#contact" onclick="closeM()">Contact</a></div>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-bg"></div>
-<div class="hero-c">
-<div class="hero-badge">Premium Tattoo Studio</div>
+<div class="hero-noise"></div>
+<div class="hero-grid"></div>
+<div class="ctn">
+<div class="hero-content">
+<div class="hero-tag"><span class="dot"></span>Premium Tattoo Studio — NYC</div>
 <h1>Tattoo that becomes part of your <em>story</em></h1>
-<p class="hero-sub">Premium tattoo studio with professional artists, custom designs and a modern approach. Every piece is crafted to be timeless.</p>
-<div class="hero-btns"><a href="#booking" class="btn btn-p">Book Session</a><a href="#portfolio" class="btn btn-o">View Portfolio</a></div>
+<p class="hero-desc">Premium tattoo studio with professional artists, custom designs and a modern approach. Every piece we create is a collaboration between artist and client.</p>
+<div class="hero-btns">
+<a href="#booking" class="btn btn-p">Book Session</a>
+<a href="#portfolio" class="btn btn-g">View Portfolio</a>
 </div>
-<div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-l"></div></div>
+</div>
+</div>
+<div class="hero-scroll"><span class="hero-scroll-text">Scroll</span><div class="hero-scroll-line"></div></div>
+<div class="hero-side"><a href="#">IG</a><a href="#">TW</a><a href="#">FB</a></div>
 </section>
 </body>
 </html>
 
-<!-- Adding remaining sections via inline style block and HTML -->
 <style>
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.about-img{aspect-ratio:4/5;background:linear-gradient(135deg,#1a1a1a,#2a1515);border-radius:var(--r);display:flex;align-items:center;justify-content:center;border:1px solid var(--w05);position:relative;overflow:hidden}
-.about-stat{position:absolute;bottom:2rem;left:2rem;right:2rem;padding:1.25rem;background:var(--glass);backdrop-filter:blur(10px);border-radius:var(--r);border:1px solid var(--w1)}
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem}
-.feat{padding:1.25rem;background:var(--w05);border-radius:var(--r);border:1px solid var(--w05);transition:var(--tr)}
-.feat:hover{border-color:var(--w1);background:var(--w1);transform:translateY(-4px)}
-.feat-i{font-size:1.5rem;margin-bottom:.5rem}
-.feat h4{font-size:.9rem;font-weight:600;margin-bottom:.25rem}
-.feat p{font-size:.75rem;color:var(--w5)}
+/* === ABOUT === */
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center}
+.about-visual{position:relative}
+.about-img{aspect-ratio:3/4;background:linear-gradient(160deg,#1a1210 0%,#0d0a09 100%);border-radius:var(--r-lg);overflow:hidden;position:relative;border:1px solid var(--w1)}
+.about-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:6rem;opacity:.15}
+.about-float{position:absolute;bottom:-2rem;right:-2rem;background:var(--card);border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:1.75rem;backdrop-filter:blur(16px)}
+.about-float-num{font-family:var(--serif);font-size:3rem;font-weight:300;color:var(--w);line-height:1}
+.about-float-label{font-size:.7rem;color:var(--w4);letter-spacing:2px;text-transform:uppercase;margin-top:.5rem}
+.about-text .desc{margin-bottom:3rem}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.feat{padding:1.5rem;background:var(--card);border:1px solid var(--glass-border);border-radius:var(--r);transition:all .4s var(--ease)}
+.feat:hover{border-color:var(--w2);transform:translateY(-4px);background:var(--card-hover)}
+.feat-icon{width:40px;height:40px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1rem}
+.feat h4{font-size:.85rem;font-weight:600;margin-bottom:.375rem;color:var(--w95)}
+.feat p{font-size:.75rem;color:var(--w4);line-height:1.6}
 
-/* PORTFOLIO */
-.port-filters{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3rem}
-.port-f{padding:.6rem 1.5rem;border-radius:50px;border:1px solid var(--w1);background:transparent;color:var(--w7);font-family:var(--fb);font-size:.8rem;font-weight:500;cursor:pointer;transition:var(--tr)}
-.port-f:hover,.port-f.active{background:var(--red);border-color:var(--red);color:var(--w)}
-.port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
-.port-item{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1;background:var(--card);cursor:pointer;transition:var(--tr)}
-.port-item:nth-child(2){aspect-ratio:2/3}.port-item:nth-child(5){aspect-ratio:3/4}
-.port-item-bg{width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a,#222);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:.3;transition:var(--tr)}
-.port-item:hover .port-item-bg{transform:scale(1.05);opacity:.5}
-.port-item::after{content:'View';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.7);color:var(--w);font-weight:600;font-size:.9rem;opacity:0;transition:var(--tr)}
-.port-item:hover::after{opacity:1}
+/* === PORTFOLIO === */
+.port-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:2rem}
+.port-filters{display:flex;gap:.5rem;flex-wrap:wrap}
+.port-f{padding:.55rem 1.25rem;border-radius:50px;border:1px solid var(--w1);background:transparent;color:var(--w4);font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:all .3s var(--ease);letter-spacing:.3px}
+.port-f:hover{border-color:var(--w2);color:var(--w6)}.port-f.active{background:var(--accent);border-color:var(--accent);color:var(--w)}
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+.port-item{position:relative;border-radius:var(--r);overflow:hidden;cursor:pointer;background:var(--card);border:1px solid var(--glass-border);transition:all .5s var(--ease)}
+.port-item:nth-child(1){grid-row:span 2;aspect-ratio:auto}.port-item:not(:nth-child(1)){aspect-ratio:1}
+.port-item-inner{width:100%;height:100%;min-height:200px;background:linear-gradient(135deg,#1a1210,#0f0d0c);display:flex;align-items:center;justify-content:center;font-size:3.5rem;opacity:.2;transition:all .5s var(--ease)}
+.port-item:hover{border-color:var(--w2);transform:scale(1.02)}.port-item:hover .port-item-inner{opacity:.4;transform:scale(1.05)}
+.port-item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,5,.9) 0%,transparent 60%);opacity:0;transition:opacity .4s;display:flex;align-items:flex-end;padding:1.5rem}
+.port-item:hover .port-item-overlay{opacity:1}
+.port-item-label{font-size:.75rem;color:var(--w6);letter-spacing:1px;text-transform:uppercase}
 
-/* ARTISTS */
-.art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem}
-.art-card{background:var(--card);border-radius:var(--r);overflow:hidden;border:1px solid var(--w05);transition:var(--tr)}
-.art-card:hover{transform:translateY(-8px);border-color:var(--w1);box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.art-img{height:320px;background:linear-gradient(135deg,#1a1a1a,#221515);display:flex;align-items:center;justify-content:center;font-size:4rem;opacity:.3;position:relative;overflow:hidden}
-.art-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(to top,var(--card),transparent)}
-.art-info{padding:1.5rem}
-.art-name{font-family:var(--ff);font-size:1.25rem;font-weight:700;margin-bottom:.25rem}
-.art-spec{font-size:.8rem;color:var(--red);font-weight:500;margin-bottom:.75rem}
-.art-bio{font-size:.85rem;color:var(--w5);line-height:1.6;margin-bottom:1rem}
-.art-ig{display:inline-flex;align-items:center;gap:.5rem;color:var(--w7);text-decoration:none;font-size:.8rem;font-weight:500;transition:var(--tr)}
-.art-ig:hover{color:var(--red)}
+/* === ARTISTS === */
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.art-card{background:var(--card);border:1px solid var(--glass-border);border-radius:var(--r-lg);overflow:hidden;transition:all .5s var(--ease)}
+.art-card:hover{border-color:var(--w2);transform:translateY(-8px);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.art-photo{height:360px;background:linear-gradient(160deg,#1a1210,#0d0a09);display:flex;align-items:center;justify-content:center;font-size:5rem;opacity:.15;position:relative;overflow:hidden}
+.art-photo::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,var(--card),transparent)}
+.art-body{padding:2rem}
+.art-name{font-family:var(--serif);font-size:1.5rem;font-weight:400;margin-bottom:.25rem}
+.art-spec{font-size:.75rem;color:var(--accent);font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem}
+.art-bio{font-size:.85rem;color:var(--w4);line-height:1.7;margin-bottom:1.5rem}
+.art-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--w6);font-weight:500;transition:color .3s}.art-link:hover{color:var(--accent)}
 
-/* BOOKING */
-.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.book-form{background:var(--card);padding:2.5rem;border-radius:var(--r);border:1px solid var(--w05)}
-.form-group{margin-bottom:1.5rem}
-.form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--w7);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:1px}
-.form-group input,.form-group textarea,.form-group select{width:100%;padding:1rem 1.25rem;background:var(--w05);border:1px solid var(--w1);border-radius:var(--r);color:var(--w);font-family:var(--fb);font-size:.9rem;transition:var(--tr);outline:none}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--red);box-shadow:0 0 0 3px var(--glow)}
-.form-group textarea{resize:vertical;min-height:120px}
-.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
-.form-group select option{background:var(--bg);color:var(--w)}
+/* === BOOKING === */
+.book-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}
+.book-info .heading{margin-bottom:1rem}
+.book-perks{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.5rem}
+.book-perk{display:flex;align-items:center;gap:1.25rem}
+.book-perk-icon{width:48px;height:48px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.book-perk-text h5{font-size:.9rem;font-weight:600;margin-bottom:.125rem}.book-perk-text p{font-size:.8rem;color:var(--w4)}
+.book-form{background:var(--card);border:1px solid var(--glass-border);border-radius:var(--r-xl);padding:3rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
+.form-group{display:flex;flex-direction:column;gap:.5rem}
+.form-group.full{grid-column:span 2}
+.form-label{font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--w4)}
+.form-input{padding:1rem 1.25rem;background:var(--bg3);border:1px solid var(--glass-border);border-radius:var(--r);color:var(--w);font-family:var(--sans);font-size:.9rem;transition:all .3s;outline:none}
+.form-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.form-input::placeholder{color:var(--w2)}
+textarea.form-input{resize:vertical;min-height:120px}
+select.form-input{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M8 12L2 6h12l-6 6z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.25rem center}
+select.form-input option{background:var(--bg);color:var(--w)}
+.book-submit{width:100%;margin-top:1.5rem;padding:1.125rem;font-size:.85rem;letter-spacing:.5px}
 
-/* REVIEWS */
-.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:1.5rem}
-.rev-card{background:var(--card);padding:2rem;border-radius:var(--r);border:1px solid var(--w05);transition:var(--tr)}
-.rev-card:hover{border-color:var(--w1);transform:translateY(-4px)}
-.rev-stars{color:var(--red);font-size:1rem;margin-bottom:1rem;letter-spacing:2px}
-.rev-text{font-size:.95rem;color:var(--w7);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
-.rev-author{display:flex;align-items:center;gap:1rem}
-.rev-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--red-d),var(--red));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
-.rev-name{font-weight:600;font-size:.9rem}.rev-date{font-size:.75rem;color:var(--w5)}
+/* === REVIEWS === */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.rev-card{background:var(--card);border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:2.25rem;transition:all .4s var(--ease)}
+.rev-card:hover{border-color:var(--w2);transform:translateY(-4px)}
+.rev-quote{font-size:.7rem;color:var(--accent);margin-bottom:1.25rem;letter-spacing:2px}
+.rev-text{font-family:var(--serif);font-size:1.1rem;font-weight:300;font-style:italic;color:var(--w8);line-height:1.7;margin-bottom:2rem}
+.rev-author{display:flex;align-items:center;gap:1rem;padding-top:1.5rem;border-top:1px solid var(--glass-border)}
+.rev-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#8B0000);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:600}
+.rev-name{font-size:.85rem;font-weight:500}.rev-date{font-size:.7rem;color:var(--w4)}
 
-/* INSTAGRAM */
-.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem}
-.ig-item{aspect-ratio:1;background:linear-gradient(135deg,#1a1a1a,#221515);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:2rem;opacity:.3;cursor:pointer;transition:var(--tr);position:relative;overflow:hidden}
-.ig-item:hover{opacity:.6;transform:scale(1.03)}
-.ig-item::after{content:'♡';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.6);font-size:1.5rem;opacity:0;transition:var(--tr)}
-.ig-item:hover::after{opacity:1}
+/* === INSTAGRAM === */
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem;margin-top:3rem}
+.ig-item{aspect-ratio:1;background:linear-gradient(135deg,#1a1210,#0d0a09);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:2rem;opacity:.2;cursor:pointer;transition:all .4s var(--ease);position:relative;overflow:hidden;border:1px solid var(--glass-border)}
+.ig-item:hover{opacity:.5;transform:scale(1.04);border-color:var(--w2)}
 
-/* CONTACT */
+/* === CONTACT === */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
-.contact-info{display:flex;flex-direction:column;gap:2rem}
-.contact-item{display:flex;gap:1rem;align-items:flex-start}
-.contact-icon{width:48px;height:48px;background:var(--w05);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
-.contact-label{font-size:.75rem;color:var(--w5);text-transform:uppercase;letter-spacing:1px;margin-bottom:.25rem}
-.contact-val{font-size:1rem;font-weight:500}
-.contact-map{border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;background:var(--card);border:1px solid var(--w05);display:flex;align-items:center;justify-content:center;color:var(--w5);font-size:.9rem}
+.contact-items{display:flex;flex-direction:column;gap:2.5rem}
+.contact-item{display:flex;gap:1.25rem}
+.contact-icon{width:52px;height:52px;border-radius:50%;background:var(--card);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-label{font-size:.7rem;color:var(--w4);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.375rem}
+.contact-val{font-size:1rem;font-weight:400;color:var(--w8)}
+.contact-map{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;background:var(--card);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;color:var(--w4);font-size:.85rem}
+.contact-socials{display:flex;gap:.75rem;margin-top:2rem}
+.contact-socials a{width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .3s}
+.contact-socials a:hover{border-color:var(--accent);background:var(--accent-soft);transform:translateY(-2px)}
 
-/* FOOTER */
-footer{padding:3rem 0;border-top:1px solid var(--w05)}
-.footer-c{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+/* === FOOTER === */
+footer{padding:3rem 0;border-top:1px solid var(--glass-border)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.footer-logo{font-family:var(--serif);font-size:1.2rem;font-weight:600;letter-spacing:1px}
+.footer-logo span{color:var(--accent);font-weight:300}
 .footer-links{display:flex;gap:2rem}
-.footer-links a{color:var(--w5);text-decoration:none;font-size:.85rem;transition:var(--tr)}
-.footer-links a:hover{color:var(--w)}
-.footer-copy{font-size:.8rem;color:var(--w3)}
+.footer-links a{color:var(--w4);font-size:.8rem;transition:color .3s}.footer-links a:hover{color:var(--w)}
+.footer-copy{font-size:.7rem;color:var(--w2);letter-spacing:.5px}
 
-/* RESPONSIVE */
+/* === DIVIDER === */
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--w1),transparent)}
+
+/* === ANIMATIONS === */
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* === RESPONSIVE === */
 @media(max-width:1024px){
-.about-grid,.book-grid,.contact-grid{grid-template-columns:1fr}
-.about-img{max-height:400px;aspect-ratio:16/9}
+.about-grid,.book-layout,.contact-grid{grid-template-columns:1fr}
+.about-float{position:relative;bottom:0;right:0;display:inline-block;margin-top:1.5rem}
+.art-grid{grid-template-columns:1fr 1fr}
+.port-grid{grid-template-columns:1fr 1fr}
+.port-item:nth-child(1){grid-row:auto}
+.hero-side{display:none}
 }
 @media(max-width:768px){
-.nav-l,.nav-b{display:none}
-.ham{display:block}
-.hero h1{font-size:2.5rem}
-.feat-grid{grid-template-columns:1fr}
-.port-grid{grid-template-columns:1fr 1fr}
-.art-grid{grid-template-columns:1fr}
-.rev-grid{grid-template-columns:1fr}
+.nav-links,.nav-right .btn{display:none}.ham{display:block}
+.hero h1{font-size:2.75rem;letter-spacing:-1px}
+.features{grid-template-columns:1fr}
+.port-grid,.art-grid,.rev-grid{grid-template-columns:1fr}
 .ig-grid{grid-template-columns:repeat(3,1fr)}
-.footer-c{flex-direction:column;text-align:center}
+.form-row{grid-template-columns:1fr}.form-group.full{grid-column:auto}
+.footer-inner{flex-direction:column;text-align:center}
 .footer-links{justify-content:center}
-}
-@media(max-width:480px){
-.port-grid{grid-template-columns:1fr}
-.hero-btns{flex-direction:column;align-items:center}
-.btn{width:100%;max-width:280px}
+.port-head{flex-direction:column;align-items:flex-start}
+.hero-scroll{display:none}
 }
 </style>
 
 <!-- ABOUT -->
 <section class="sec" id="about" style="background:var(--bg2)">
-<div class="ctn"><div class="about-grid">
-<div class="about-img"><div style="font-size:8rem;opacity:.2">🖋️</div><div class="about-stat"><div style="font-size:2rem;font-weight:800;font-family:var(--ff)">6+</div><div style="font-size:.8rem;color:var(--w5)">Years of Experience</div></div></div>
-<div><span class="label">About Us</span><h2 class="title">Where art meets precision</h2><p class="sub">Ultra Tattoo is more than a studio — it's a creative space where your ideas transform into permanent art. Our artists create pieces that tell your unique story.</p>
-<div class="feat-grid">
-<div class="feat"><div class="feat-i">⚡</div><h4>Pro Artists</h4><p>5+ years experience</p></div>
-<div class="feat"><div class="feat-i">🛡️</div><h4>100% Sterile</h4><p>Medical-grade tools</p></div>
-<div class="feat"><div class="feat-i">✨</div><h4>Custom Designs</h4><p>Unique art for you</p></div>
-<div class="feat"><div class="feat-i">🎯</div><h4>Individual Approach</h4><p>Your vision first</p></div>
+<div class="ctn"><div class="about-grid reveal">
+<div class="about-visual">
+<div class="about-img"><div class="about-img-inner">🖋️</div></div>
+<div class="about-float"><div class="about-float-num">6+</div><div class="about-float-label">Years of Excellence</div></div>
+</div>
+<div class="about-text">
+<div class="eyebrow">About the Studio</div>
+<h2 class="heading">Where <strong>art</strong> meets<br>precision</h2>
+<p class="desc">Ultra Tattoo is a creative space where your ideas transform into permanent art. We combine technical mastery with artistic vision to create pieces that are uniquely yours — crafted in a safe, sterile, and inspiring environment.</p>
+<div class="features">
+<div class="feat"><div class="feat-icon">⚡</div><h4>Expert Artists</h4><p>5–12 years of professional experience</p></div>
+<div class="feat"><div class="feat-icon">🛡️</div><h4>Medical-Grade Sterility</h4><p>Hospital-level hygiene standards</p></div>
+<div class="feat"><div class="feat-icon">✨</div><h4>Custom Designs Only</h4><p>No flash — every piece is original</p></div>
+<div class="feat"><div class="feat-icon">🎯</div><h4>Personal Approach</h4><p>1-on-1 consultation included</p></div>
+</div>
+</div>
 </div></div>
-</div></div></section>
+</section>
+
+<div class="divider"></div>
 
 <!-- PORTFOLIO -->
 <section class="sec" id="portfolio">
 <div class="ctn">
-<span class="label">Portfolio</span><h2 class="title">Our finest work</h2><p class="sub" style="margin-bottom:3rem">Each tattoo is a unique piece of art, crafted with precision and passion.</p>
+<div class="port-head reveal">
+<div><div class="eyebrow">Portfolio</div><h2 class="heading">Selected <strong>works</strong></h2></div>
 <div class="port-filters">
 <button class="port-f active">All</button><button class="port-f">Blackwork</button><button class="port-f">Realism</button><button class="port-f">Minimal</button><button class="port-f">Color</button><button class="port-f">Lettering</button>
 </div>
-<div class="port-grid">
-<div class="port-item"><div class="port-item-bg">🐉</div></div>
-<div class="port-item"><div class="port-item-bg">🌹</div></div>
-<div class="port-item"><div class="port-item-bg">🦅</div></div>
-<div class="port-item"><div class="port-item-bg">⚔️</div></div>
-<div class="port-item"><div class="port-item-bg">🐺</div></div>
-<div class="port-item"><div class="port-item-bg">🔥</div></div>
-<div class="port-item"><div class="port-item-bg">💀</div></div>
-<div class="port-item"><div class="port-item-bg">🌙</div></div>
-<div class="port-item"><div class="port-item-bg">🗡️</div></div>
+</div>
+<div class="port-grid reveal">
+<div class="port-item"><div class="port-item-inner">🐉</div><div class="port-item-overlay"><span class="port-item-label">Blackwork — Full Sleeve</span></div></div>
+<div class="port-item"><div class="port-item-inner">🌹</div><div class="port-item-overlay"><span class="port-item-label">Realism — Rose</span></div></div>
+<div class="port-item"><div class="port-item-inner">🦅</div><div class="port-item-overlay"><span class="port-item-label">Blackwork — Eagle</span></div></div>
+<div class="port-item"><div class="port-item-inner">⚔️</div><div class="port-item-overlay"><span class="port-item-label">Minimal — Geometric</span></div></div>
+<div class="port-item"><div class="port-item-inner">🐺</div><div class="port-item-overlay"><span class="port-item-label">Realism — Wolf</span></div></div>
+<div class="port-item"><div class="port-item-inner">🌙</div><div class="port-item-overlay"><span class="port-item-label">Fine Line — Moon</span></div></div>
 </div>
 </div></section>
+
+<div class="divider"></div>
 
 <!-- ARTISTS -->
 <section class="sec" id="artists" style="background:var(--bg2)">
 <div class="ctn">
-<span class="label">Our Team</span><h2 class="title">Meet the artists</h2><p class="sub" style="margin-bottom:3rem">Talented professionals who bring your vision to life.</p>
-<div class="art-grid">
-<div class="art-card"><div class="art-img">👨‍🎨</div><div class="art-info"><div class="art-name">Alex Noir</div><div class="art-spec">Blackwork & Realism</div><p class="art-bio">Specializing in large-scale blackwork and photorealistic portraits. 8 years of experience.</p><a href="#" class="art-ig">📷 @alexnoir.ink</a></div></div>
-<div class="art-card"><div class="art-img">👩‍🎨</div><div class="art-info"><div class="art-name">Maya Storm</div><div class="art-spec">Minimalism & Fine Line</div><p class="art-bio">Creating delicate fine-line tattoos with a focus on botanical and geometric designs.</p><a href="#" class="art-ig">📷 @mayastorm.tattoo</a></div></div>
-<div class="art-card"><div class="art-img">🧑‍🎨</div><div class="art-info"><div class="art-name">Viktor Shade</div><div class="art-spec">Color & Neo-Traditional</div><p class="art-bio">Bold colors and dynamic compositions. Bringing traditional art into the modern era.</p><a href="#" class="art-ig">📷 @viktorshade</a></div></div>
+<div class="reveal" style="text-align:center;margin-bottom:4rem"><div class="eyebrow" style="justify-content:center"><span style="width:32px;height:1px;background:var(--accent);display:block"></span>Our Artists</div><h2 class="heading">Meet the <strong>team</strong></h2><p class="desc" style="margin:0 auto">Talented professionals who bring your vision to life with precision and passion.</p></div>
+<div class="art-grid reveal">
+<div class="art-card"><div class="art-photo">👨‍🎨</div><div class="art-body"><div class="art-name">Alex Noir</div><div class="art-spec">Blackwork & Realism</div><p class="art-bio">Specializing in large-scale blackwork and photorealistic portraits. 8 years of dedicated practice.</p><a href="#" class="art-link">→ @alexnoir.ink</a></div></div>
+<div class="art-card"><div class="art-photo">👩‍🎨</div><div class="art-body"><div class="art-name">Maya Storm</div><div class="art-spec">Fine Line & Botanical</div><p class="art-bio">Creating delicate fine-line tattoos with a focus on botanical and organic designs.</p><a href="#" class="art-link">→ @mayastorm.tattoo</a></div></div>
+<div class="art-card"><div class="art-photo">🧑‍🎨</div><div class="art-body"><div class="art-name">Viktor Shade</div><div class="art-spec">Color & Neo-Traditional</div><p class="art-bio">Bold colors and dynamic compositions. Bringing traditional art into the modern era.</p><a href="#" class="art-link">→ @viktorshade</a></div></div>
 </div>
 </div></section>
 
+<div class="divider"></div>
+
 <!-- BOOKING -->
 <section class="sec" id="booking">
-<div class="ctn"><div class="book-grid">
-<div><span class="label">Book a Session</span><h2 class="title">Ready to get inked?</h2><p class="sub">Fill out the form and we'll get back to you within 24 hours to discuss your idea and schedule a session.</p>
-<div style="margin-top:2.5rem;display:flex;flex-direction:column;gap:1.5rem">
-<div style="display:flex;align-items:center;gap:1rem"><div style="width:44px;height:44px;background:var(--w05);border-radius:50%;display:flex;align-items:center;justify-content:center">⚡</div><div><div style="font-size:.9rem;font-weight:600">Quick Response</div><div style="font-size:.8rem;color:var(--w5)">We reply within 24h</div></div></div>
-<div style="display:flex;align-items:center;gap:1rem"><div style="width:44px;height:44px;background:var(--w05);border-radius:50%;display:flex;align-items:center;justify-content:center">💬</div><div><div style="font-size:.9rem;font-weight:600">Free Consultation</div><div style="font-size:.8rem;color:var(--w5)">Discuss your idea first</div></div></div>
-<div style="display:flex;align-items:center;gap:1rem"><div style="width:44px;height:44px;background:var(--w05);border-radius:50%;display:flex;align-items:center;justify-content:center">🎨</div><div><div style="font-size:.9rem;font-weight:600">Custom Sketch</div><div style="font-size:.8rem;color:var(--w5)">Unique design for you</div></div></div>
-</div></div>
-<div class="book-form">
-<div class="form-group"><label>Your Name</label><input type="text" placeholder="John Doe"></div>
-<div class="form-group"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000"></div>
-<div class="form-group"><label>Preferred Artist</label><select><option>Any Artist</option><option>Alex Noir</option><option>Maya Storm</option><option>Viktor Shade</option></select></div>
-<div class="form-group"><label>Preferred Date</label><input type="date"></div>
-<div class="form-group"><label>Tattoo Idea</label><textarea placeholder="Describe your tattoo idea, size, placement..."></textarea></div>
-<button class="btn btn-p" style="width:100%;padding:1.125rem">Book My Session →</button>
+<div class="ctn"><div class="book-layout reveal">
+<div class="book-info">
+<div class="eyebrow">Book a Session</div>
+<h2 class="heading">Ready to get <em>inked</em>?</h2>
+<p class="desc">Fill out the form and we'll get back to you within 24 hours to discuss your idea and schedule a session.</p>
+<div class="book-perks">
+<div class="book-perk"><div class="book-perk-icon">⚡</div><div class="book-perk-text"><h5>Quick Response</h5><p>We reply within 24 hours</p></div></div>
+<div class="book-perk"><div class="book-perk-icon">💬</div><div class="book-perk-text"><h5>Free Consultation</h5><p>Discuss your idea before committing</p></div></div>
+<div class="book-perk"><div class="book-perk-icon">🎨</div><div class="book-perk-text"><h5>Custom Sketch</h5><p>Original design created for you</p></div></div>
 </div>
-</div></div></section>
+</div>
+<form class="book-form" onsubmit="event.preventDefault();alert('Thank you! We will contact you within 24 hours.')">
+<div class="form-row">
+<div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="John Doe" required></div>
+<div class="form-group"><label class="form-label">Phone</label><input class="form-input" type="tel" placeholder="+1 (555) 000-0000" required></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label class="form-label">Preferred Artist</label><select class="form-input"><option>Any Available</option><option>Alex Noir</option><option>Maya Storm</option><option>Viktor Shade</option></select></div>
+<div class="form-group"><label class="form-label">Preferred Date</label><input class="form-input" type="date"></div>
+</div>
+<div class="form-row"><div class="form-group full"><label class="form-label">Tattoo Idea</label><textarea class="form-input" placeholder="Describe your tattoo idea, size, placement, style preferences..." required></textarea></div></div>
+<button type="submit" class="btn btn-p book-submit">Book My Session →</button>
+</form>
+</div></div>
+</section>
+
+<div class="divider"></div>
 
 <!-- REVIEWS -->
 <section class="sec" id="reviews" style="background:var(--bg2)">
 <div class="ctn">
-<span class="label">Reviews</span><h2 class="title">What clients say</h2><p class="sub" style="margin-bottom:3rem">Real stories from real people who trusted us with their skin.</p>
-<div class="rev-grid">
-<div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Absolutely incredible work. Alex created a masterpiece on my sleeve. The attention to detail is unreal. Will definitely be back for more."</p><div class="rev-author"><div class="rev-avatar">M</div><div><div class="rev-name">Marcus T.</div><div class="rev-date">2 weeks ago</div></div></div></div>
-<div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Maya did the most beautiful fine-line botanical piece on my forearm. The studio is clean, professional, and the vibe is amazing."</p><div class="rev-author"><div class="rev-avatar">S</div><div><div class="rev-name">Sarah K.</div><div class="rev-date">1 month ago</div></div></div></div>
-<div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Best tattoo experience I've ever had. Viktor's color work is on another level. The whole process from consultation to aftercare was perfect."</p><div class="rev-author"><div class="rev-avatar">D</div><div><div class="rev-name">Daniel R.</div><div class="rev-date">3 weeks ago</div></div></div></div>
+<div class="reveal" style="text-align:center;margin-bottom:4rem"><div class="eyebrow" style="justify-content:center"><span style="width:32px;height:1px;background:var(--accent);display:block"></span>Testimonials</div><h2 class="heading">What clients <strong>say</strong></h2></div>
+<div class="rev-grid reveal">
+<div class="rev-card"><div class="rev-quote">★★★★★</div><p class="rev-text">"Absolutely incredible work. Alex created a masterpiece on my sleeve. The attention to detail is unreal."</p><div class="rev-author"><div class="rev-avatar">M</div><div><div class="rev-name">Marcus T.</div><div class="rev-date">2 weeks ago</div></div></div></div>
+<div class="rev-card"><div class="rev-quote">★★★★★</div><p class="rev-text">"Maya did the most beautiful fine-line botanical piece. The studio is immaculate and the vibe is incredible."</p><div class="rev-author"><div class="rev-avatar">S</div><div><div class="rev-name">Sarah K.</div><div class="rev-date">1 month ago</div></div></div></div>
+<div class="rev-card"><div class="rev-quote">★★★★★</div><p class="rev-text">"Best tattoo experience I've ever had. Viktor's color work is on another level. From consultation to aftercare — perfect."</p><div class="rev-author"><div class="rev-avatar">D</div><div><div class="rev-name">Daniel R.</div><div class="rev-date">3 weeks ago</div></div></div></div>
 </div>
 </div></section>
 
+<div class="divider"></div>
+
 <!-- INSTAGRAM -->
 <section class="sec" id="instagram">
-<div class="ctn" style="text-align:center">
-<span class="label">Instagram</span><h2 class="title">Follow our work</h2><p class="sub" style="margin:0 auto 3rem;text-align:center">Fresh ink, daily inspiration. Follow us @ultratattoo</p>
+<div class="ctn reveal" style="text-align:center">
+<div class="eyebrow" style="justify-content:center"><span style="width:32px;height:1px;background:var(--accent);display:block"></span>Instagram</div>
+<h2 class="heading">Follow our <strong>work</strong></h2>
+<p class="desc" style="margin:0 auto">Fresh ink, daily inspiration. Follow us for the latest pieces and behind-the-scenes content.</p>
 <div class="ig-grid">
 <div class="ig-item">🖤</div><div class="ig-item">🌿</div><div class="ig-item">🐍</div><div class="ig-item">🌹</div><div class="ig-item">💎</div><div class="ig-item">🦋</div>
 </div>
-<a href="#" class="btn btn-o" style="margin-top:2.5rem">Follow @ultratattoo →</a>
+<a href="#" class="btn btn-g" style="margin-top:3rem">Follow @ultratattoo →</a>
 </div></section>
+
+<div class="divider"></div>
 
 <!-- CONTACT -->
 <section class="sec" id="contact" style="background:var(--bg2)">
 <div class="ctn">
-<span class="label">Contact</span><h2 class="title">Find us</h2><p class="sub" style="margin-bottom:3rem">Visit our studio or reach out online.</p>
-<div class="contact-grid">
-<div class="contact-info">
-<div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Address</div><div class="contact-val">123 Ink Street, Art District<br>New York, NY 10001</div></div></div>
+<div class="reveal" style="margin-bottom:4rem"><div class="eyebrow">Contact</div><h2 class="heading">Find <strong>us</strong></h2></div>
+<div class="contact-grid reveal">
+<div>
+<div class="contact-items">
+<div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Studio Address</div><div class="contact-val">123 Ink Street, Art District<br>New York, NY 10001</div></div></div>
 <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-val">+1 (555) 123-4567</div></div></div>
-<div class="contact-item"><div class="contact-icon">🕐</div><div><div class="contact-label">Working Hours</div><div class="contact-val">Mon–Sat: 11:00 – 21:00<br>Sun: By appointment</div></div></div>
+<div class="contact-item"><div class="contact-icon">🕐</div><div><div class="contact-label">Working Hours</div><div class="contact-val">Mon – Sat: 11:00 – 21:00<br>Sun: By appointment only</div></div></div>
 <div class="contact-item"><div class="contact-icon">📧</div><div><div class="contact-label">Email</div><div class="contact-val">hello@ultratattoo.com</div></div></div>
-<div style="display:flex;gap:1rem;margin-top:1rem">
-<a href="#" style="width:44px;height:44px;background:var(--w05);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.1rem;transition:var(--tr)">📷</a>
-<a href="#" style="width:44px;height:44px;background:var(--w05);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.1rem;transition:var(--tr)">✈️</a>
-<a href="#" style="width:44px;height:44px;background:var(--w05);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.1rem;transition:var(--tr)">🎵</a>
 </div>
+<div class="contact-socials"><a href="#">📷</a><a href="#">✈️</a><a href="#">🎵</a><a href="#">💬</a></div>
 </div>
-<div class="contact-map">📍 Google Maps Embed Area</div>
+<div class="contact-map">📍 Google Maps — 123 Ink Street, NYC</div>
 </div>
 </div></section>
 
 <!-- FOOTER -->
-<footer>
-<div class="ctn"><div class="footer-c">
-<a href="#" class="logo">ULTRA<span>.</span></a>
+<footer><div class="ctn"><div class="footer-inner">
+<div class="footer-logo">ULTRA<span>.</span></div>
 <div class="footer-links"><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#artists">Artists</a><a href="#booking">Booking</a><a href="#contact">Contact</a></div>
 <div class="footer-copy">© 2026 Ultra Tattoo. All rights reserved.</div>
-</div></div>
-</footer>
+</div></div></footer>
 
 <script>
-// Navbar scroll
-window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
-
+// Nav scroll
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>60)});
 // Mobile menu
-const ham=document.getElementById('ham'),mob=document.getElementById('mob-menu');
-ham.addEventListener('click',()=>{ham.classList.toggle('active');mob.classList.toggle('active');document.body.style.overflow=mob.classList.contains('active')?'hidden':''});
-function closeMenu(){ham.classList.remove('active');mob.classList.remove('active');document.body.style.overflow=''}
-
+const ham=document.getElementById('ham'),mob=document.getElementById('mob');
+ham.onclick=()=>{ham.classList.toggle('active');mob.classList.toggle('active');document.body.style.overflow=mob.classList.contains('active')?'hidden':''};
+function closeM(){ham.classList.remove('active');mob.classList.remove('active');document.body.style.overflow=''}
 // Portfolio filters
-document.querySelectorAll('.port-f').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.port-f').forEach(b=>b.classList.remove('active'));btn.classList.add('active')})});
-
-// Scroll animations
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.sec > .ctn').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='all 0.8s ease';observer.observe(el)});
-
-// Form submit
-document.querySelector('.book-form .btn')?.addEventListener('click',e=>{e.preventDefault();alert('Thank you! We will contact you within 24 hours.')});
+document.querySelectorAll('.port-f').forEach(b=>b.onclick=()=>{document.querySelectorAll('.port-f').forEach(x=>x.classList.remove('active'));b.classList.add('active')});
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
