@@ -49,12 +49,12 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
 .btn-sm{padding:.75rem 1.75rem;font-size:.75rem}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;transition:all .6s var(--ease)}
-nav.scrolled{padding:.6rem 0;background:rgba(255,252,248,.94);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);box-shadow:0 1px 8px rgba(42,33,24,.03)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.5rem 0;transition:all .6s var(--ease)}
+nav.scrolled{padding:1rem 0;background:rgba(255,252,248,.94);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);box-shadow:0 1px 8px rgba(42,33,24,.03)}
 nav .ctn{display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center}
 .nav-logo img{transition:all .4s var(--ease)}
-nav.scrolled .nav-logo img{height:44px !important}
+nav.scrolled .nav-logo img{height:80px !important}
 .nav-links{display:flex;gap:2.25rem;list-style:none}
 .nav-links a{color:var(--text);font-size:.76rem;font-weight:500;letter-spacing:.3px;transition:all .3s;position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:50%;width:0;height:1.5px;background:var(--accent);transition:all .4s var(--ease);transform:translateX(-50%);border-radius:1px}
@@ -98,7 +98,7 @@ nav.scrolled .nav-logo img{height:44px !important}
 <body>
 
 <nav id="nav"><div class="ctn">
-<a href="#" class="nav-logo"><img src="logo.png" alt="BodyMia" style="height:56px;width:auto;"></a>
+<a href="#" class="nav-logo"><img src="logo.png" alt="BodyMia" style="height:120px;width:auto;"></a>
 <ul class="nav-links"><li><a href="#services">Послуги</a></li><li><a href="#about">Про нас</a></li><li><a href="#gallery">Галерея</a></li><li><a href="#booking">Запис</a></li><li><a href="#reviews">Відгуки</a></li><li><a href="#contact">Контакти</a></li></ul>
 <div class="nav-right"><a href="#booking" class="btn btn-p nav-btn">Записатись</a></div>
 <button class="ham" id="ham" aria-label="Меню"><span></span><span></span><span></span></button>
@@ -210,8 +210,8 @@ footer{padding:3.5rem 0;border-top:1px solid var(--bg3);background:var(--bg2)}
 
 /* RESPONSIVE */
 @media(max-width:1024px){.hero-inner,.about-grid,.book-layout,.contact-grid{grid-template-columns:1fr}.srv-grid{grid-template-columns:1fr 1fr}.gal-grid{grid-template-columns:repeat(3,1fr)}.gal-item:nth-child(1){grid-column:span 2}.hero-visual{display:none}}
-@media(max-width:768px){.nav-links,.nav-right{display:none}.ham{display:block}.nav-logo img{height:48px !important}.srv-grid,.rev-grid{grid-template-columns:1fr}.gal-grid{grid-template-columns:1fr 1fr}.gal-item:nth-child(1){grid-column:auto;grid-row:auto}.form-row{grid-template-columns:1fr}.form-group.full{grid-column:auto}.footer-inner{flex-direction:column;text-align:center}.footer-links{justify-content:center}.hero h1{font-size:2.25rem;letter-spacing:-.5px}.hero-desc{font-size:.9rem}.about-features{grid-template-columns:1fr}.book-form{padding:1.75rem}.contact-grid{gap:2.5rem}.sec{padding:4rem 0}.btn{padding:.85rem 2rem}.heading{font-size:clamp(1.75rem,5vw,2.5rem)}}
-@media(max-width:480px){.hero{min-height:auto;padding:7rem 0 4rem}.hero h1{font-size:1.9rem}.hero-tag{font-size:.6rem;padding:.35rem .9rem}.btn{padding:.8rem 1.75rem;font-size:.78rem}.sec{padding:3.5rem 0}.srv-card{padding:2rem 1.5rem}.book-form{padding:1.5rem}.ctn{padding:0 1.25rem}.nav-logo img{height:42px !important}}
+@media(max-width:768px){.nav-links,.nav-right{display:none}.ham{display:block}.nav-logo img{height:90px !important}.srv-grid,.rev-grid{grid-template-columns:1fr}.gal-grid{grid-template-columns:1fr 1fr}.gal-item:nth-child(1){grid-column:auto;grid-row:auto}.form-row{grid-template-columns:1fr}.form-group.full{grid-column:auto}.footer-inner{flex-direction:column;text-align:center}.footer-links{justify-content:center}.hero h1{font-size:2.25rem;letter-spacing:-.5px}.hero-desc{font-size:.9rem}.about-features{grid-template-columns:1fr}.book-form{padding:1.75rem}.contact-grid{gap:2.5rem}.sec{padding:4rem 0}.btn{padding:.85rem 2rem}.heading{font-size:clamp(1.75rem,5vw,2.5rem)}}
+@media(max-width:480px){.hero{min-height:auto;padding:7rem 0 4rem}.hero h1{font-size:1.9rem}.hero-tag{font-size:.6rem;padding:.35rem .9rem}.btn{padding:.8rem 1.75rem;font-size:.78rem}.sec{padding:3.5rem 0}.srv-card{padding:2rem 1.5rem}.book-form{padding:1.5rem}.ctn{padding:0 1.25rem}.nav-logo img{height:80px !important}}
 </style>
 
 <!-- SERVICES -->
@@ -303,7 +303,7 @@ footer{padding:3.5rem 0;border-top:1px solid var(--bg3);background:var(--bg2)}
 </div></div></section>
 
 <footer><div class="ctn"><div class="footer-inner">
-<div class="footer-logo"><img src="logo.png" alt="BodyMia" style="height:44px;width:auto;opacity:.85;"></div>
+<div class="footer-logo"><img src="logo.png" alt="BodyMia" style="height:80px;width:auto;"></div>
 <div class="footer-links"><a href="#services">Послуги</a><a href="#about">Про нас</a><a href="#booking">Запис</a><a href="#reviews">Відгуки</a><a href="#contact">Контакти</a></div>
 <div class="footer-copy">© 2026 BodyMia. Всі права захищені.</div>
 </div></div></footer>
