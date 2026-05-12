@@ -3,309 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BodyMia — Преміум велнес-студія | Japanese Head SPA, EMS, Масаж</title>
-<meta name="description" content="BodyMia — елітна велнес-студія. Japanese Head SPA, EMS-процедури, мануальний масаж. Розкішний догляд за тілом та душею.">
-<meta property="og:title" content="BodyMia — Преміум велнес-студія">
-<meta property="og:description" content="Елітна велнес-студія з японськими SPA-ритуалами, EMS та масажем.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>X-Drive — Преміум автомийка та детейлінг | Вінниця</title>
+<meta name="description" content="X-Drive — преміальна автомийка та детейлінг студія у Вінниці. Комплексна мийка, полірування, хімчистка, керамічне покриття.">
+<meta property="og:title" content="X-Drive — Преміум автомийка та детейлінг">
+<meta property="og:description" content="Професійний догляд за вашим авто. Детейлінг, полірування, хімчистка у Вінниці.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
---bg:#FFFCF8;--bg2:#FFF9F2;--bg3:#F8F0E8;--card:#FFFFFF;--card-hover:#FFFDF9;
---dark:#2A2118;--dark2:#3D3028;--text:#5E4F44;--text-light:#9B8B7E;--text-muted:#C4B5A8;
---accent:#B8845C;--accent-dark:#9A6D47;--accent-light:#D4A87A;--accent-soft:rgba(184,132,92,.08);--accent-glow:rgba(184,132,92,.15);
---gold:#D4A853;--rose:#E8C4B8;--sage:#C8D4C4;
---serif:'Cormorant Garamond',serif;--sans:'Inter',system-ui,sans-serif;
---r:14px;--r-lg:24px;--r-xl:36px;
---shadow-sm:0 2px 8px rgba(42,33,24,.04);--shadow:0 8px 32px rgba(42,33,24,.06);--shadow-lg:0 20px 60px rgba(42,33,24,.08);--shadow-xl:0 32px 80px rgba(42,33,24,.1);
---ease:cubic-bezier(.25,.46,.45,.94);--spring:cubic-bezier(.34,1.56,.64,1);
+--bg:#0a0a0a;--bg2:#0f0f0f;--bg3:#141414;--card:#1a1a1a;--card-hover:#1f1f1f;
+--w:#fff;--w9:rgba(255,255,255,.9);--w7:rgba(255,255,255,.7);--w5:rgba(255,255,255,.5);--w3:rgba(255,255,255,.3);--w1:rgba(255,255,255,.08);--w05:rgba(255,255,255,.04);
+--red:#E31837;--red-dark:#B81430;--red-glow:rgba(227,24,55,.2);--red-soft:rgba(227,24,55,.08);
+--display:'Oswald',sans-serif;--body:'Inter',system-ui,sans-serif;
+--r:10px;--r-lg:16px;--r-xl:24px;
+--shadow:0 8px 32px rgba(0,0,0,.4);--shadow-lg:0 20px 60px rgba(0,0,0,.5);
+--ease:cubic-bezier(.25,.46,.45,.94);
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--dark);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent-light);border-radius:2px}
+body{font-family:var(--body);background:var(--bg);color:var(--w);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
 img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
 
-/* LAYOUT */
-.ctn{max-width:1180px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4.5rem)}
-.sec{padding:clamp(5.5rem,14vw,9rem) 0;position:relative}
-.sec-alt{background:var(--bg2)}
-
-/* TYPOGRAPHY */
-.eyebrow{font-size:.65rem;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
-.eyebrow::before{content:'';width:24px;height:1.5px;background:var(--accent-light);border-radius:1px}
-.heading{font-family:var(--serif);font-size:clamp(2.25rem,5.5vw,3.5rem);font-weight:300;line-height:1.12;color:var(--dark);margin-bottom:1.25rem;letter-spacing:-.5px}
-.heading strong{font-weight:500}
-.heading em{font-style:italic;color:var(--accent)}
-.desc{font-size:.92rem;color:var(--text-light);max-width:460px;line-height:1.9;font-weight:300}
+.ctn{max-width:1200px;margin:0 auto;padding:0 clamp(1.5rem,4vw,4rem)}
+.sec{padding:clamp(5rem,12vw,8rem) 0}
+.eyebrow{font-family:var(--display);font-size:.7rem;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--red)}
+.heading{font-family:var(--display);font-size:clamp(2rem,5vw,3.25rem);font-weight:600;line-height:1.1;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.heading em{font-style:normal;color:var(--red)}
+.desc{font-size:.9rem;color:var(--w5);max-width:480px;line-height:1.85}
 .text-center{text-align:center}.text-center .desc{margin:0 auto}
 
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 2.5rem;border:none;border-radius:60px;font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.3px;cursor:pointer;text-decoration:none;transition:all .5s var(--ease);position:relative;overflow:hidden}
-.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.2),transparent);opacity:0;transition:opacity .4s}.btn:hover::before{opacity:1}
-.btn-p{background:linear-gradient(135deg,var(--accent) 0%,var(--accent-dark) 100%);color:#fff;box-shadow:0 6px 24px var(--accent-glow)}
-.btn-p:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px rgba(184,132,92,.25)}
-.btn-o{background:transparent;color:var(--dark);border:1.5px solid var(--accent-light)}
-.btn-o:hover{border-color:var(--accent);background:var(--accent-soft);transform:translateY(-2px)}
-.btn-sm{padding:.75rem 1.75rem;font-size:.75rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 2.25rem;border:none;border-radius:4px;font-family:var(--body);font-size:.8rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .4s var(--ease)}
+.btn-p{background:var(--red);color:var(--w);box-shadow:0 4px 20px var(--red-glow)}
+.btn-p:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 8px 32px var(--red-glow)}
+.btn-o{background:transparent;color:var(--w);border:1.5px solid var(--w3)}
+.btn-o:hover{border-color:var(--w);background:var(--w1);transform:translateY(-2px)}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;transition:all .6s var(--ease)}
-nav.scrolled{padding:.5rem 0;background:rgba(255,252,248,.96);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);box-shadow:0 1px 8px rgba(42,33,24,.03)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 0;transition:all .5s var(--ease)}
+nav.scrolled{padding:.75rem 0;background:rgba(10,10,10,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--w1)}
 nav .ctn{display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center}
-.nav-logo img{transition:all .4s var(--ease)}
-nav.scrolled .nav-logo img{height:60px !important}
-.nav-links{display:flex;gap:2.25rem;list-style:none}
-.nav-links a{color:var(--text);font-size:.76rem;font-weight:500;letter-spacing:.3px;transition:all .3s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:50%;width:0;height:1.5px;background:var(--accent);transition:all .4s var(--ease);transform:translateX(-50%);border-radius:1px}
-.nav-links a:hover{color:var(--dark)}.nav-links a:hover::after{width:100%}
-.nav-right{display:flex;align-items:center;gap:1rem}
-.nav-btn{padding:.6rem 1.4rem;font-size:.7rem;letter-spacing:.5px}
-.ham{display:none;background:none;border:none;cursor:pointer;width:26px;height:18px;position:relative;z-index:1001}
-.ham span{display:block;width:100%;height:1.5px;background:var(--dark);position:absolute;left:0;transition:all .4s var(--ease);border-radius:1px}
-.ham span:nth-child(1){top:0;width:100%}.ham span:nth-child(2){top:50%;transform:translateY(-50%);width:70%}.ham span:nth-child(3){bottom:0;width:85%}
-.ham.active span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg);width:100%}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){bottom:50%;transform:translateY(50%) rotate(-45deg);width:100%}
-.mob{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:999;opacity:0;visibility:hidden;transition:all .5s var(--ease)}
+.nav-logo{font-family:var(--display);font-size:1.4rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--w)}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--w5);font-size:.75rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--w)}
+.nav-btn{padding:.6rem 1.4rem;font-size:.7rem}
+.ham{display:none;background:none;border:none;cursor:pointer;width:28px;height:18px;position:relative;z-index:1001}
+.ham span{display:block;width:100%;height:2px;background:var(--w);position:absolute;left:0;transition:all .3s}
+.ham span:nth-child(1){top:0}.ham span:nth-child(2){top:50%;transform:translateY(-50%)}.ham span:nth-child(3){bottom:0}
+.ham.active span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg)}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){bottom:50%;transform:translateY(50%) rotate(-45deg)}
+.mob{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:999;opacity:0;visibility:hidden;transition:all .4s}
 .mob.active{opacity:1;visibility:visible}
-.mob a{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--dark);transition:color .3s}.mob a:hover{color:var(--accent)}
+.mob a{font-family:var(--display);font-size:1.5rem;font-weight:500;color:var(--w);text-transform:uppercase;letter-spacing:2px}.mob a:hover{color:var(--red)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(160deg,var(--bg) 0%,var(--bg2) 40%,var(--bg3) 100%);padding-top:140px}
-.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:60%;height:140%;background:radial-gradient(ellipse,var(--accent-soft) 0%,transparent 70%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-10%;left:-5%;width:40%;height:80%;background:radial-gradient(ellipse,rgba(200,212,196,.1) 0%,transparent 60%);pointer-events:none}
-.hero-inner{display:grid;grid-template-columns:1fr .9fr;gap:4rem;align-items:center;width:100%}
-.hero-content{position:relative;z-index:2;animation:heroIn 1.4s var(--ease) both}
-@keyframes heroIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.hero-tag{display:inline-flex;align-items:center;gap:.6rem;padding:.45rem 1.1rem;border:1px solid var(--accent-light);border-radius:50px;font-size:.68rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;background:rgba(255,255,255,.6);backdrop-filter:blur(8px)}
-.hero-tag .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:pulse 2.5s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
-.hero h1{font-family:var(--serif);font-size:clamp(2.75rem,6vw,4.25rem);font-weight:300;line-height:1.08;color:var(--dark);margin-bottom:1.5rem;letter-spacing:-1px}
-.hero h1 em{font-style:italic;color:var(--accent)}
-.hero-desc{font-size:1rem;color:var(--text-light);max-width:440px;line-height:1.9;margin-bottom:2.5rem;font-weight:300}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:100px}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a 0%,#1a0a0a 40%,#0a0a0a 100%)}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(227,24,55,.06),transparent 60%)}
+.hero-content{position:relative;z-index:2;max-width:700px;animation:fadeUp 1.2s var(--ease) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;border:1px solid var(--w1);border-radius:3px;font-family:var(--display);font-size:.65rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--w5);margin-bottom:2rem}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--red);border-radius:1px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--display);font-size:clamp(2.5rem,7vw,4.5rem);font-weight:700;line-height:1.05;text-transform:uppercase;letter-spacing:2px;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-desc{font-size:1rem;color:var(--w5);max-width:500px;line-height:1.8;margin-bottom:2.5rem}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.hero-visual{position:relative;animation:heroIn 1.4s var(--ease) .2s both}
-.hero-img-main{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--bg3),var(--rose));border-radius:var(--r-xl);display:flex;align-items:center;justify-content:center;font-size:5rem;opacity:.25;box-shadow:var(--shadow-xl);border:1px solid rgba(184,132,92,.1)}
-.hero-float{position:absolute;bottom:2rem;left:-2rem;background:var(--card);border-radius:var(--r-lg);padding:1.25rem 1.5rem;box-shadow:var(--shadow-lg);border:1px solid rgba(184,132,92,.06);backdrop-filter:blur(10px);animation:float 4s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.hero-float-num{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--accent);line-height:1}
-.hero-float-label{font-size:.7rem;color:var(--text-light);margin-top:.25rem}
-.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem}
-.hero-scroll-dot{width:4px;height:4px;border-radius:50%;background:var(--accent-light);animation:scrollDot 2s infinite}
-@keyframes scrollDot{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.3;transform:translateY(6px)}}
-.hero-scroll-line{width:1px;height:28px;background:linear-gradient(to bottom,var(--accent-light),transparent)}
+
+/* SERVICES */
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-top:3rem}
+.srv-card{background:var(--card);border:1px solid var(--w1);border-radius:var(--r);padding:2rem;transition:all .4s var(--ease);position:relative;overflow:hidden}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transition:transform .4s var(--ease)}
+.srv-card:hover{border-color:rgba(227,24,55,.2);transform:translateY(-4px);box-shadow:var(--shadow)}.srv-card:hover::before{transform:scaleX(1)}
+.srv-icon{font-size:1.75rem;margin-bottom:1.25rem}
+.srv-card h3{font-family:var(--display);font-size:1.1rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.5rem}
+.srv-card p{font-size:.8rem;color:var(--w5);line-height:1.7}
+.srv-price{margin-top:1rem;font-size:.85rem;font-weight:600;color:var(--red)}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.why-card{text-align:center;padding:2rem 1.5rem}
+.why-num{font-family:var(--display);font-size:2.5rem;font-weight:700;color:var(--red);line-height:1;margin-bottom:.75rem}
+.why-card h4{font-family:var(--display);font-size:.9rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.5rem}
+.why-card p{font-size:.78rem;color:var(--w5);line-height:1.6}
+
+/* BOOKING */
+.book-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+.book-form{background:var(--card);padding:2.5rem;border-radius:var(--r-lg);border:1px solid var(--w1)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem}.form-group.full{grid-column:span 2}
+.form-label{font-size:.65rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--w5)}
+.form-input{padding:.9rem 1rem;background:var(--bg2);border:1px solid var(--w1);border-radius:4px;color:var(--w);font-family:var(--body);font-size:.85rem;transition:all .3s;outline:none}
+.form-input:focus{border-color:var(--red);box-shadow:0 0 0 3px var(--red-soft)}
+.form-input::placeholder{color:var(--w3)}
+select.form-input{cursor:pointer;appearance:none}
+
+/* REVIEWS */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.rev-card{background:var(--card);border:1px solid var(--w1);border-radius:var(--r);padding:2rem;transition:all .4s var(--ease)}
+.rev-card:hover{border-color:rgba(227,24,55,.15);transform:translateY(-3px)}
+.rev-stars{color:var(--red);font-size:.9rem;margin-bottom:1rem;letter-spacing:1px}
+.rev-text{font-size:.88rem;color:var(--w7);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+.rev-name{font-size:.8rem;font-weight:600;color:var(--w9)}.rev-car{font-size:.7rem;color:var(--w3);margin-top:.2rem}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem}
+.contact-items{display:flex;flex-direction:column;gap:2rem}
+.contact-item{display:flex;gap:1rem;align-items:flex-start}
+.contact-icon{width:44px;height:44px;background:var(--red-soft);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.contact-label{font-size:.65rem;color:var(--w3);letter-spacing:1px;text-transform:uppercase;margin-bottom:.2rem}
+.contact-val{font-size:.9rem;color:var(--w9)}
+.contact-map{border-radius:var(--r-lg);aspect-ratio:4/3;background:var(--card);border:1px solid var(--w1);display:flex;align-items:center;justify-content:center;color:var(--w3);font-size:.8rem}
+
+/* FOOTER */
+footer{padding:2.5rem 0;border-top:1px solid var(--w1);background:var(--bg2)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:var(--display);font-size:1.1rem;font-weight:700;letter-spacing:2px;text-transform:uppercase}.footer-logo span{color:var(--red)}
+.footer-links{display:flex;gap:1.5rem}.footer-links a{color:var(--w3);font-size:.75rem;transition:color .3s}.footer-links a:hover{color:var(--w)}
+.footer-copy{font-size:.65rem;color:var(--w3)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:all .8s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:1024px){.book-layout,.contact-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav-links,.nav-btn{display:none}.ham{display:block}.srv-grid,.rev-grid,.why-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.form-group.full{grid-column:auto}.footer-inner{flex-direction:column;text-align:center}.footer-links{justify-content:center}.hero h1{font-size:2.25rem}.hero{padding-top:80px}}
+@media(max-width:480px){.hero{min-height:auto;padding:6rem 0 4rem}.hero h1{font-size:1.9rem}.sec{padding:3.5rem 0}.btn{padding:.8rem 1.75rem;font-size:.75rem}.book-form{padding:1.75rem}}
 </style>
 </head>
 <body>
 
 <nav id="nav"><div class="ctn">
-<a href="#" class="nav-logo"><img src="logo.png" alt="BodyMia" style="height:100px;width:auto;"></a>
-<ul class="nav-links"><li><a href="#services">Послуги</a></li><li><a href="#about">Про нас</a></li><li><a href="#gallery">Галерея</a></li><li><a href="#booking">Запис</a></li><li><a href="#reviews">Відгуки</a></li><li><a href="#contact">Контакти</a></li></ul>
-<div class="nav-right"><a href="#booking" class="btn btn-p nav-btn">Записатись</a></div>
+<a href="#" class="nav-logo">X-<span>DRIVE</span></a>
+<ul class="nav-links"><li><a href="#services">Послуги</a></li><li><a href="#why">Переваги</a></li><li><a href="#booking">Запис</a></li><li><a href="#reviews">Відгуки</a></li><li><a href="#contact">Контакти</a></li></ul>
+<a href="#booking" class="btn btn-p nav-btn">Записатись</a>
 <button class="ham" id="ham" aria-label="Меню"><span></span><span></span><span></span></button>
 </div></nav>
-<div class="mob" id="mob"><a href="#services" onclick="closeM()">Послуги</a><a href="#about" onclick="closeM()">Про нас</a><a href="#gallery" onclick="closeM()">Галерея</a><a href="#booking" onclick="closeM()">Запис</a><a href="#reviews" onclick="closeM()">Відгуки</a><a href="#contact" onclick="closeM()">Контакти</a></div>
+<div class="mob" id="mob"><a href="#services" onclick="closeM()">Послуги</a><a href="#why" onclick="closeM()">Переваги</a><a href="#booking" onclick="closeM()">Запис</a><a href="#reviews" onclick="closeM()">Відгуки</a><a href="#contact" onclick="closeM()">Контакти</a></div>
 
 <section class="hero">
-<div class="ctn"><div class="hero-inner">
-<div class="hero-content">
-<div class="hero-tag"><span class="dot"></span>Преміум велнес-студія</div>
-<h1>Мистецтво <em>гармонії</em> тіла та душі</h1>
-<p class="hero-desc">Елітна велнес-студія з японськими SPA-ритуалами, EMS-процедурами та мануальним масажем. Простір, де турбота стає мистецтвом.</p>
-<div class="hero-btns"><a href="#booking" class="btn btn-p">Записатись на сеанс</a><a href="#services" class="btn btn-o">Наші послуги</a></div>
-</div>
-<div class="hero-visual">
-<div class="hero-img-main">🧖‍♀️</div>
-<div class="hero-float"><div class="hero-float-num">500+</div><div class="hero-float-label">задоволених клієнток</div></div>
-</div>
+<div class="hero-bg"></div>
+<div class="ctn"><div class="hero-content">
+<div class="hero-tag">Преміум детейлінг студія — Вінниця</div>
+<h1>Преміальний догляд за вашим <em>авто</em></h1>
+<p class="hero-desc">Детейлінг, полірування, хімчистка та професійна мийка авто. Сучасне обладнання, преміум автохімія та увага до кожної деталі.</p>
+<div class="hero-btns"><a href="#booking" class="btn btn-p">Записатись</a><a href="#services" class="btn btn-o">Наші послуги</a></div>
 </div></div>
-<div class="hero-scroll"><div class="hero-scroll-dot"></div><div class="hero-scroll-line"></div></div>
 </section>
-</body>
-</html>
 
-<style>
-/* SERVICES */
-.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:3.5rem}
-.srv-card{background:var(--card);border-radius:var(--r-lg);padding:2.75rem 2rem;border:1px solid rgba(184,132,92,.06);transition:all .5s var(--ease);position:relative;overflow:hidden}
-.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent-light),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-.srv-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl);border-color:rgba(184,132,92,.12)}.srv-card:hover::before{transform:scaleX(1)}
-.srv-icon{width:56px;height:56px;margin-bottom:1.75rem;background:linear-gradient(135deg,var(--accent-soft),rgba(184,132,92,.04));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(184,132,92,.1)}
-.srv-card h3{font-family:var(--serif);font-size:1.4rem;font-weight:400;margin-bottom:.75rem;color:var(--dark)}
-.srv-card p{font-size:.83rem;color:var(--text-light);line-height:1.8}
-.srv-meta{margin-top:1.5rem;display:flex;align-items:center;justify-content:space-between;padding-top:1.25rem;border-top:1px solid var(--bg3)}
-.srv-price{font-size:.9rem;font-weight:600;color:var(--accent)}.srv-time{font-size:.75rem;color:var(--text-muted)}
-
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center}
-.about-visual{position:relative}
-.about-img{aspect-ratio:4/5;background:linear-gradient(160deg,var(--bg3),var(--rose));border-radius:var(--r-xl);display:flex;align-items:center;justify-content:center;font-size:5rem;opacity:.2;border:1px solid rgba(184,132,92,.1);box-shadow:var(--shadow-lg)}
-.about-badge{position:absolute;top:2rem;right:-1.5rem;background:var(--card);border-radius:var(--r);padding:1rem 1.25rem;box-shadow:var(--shadow);border:1px solid rgba(184,132,92,.06);animation:float 5s ease-in-out infinite .5s}
-.about-badge-icon{font-size:1.25rem;margin-bottom:.25rem}.about-badge-text{font-size:.7rem;color:var(--text-light);font-weight:500}
-.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem}
-.about-feat{padding:1.25rem;background:var(--bg2);border-radius:var(--r);border:1px solid rgba(184,132,92,.06);transition:all .3s var(--ease)}
-.about-feat:hover{background:var(--card);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
-.about-feat h4{font-size:.82rem;font-weight:600;color:var(--dark);margin-bottom:.25rem}.about-feat p{font-size:.72rem;color:var(--text-light);line-height:1.6}
-
-/* GALLERY */
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:3rem}
-.gal-item{aspect-ratio:1;background:linear-gradient(135deg,var(--bg3),var(--rose));border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:.2;cursor:pointer;transition:all .5s var(--ease);border:1px solid rgba(184,132,92,.06);overflow:hidden;position:relative}
-.gal-item:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto;border-radius:var(--r-lg)}
-.gal-item:hover{opacity:.35;transform:scale(1.02);box-shadow:var(--shadow-lg)}
-.gal-item::after{content:'Переглянути';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,252,248,.85);color:var(--accent);font-size:.8rem;font-weight:500;letter-spacing:1px;opacity:0;transition:opacity .4s;backdrop-filter:blur(4px)}
-.gal-item:hover::after{opacity:1}
-
-/* BOOKING */
-.book-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:5rem;align-items:start}
-.book-info .heading{margin-bottom:1rem}
-.book-perks{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.5rem}
-.book-perk{display:flex;align-items:center;gap:1.25rem}
-.book-perk-icon{width:44px;height:44px;border-radius:50%;background:var(--accent-soft);border:1px solid rgba(184,132,92,.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.book-perk h5{font-size:.85rem;font-weight:500;color:var(--dark);margin-bottom:.125rem}.book-perk p{font-size:.75rem;color:var(--text-light)}
-.book-form{background:var(--card);padding:3rem;border-radius:var(--r-xl);box-shadow:var(--shadow-lg);border:1px solid rgba(184,132,92,.06)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
-.form-group{display:flex;flex-direction:column;gap:.5rem}.form-group.full{grid-column:span 2}
-.form-label{font-size:.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)}
-.form-input{padding:1rem 1.25rem;background:var(--bg2);border:1.5px solid rgba(184,132,92,.1);border-radius:var(--r);color:var(--dark);font-family:var(--sans);font-size:.88rem;transition:all .4s var(--ease);outline:none}
-.form-input:focus{border-color:var(--accent);background:var(--card);box-shadow:0 0 0 4px var(--accent-soft)}
-.form-input::placeholder{color:var(--text-muted)}
-textarea.form-input{resize:vertical;min-height:110px}
-select.form-input{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%239B8B7E' viewBox='0 0 16 16'%3E%3Cpath d='M8 12L2 6h12l-6 6z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.25rem center}
-.book-submit{width:100%;margin-top:1rem;padding:1.1rem;font-size:.85rem;letter-spacing:.5px}
-
-/* REVIEWS */
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.rev-card{background:var(--card);border:1px solid rgba(184,132,92,.06);border-radius:var(--r-lg);padding:2.25rem;transition:all .5s var(--ease);position:relative}
-.rev-card::before{content:'"';position:absolute;top:1.5rem;right:1.5rem;font-family:var(--serif);font-size:3rem;color:var(--accent-light);opacity:.4;line-height:1}
-.rev-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(184,132,92,.12)}
-.rev-text{font-family:var(--serif);font-size:1.05rem;font-weight:300;font-style:italic;color:var(--dark2);line-height:1.75;margin-bottom:1.75rem}
-.rev-author{display:flex;align-items:center;gap:.75rem;padding-top:1.25rem;border-top:1px solid var(--bg3)}
-.rev-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent-light),var(--rose));display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--card)}
-.rev-name{font-size:.82rem;font-weight:500;color:var(--dark)}.rev-date{font-size:.68rem;color:var(--text-muted)}
-
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem}
-.contact-items{display:flex;flex-direction:column;gap:2.25rem}
-.contact-item{display:flex;gap:1.25rem}
-.contact-icon{width:48px;height:48px;border-radius:50%;background:var(--accent-soft);border:1px solid rgba(184,132,92,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.contact-label{font-size:.68rem;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.25rem}
-.contact-val{font-size:.92rem;color:var(--dark);font-weight:400}
-.contact-map{border-radius:var(--r-xl);aspect-ratio:4/3;background:linear-gradient(135deg,var(--bg3),var(--bg2));border:1px solid rgba(184,132,92,.08);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:.82rem;box-shadow:var(--shadow)}
-.contact-socials{display:flex;gap:.6rem;margin-top:2rem}
-.contact-socials a{width:42px;height:42px;border-radius:50%;background:var(--card);border:1px solid rgba(184,132,92,.08);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .3s var(--ease);box-shadow:var(--shadow-sm)}
-.contact-socials a:hover{border-color:var(--accent);background:var(--accent-soft);transform:translateY(-3px);box-shadow:var(--shadow)}
-
-/* FOOTER */
-footer{padding:3.5rem 0;border-top:1px solid var(--bg3);background:var(--bg2)}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.footer-logo{font-family:var(--serif);font-size:1.3rem;font-weight:300}.footer-logo span{font-weight:600;color:var(--accent)}
-.footer-links{display:flex;gap:2rem}.footer-links a{color:var(--text-light);font-size:.78rem;font-weight:400;transition:color .3s}.footer-links a:hover{color:var(--accent)}
-.footer-copy{font-size:.68rem;color:var(--text-muted);letter-spacing:.3px}
-
-/* DIVIDER */
-.divider{width:60px;height:1.5px;background:linear-gradient(90deg,transparent,var(--accent-light),transparent);margin:0 auto}
-
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(35px);transition:all .9s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
-
-/* RESPONSIVE */
-@media(max-width:1024px){.hero-inner,.about-grid,.book-layout,.contact-grid{grid-template-columns:1fr}.srv-grid{grid-template-columns:1fr 1fr}.gal-grid{grid-template-columns:repeat(3,1fr)}.gal-item:nth-child(1){grid-column:span 2}.hero-visual{display:none}}
-@media(max-width:768px){.nav-links,.nav-right{display:none}.ham{display:block}.nav-logo img{height:80px !important}.srv-grid,.rev-grid{grid-template-columns:1fr}.gal-grid{grid-template-columns:1fr 1fr}.gal-item:nth-child(1){grid-column:auto;grid-row:auto}.form-row{grid-template-columns:1fr}.form-group.full{grid-column:auto}.footer-inner{flex-direction:column;text-align:center}.footer-links{justify-content:center}.hero h1{font-size:2.25rem;letter-spacing:-.5px}.hero-desc{font-size:.9rem}.about-features{grid-template-columns:1fr}.book-form{padding:1.75rem}.contact-grid{gap:2.5rem}.sec{padding:4rem 0}.btn{padding:.85rem 2rem}.heading{font-size:clamp(1.75rem,5vw,2.5rem)}}
-@media(max-width:480px){.hero{min-height:auto;padding:7rem 0 4rem}.hero h1{font-size:1.9rem}.hero-tag{font-size:.6rem;padding:.35rem .9rem}.btn{padding:.8rem 1.75rem;font-size:.78rem}.sec{padding:3.5rem 0}.srv-card{padding:2rem 1.5rem}.book-form{padding:1.5rem}.ctn{padding:0 1.25rem}.nav-logo img{height:70px !important}}
-</style>
-
-<!-- SERVICES -->
 <section class="sec" id="services">
 <div class="ctn">
-<div class="text-center reveal"><div class="eyebrow" style="justify-content:center"><span style="width:24px;height:1.5px;background:var(--accent-light);display:block;border-radius:1px"></span>Наші послуги</div>
-<h2 class="heading">Розкішний догляд для <strong>вас</strong></h2>
-<p class="desc">Кожна процедура — це подорож до гармонії, створена з любов'ю до деталей та турботою про ваш комфорт.</p></div>
-<div class="srv-grid">
-<div class="srv-card reveal reveal-delay-1"><div class="srv-icon">🌸</div><h3>Japanese Head SPA</h3><p>Унікальний японський ритуал догляду за шкірою голови та волоссям. Глибоке очищення, живлення та абсолютна релаксація.</p><div class="srv-meta"><span class="srv-price">від 1 800 грн</span><span class="srv-time">60–90 хв</span></div></div>
-<div class="srv-card reveal reveal-delay-2"><div class="srv-icon">⚡</div><h3>EMS-процедури</h3><p>Сучасна технологія електростимуляції для корекції фігури, тонусу тіла та відновлення після навантажень.</p><div class="srv-meta"><span class="srv-price">від 1 200 грн</span><span class="srv-time">45–60 хв</span></div></div>
-<div class="srv-card reveal reveal-delay-3"><div class="srv-icon">🤲</div><h3>Мануальний масаж</h3><p>Класичний та лікувальний масаж від досвідчених майстрів. Зняття напруги, відновлення та глибока релаксація.</p><div class="srv-meta"><span class="srv-price">від 900 грн</span><span class="srv-time">60–90 хв</span></div></div>
-</div></div></section>
-
-<!-- ABOUT -->
-<section class="sec sec-alt" id="about">
-<div class="ctn"><div class="about-grid reveal">
-<div class="about-visual">
-<div class="about-img">🧖‍♀️</div>
-<div class="about-badge"><div class="about-badge-icon">✦</div><div class="about-badge-text">Преміум засоби</div></div>
+<div class="text-center reveal"><div class="eyebrow" style="justify-content:center">Послуги</div><h2 class="heading">Повний спектр <em>послуг</em></h2><p class="desc">Від комплексної мийки до преміум детейлінгу — ми дбаємо про ваше авто як про своє.</p></div>
+<div class="srv-grid reveal">
+<div class="srv-card"><div class="srv-icon">🚿</div><h3>Комплексна мийка</h3><p>Зовнішня мийка, чистка дисків, обробка пластику, сушка та фінішний огляд.</p><div class="srv-price">від 350 грн</div></div>
+<div class="srv-card"><div class="srv-icon">✨</div><h3>Детейлінг</h3><p>Глибоке очищення та відновлення кожного елементу автомобіля до ідеального стану.</p><div class="srv-price">від 3 500 грн</div></div>
+<div class="srv-card"><div class="srv-icon">🧽</div><h3>Хімчистка салону</h3><p>Професійна хімчистка тканини, шкіри, стелі та всіх елементів інтер'єру.</p><div class="srv-price">від 2 000 грн</div></div>
+<div class="srv-card"><div class="srv-icon">💎</div><h3>Полірування</h3><p>Видалення подряпин, відновлення блиску та захист лакофарбового покриття.</p><div class="srv-price">від 2 500 грн</div></div>
+<div class="srv-card"><div class="srv-icon">🛡️</div><h3>Керамічне покриття</h3><p>Довготривалий захист кузова від подряпин, бруду та ультрафіолету на 2-5 років.</p><div class="srv-price">від 8 000 грн</div></div>
+<div class="srv-card"><div class="srv-icon">💧</div><h3>Антидощ</h3><p>Гідрофобне покриття скла для ідеальної видимості в будь-яку погоду.</p><div class="srv-price">від 500 грн</div></div>
 </div>
-<div>
-<div class="eyebrow">Про студію</div>
-<h2 class="heading">Простір, створений для вашого <strong>комфорту</strong></h2>
-<p class="desc">BodyMia — це більше ніж студія. Це місце, де кожна деталь продумана для вашого відпочинку. Преміальні засоби, досвідчені майстри та атмосфера абсолютного спокою.</p>
-<div class="about-features">
-<div class="about-feat"><h4>✦ Преміум косметика</h4><p>Японські та корейські бренди</p></div>
-<div class="about-feat"><h4>✦ Досвідчені майстри</h4><p>5+ років практики</p></div>
-<div class="about-feat"><h4>✦ Індивідуальний підхід</h4><p>Програма під ваші потреби</p></div>
-<div class="about-feat"><h4>✦ Затишна атмосфера</h4><p>Простір для розслаблення</p></div>
-</div></div>
-</div></div></section>
+</div></section>
 
-<!-- GALLERY -->
-<section class="sec" id="gallery">
+<section class="sec" id="why" style="background:var(--bg2)">
 <div class="ctn">
-<div class="text-center reveal"><div class="eyebrow" style="justify-content:center"><span style="width:24px;height:1.5px;background:var(--accent-light);display:block;border-radius:1px"></span>Галерея</div>
-<h2 class="heading">Атмосфера <strong>BodyMia</strong></h2>
-<p class="desc">Зазирніть у наш простір — тут кожна деталь створена для вашого комфорту.</p></div>
-<div class="gal-grid reveal">
-<div class="gal-item">🌿</div><div class="gal-item">🕯️</div><div class="gal-item">💆‍♀️</div><div class="gal-item">🌸</div><div class="gal-item">✨</div>
-</div></div></section>
+<div class="text-center reveal"><div class="eyebrow" style="justify-content:center">Чому ми</div><h2 class="heading">Чому обирають <em>X-Drive</em></h2></div>
+<div class="why-grid reveal">
+<div class="why-card"><div class="why-num">6+</div><h4>Років досвіду</h4><p>Професійна команда з багаторічним досвідом</p></div>
+<div class="why-card"><div class="why-num">3K+</div><h4>Задоволених клієнтів</h4><p>Довіра тисяч автовласників Вінниці</p></div>
+<div class="why-card"><div class="why-num">100%</div><h4>Преміум хімія</h4><p>Тільки професійна автохімія від топ-брендів</p></div>
+</div>
+</div></section>
 
-<!-- BOOKING -->
-<section class="sec sec-alt" id="booking">
+<section class="sec" id="booking">
 <div class="ctn"><div class="book-layout reveal">
-<div class="book-info">
+<div>
 <div class="eyebrow">Онлайн запис</div>
-<h2 class="heading">Заплануйте свій <em>відпочинок</em></h2>
-<p class="desc">Оберіть зручний час і ми подбаємо про все інше. Відповідаємо протягом 30 хвилин.</p>
-<div class="book-perks">
-<div class="book-perk"><div class="book-perk-icon">⚡</div><div><h5>Швидка відповідь</h5><p>Протягом 30 хвилин</p></div></div>
-<div class="book-perk"><div class="book-perk-icon">🎁</div><div><h5>Перший візит -10%</h5><p>Знижка для нових клієнтів</p></div></div>
-<div class="book-perk"><div class="book-perk-icon">💎</div><div><h5>Преміум сервіс</h5><p>Індивідуальна програма</p></div></div>
-</div></div>
-<form class="book-form" onsubmit="event.preventDefault();alert('Дякуємо! Ми зв\'яжемося з вами протягом 30 хвилин ✨')">
-<div class="form-row"><div class="form-group"><label class="form-label">Ваше ім'я</label><input class="form-input" placeholder="Анна" required></div><div class="form-group"><label class="form-label">Телефон</label><input class="form-input" type="tel" placeholder="+380 XX XXX XX XX" required></div></div>
-<div class="form-row"><div class="form-group"><label class="form-label">Послуга</label><select class="form-input"><option>Japanese Head SPA</option><option>EMS-процедура</option><option>Мануальний масаж</option><option>Комплексна програма</option></select></div><div class="form-group"><label class="form-label">Бажана дата</label><input class="form-input" type="date"></div></div>
-<div class="form-row"><div class="form-group full"><label class="form-label">Побажання</label><textarea class="form-input" placeholder="Розкажіть про ваші побажання або запитання..."></textarea></div></div>
-<button type="submit" class="btn btn-p book-submit">Записатись на сеанс ✦</button>
+<h2 class="heading">Запишіть ваше <em>авто</em></h2>
+<p class="desc">Заповніть форму — ми зв'яжемося протягом 15 хвилин для підтвердження.</p>
+<div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem">
+<div style="display:flex;align-items:center;gap:1rem"><div style="width:36px;height:36px;background:var(--red-soft);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.9rem">⚡</div><div><div style="font-size:.82rem;font-weight:600">Швидка відповідь</div><div style="font-size:.72rem;color:var(--w3)">Протягом 15 хвилин</div></div></div>
+<div style="display:flex;align-items:center;gap:1rem"><div style="width:36px;height:36px;background:var(--red-soft);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.9rem">🅿️</div><div><div style="font-size:.82rem;font-weight:600">Зручна парковка</div><div style="font-size:.72rem;color:var(--w3)">Безкоштовне паркомісце</div></div></div>
+</div>
+</div>
+<form class="book-form" onsubmit="event.preventDefault();alert('Дякуємо! Ми зв\'яжемося з вами протягом 15 хвилин.')">
+<div class="form-row"><div class="form-group"><label class="form-label">Ім'я</label><input class="form-input" placeholder="Олександр" required></div><div class="form-group"><label class="form-label">Телефон</label><input class="form-input" type="tel" placeholder="+380 XX XXX XX XX" required></div></div>
+<div class="form-row"><div class="form-group"><label class="form-label">Послуга</label><select class="form-input"><option>Комплексна мийка</option><option>Детейлінг</option><option>Хімчистка салону</option><option>Полірування</option><option>Керамічне покриття</option><option>Антидощ</option></select></div><div class="form-group"><label class="form-label">Авто</label><input class="form-input" placeholder="BMW X5 2022"></div></div>
+<div class="form-row"><div class="form-group full"><label class="form-label">Бажана дата</label><input class="form-input" type="date"></div></div>
+<button type="submit" class="btn btn-p" style="width:100%;margin-top:.5rem">Записатись →</button>
 </form>
-</div></div></section>
+</div></div>
+</section>
 
-<!-- REVIEWS -->
-<section class="sec" id="reviews">
+<section class="sec" id="reviews" style="background:var(--bg2)">
 <div class="ctn">
-<div class="text-center reveal"><div class="eyebrow" style="justify-content:center"><span style="width:24px;height:1.5px;background:var(--accent-light);display:block;border-radius:1px"></span>Відгуки</div>
-<h2 class="heading">Що кажуть наші <strong>клієнтки</strong></h2></div>
-<div class="rev-grid">
-<div class="rev-card reveal reveal-delay-1"><p class="rev-text">"Неймовірний досвід! Japanese Head SPA — це щось космічне. Вийшла як нова людина. Обов'язково повернусь знову."</p><div class="rev-author"><div class="rev-avatar">О</div><div><div class="rev-name">Олена М.</div><div class="rev-date">1 тиждень тому</div></div></div></div>
-<div class="rev-card reveal reveal-delay-2"><p class="rev-text">"Найкраща студія в місті. Атмосфера, майстри, засоби — все на вищому рівні. Рекомендую всім подругам!"</p><div class="rev-author"><div class="rev-avatar">А</div><div><div class="rev-name">Анна К.</div><div class="rev-date">3 дні тому</div></div></div></div>
-<div class="rev-card reveal reveal-delay-3"><p class="rev-text">"EMS-процедури дають неймовірний результат. За місяць помітила реальні зміни. Дуже вдячна команді BodyMia!"</p><div class="rev-author"><div class="rev-avatar">В</div><div><div class="rev-name">Вікторія С.</div><div class="rev-date">2 тижні тому</div></div></div></div>
-</div></div></section>
+<div class="text-center reveal"><div class="eyebrow" style="justify-content:center">Відгуки</div><h2 class="heading">Що кажуть <em>клієнти</em></h2></div>
+<div class="rev-grid reveal">
+<div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Найкраща мийка у Вінниці. Авто виглядає як нове після детейлінгу. Рекомендую всім!"</p><div class="rev-name">Олександр К.</div><div class="rev-car">BMW X5 • 2 тижні тому</div></div>
+<div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Зробили керамічне покриття — результат неймовірний. Вода просто стікає з кузова. Професіонали!"</p><div class="rev-name">Андрій М.</div><div class="rev-car">Mercedes GLE • 1 місяць тому</div></div>
+<div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Хімчистка салону на вищому рівні. Все як нове, навіть запах приємний. Буду постійним клієнтом."</p><div class="rev-name">Віталій С.</div><div class="rev-car">Audi Q7 • 3 дні тому</div></div>
+</div>
+</div></section>
 
-<!-- CONTACT -->
-<section class="sec sec-alt" id="contact">
+<section class="sec" id="contact">
 <div class="ctn">
-<div class="reveal"><div class="eyebrow">Контакти</div><h2 class="heading">Завітайте до <strong>нас</strong></h2></div>
+<div class="reveal"><div class="eyebrow">Контакти</div><h2 class="heading">Знайдіть <em>нас</em></h2></div>
 <div class="contact-grid reveal">
 <div><div class="contact-items">
-<div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Адреса</div><div class="contact-val">вул. Велика Васильківська, 48<br>Київ, 01004</div></div></div>
-<div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Телефон</div><div class="contact-val">+38 (097) 123-45-67</div></div></div>
-<div class="contact-item"><div class="contact-icon">🕐</div><div><div class="contact-label">Графік</div><div class="contact-val">Пн – Сб: 10:00 – 21:00<br>Нд: 11:00 – 19:00</div></div></div>
-<div class="contact-item"><div class="contact-icon">📧</div><div><div class="contact-label">Email</div><div class="contact-val">hello@bodymia.com.ua</div></div></div>
+<div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Адреса</div><div class="contact-val">Хмельницьке шосе, 17А<br>Вінниця</div></div></div>
+<div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Телефон</div><div class="contact-val">+380 68 725 78 90</div></div></div>
+<div class="contact-item"><div class="contact-icon">🕐</div><div><div class="contact-label">Графік</div><div class="contact-val">Пн – Нд: 09:00 – 20:00</div></div></div>
+<div class="contact-item"><div class="contact-icon">📷</div><div><div class="contact-label">Instagram</div><div class="contact-val">@xdrive.vn</div></div></div>
+</div></div>
+<div class="contact-map">📍 Google Maps — Хмельницьке шосе, 17А, Вінниця</div>
 </div>
-<div class="contact-socials"><a href="#">📷</a><a href="#">✈️</a><a href="#">🎵</a></div>
-</div>
-<div class="contact-map">📍 Google Maps — вул. Велика Васильківська, 48, Київ</div>
-</div></div></section>
+</div></section>
 
 <footer><div class="ctn"><div class="footer-inner">
-<div class="footer-logo"><img src="logo.png" alt="BodyMia" style="height:80px;width:auto;"></div>
-<div class="footer-links"><a href="#services">Послуги</a><a href="#about">Про нас</a><a href="#booking">Запис</a><a href="#reviews">Відгуки</a><a href="#contact">Контакти</a></div>
-<div class="footer-copy">© 2026 BodyMia. Всі права захищені.</div>
+<div class="footer-logo">X-<span>DRIVE</span></div>
+<div class="footer-links"><a href="#services">Послуги</a><a href="#booking">Запис</a><a href="#reviews">Відгуки</a><a href="#contact">Контакти</a></div>
+<div class="footer-copy">© 2026 X-Drive. Всі права захищені.</div>
 </div></div></footer>
 
 <script>
@@ -313,6 +228,8 @@ window.addEventListener('scroll',()=>{document.getElementById('nav').classList.t
 const ham=document.getElementById('ham'),mob=document.getElementById('mob');
 ham.onclick=()=>{ham.classList.toggle('active');mob.classList.toggle('active');document.body.style.overflow=mob.classList.contains('active')?'hidden':''};
 function closeM(){ham.classList.remove('active');mob.classList.remove('active');document.body.style.overflow=''}
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -80px 0px'});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
+</body>
+</html>
