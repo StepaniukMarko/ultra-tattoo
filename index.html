@@ -59,8 +59,9 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:100px}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a 0%,#1a0a0a 40%,#0a0a0a 100%)}
-.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(227,24,55,.06),transparent 60%)}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80') center/cover no-repeat}
+.hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.75) 50%,rgba(10,10,10,.88) 100%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(227,24,55,.08),transparent 60%)}
 .hero-content{position:relative;z-index:2;max-width:700px;animation:fadeUp 1.2s var(--ease) both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;border:1px solid var(--w1);border-radius:3px;font-family:var(--display);font-size:.65rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--w5);margin-bottom:2rem}
@@ -170,6 +171,19 @@ footer{padding:2.5rem 0;border-top:1px solid var(--w1);background:var(--bg2)}
 <div class="why-card"><div class="why-num">6+</div><h4>Років досвіду</h4><p>Професійна команда з багаторічним досвідом</p></div>
 <div class="why-card"><div class="why-num">3K+</div><h4>Задоволених клієнтів</h4><p>Довіра тисяч автовласників Вінниці</p></div>
 <div class="why-card"><div class="why-num">100%</div><h4>Преміум хімія</h4><p>Тільки професійна автохімія від топ-брендів</p></div>
+</div>
+</div></section>
+
+<!-- GALLERY -->
+<section class="sec" id="gallery">
+<div class="ctn">
+<div class="text-center reveal"><div class="eyebrow" style="justify-content:center">Галерея</div><h2 class="heading">Наші <em>роботи</em></h2></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:3rem" class="reveal">
+<div style="grid-row:span 2;border-radius:var(--r);overflow:hidden"><img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=600&q=80" alt="Детейлінг" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="border-radius:var(--r);overflow:hidden;aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=600&q=80" alt="Полірування" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="border-radius:var(--r);overflow:hidden;aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Преміум авто" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="border-radius:var(--r);overflow:hidden;aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&q=80" alt="Мийка" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="border-radius:var(--r);overflow:hidden;aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80" alt="Результат" style="width:100%;height:100%;object-fit:cover"></div>
 </div>
 </div></section>
 
