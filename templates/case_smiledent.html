@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс SmileDent — MarkLabs Agency</title>
+    <meta name="description" content="Розробка преміального сайту для стоматологічної клініки SmileDent. Дизайн, верстка, анімації, онлайн-запис.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+    .case-hero{padding:8rem 1.5rem 5rem;text-align:center;background:linear-gradient(180deg,#0a0f1a 0%,#111827 100%);color:#fff;position:relative;overflow:hidden}
+    .case-hero::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(196,155,102,0.08),transparent 70%);pointer-events:none}
+    .case-hero__tag{display:inline-block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#C49B66;margin-bottom:1rem;padding:.4rem 1rem;border:1px solid rgba(196,155,102,.2);border-radius:50px}
+    .case-hero h1{font-size:clamp(2.5rem,6vw,4rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:1rem}
+    .case-hero__sub{font-size:1.1rem;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto 3rem;line-height:1.7}
+    .case-hero__mockup{max-width:900px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.4)}
+    .case-hero__mockup img{width:100%;display:block}
+
+    .case-section{padding:5rem 1.5rem;max-width:900px;margin:0 auto}
+    .case-section h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;margin-bottom:1.5rem;letter-spacing:-0.03em}
+    .case-section p{color:#6B7280;font-size:.95rem;line-height:1.7;margin-bottom:1rem}
+
+    .case-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem;margin:2rem 0 3rem;padding:2rem;background:#fff;border:1px solid #E5E7EB;border-radius:12px}
+    .case-meta__item{text-align:center}
+    .case-meta__label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#C49B66;margin-bottom:.3rem}
+    .case-meta__value{font-size:.95rem;font-weight:600;color:#111}
+
+    .case-tasks{list-style:none;margin:1.5rem 0}
+    .case-tasks li{padding:.75rem 0;border-bottom:1px solid #F3F4F6;font-size:.92rem;color:#374151;display:flex;align-items:center;gap:.75rem}
+    .case-tasks li::before{content:'→';color:#C49B66;font-weight:700}
+
+    .case-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:2rem 0}
+    .case-feature{padding:1.5rem;background:#fff;border:1px solid #E5E7EB;border-radius:10px;transition:all .3s}
+    .case-feature:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.05);border-color:rgba(196,155,102,.3)}
+    .case-feature span{display:block;font-size:.85rem;font-weight:600;color:#111;margin-top:.5rem}
+
+    .case-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:2rem 0}
+    .case-gallery img{width:100%;border-radius:8px;cursor:pointer;transition:transform .3s,box-shadow .3s;border:1px solid #E5E7EB}
+    .case-gallery img:hover{transform:scale(1.02);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+
+    .case-result{text-align:center;padding:4rem 2rem;background:linear-gradient(135deg,#111827,#1F2937);border-radius:16px;margin:3rem 0;color:#fff}
+    .case-result h3{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;margin-bottom:.75rem;letter-spacing:-0.02em}
+    .case-result p{color:rgba(255,255,255,.6);font-size:.95rem;max-width:500px;margin:0 auto}
+
+    .case-cta{text-align:center;padding:4rem 1.5rem;border-top:1px solid #E5E7EB}
+    .case-cta h2{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;margin-bottom:1rem;letter-spacing:-0.03em}
+    .case-cta p{color:#6B7280;margin-bottom:2rem;font-size:1rem}
+    .case-cta .btn{display:inline-flex;align-items:center;padding:1rem 2.5rem;background:#3b82f6;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;transition:all .3s}
+    .case-cta .btn:hover{background:#2563eb;transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.25)}
+
+    .case-back{display:inline-flex;align-items:center;gap:.4rem;color:#6B7280;text-decoration:none;font-size:.85rem;font-weight:500;margin-bottom:2rem;transition:color .2s}
+    .case-back:hover{color:#111}
+
+    /* Lightbox */
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:90%;max-height:90vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+
+    @media(max-width:768px){
+        .case-hero{padding:6rem 1.25rem 3rem}
+        .case-hero h1{font-size:2rem}
+        .case-section{padding:3rem 1.25rem}
+        .case-gallery{grid-template-columns:1fr}
+        .case-meta{grid-template-columns:repeat(2,1fr)}
+        .case-features{grid-template-columns:1fr}
+    }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav id="nav" class="scrolled" style="background:rgba(10,15,26,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05);padding:.7rem 0;position:fixed;top:0;left:0;right:0;z-index:100">
+    <div class="ctn" style="display:flex;align-items:center;justify-content:space-between">
+        <a href="/" class="logo">Mark<span>Labs</span></a>
+        <a href="/#contact" class="btn btn-p nav-cta" style="font-size:.72rem;padding:.5rem 1.1rem;background:#3b82f6;border-radius:8px;color:#fff;text-decoration:none">Залишити заявку</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="case-hero">
+    <span class="case-hero__tag">Кейс</span>
+    <h1>SmileDent</h1>
+    <p class="case-hero__sub">Преміальний сайт для сучасної стоматологічної клініки. Дизайн, верстка, анімації та онлайн-запис.</p>
+    <div class="case-hero__mockup">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=85" alt="SmileDent — Hero">
+    </div>
+</section>
+
+<!-- About Project -->
+<div class="case-section">
+    <a href="/" class="case-back">← Назад до портфоліо</a>
+    <h2>Про проєкт</h2>
+    <p>Розробили конверсійний сайт стоматологічної клініки з акцентом на довіру пацієнтів, зручний онлайн-запис та преміальний візуальний стиль. Сайт виглядає як продукт агентства рівня $3000+.</p>
+
+    <div class="case-meta">
+        <div class="case-meta__item">
+            <div class="case-meta__label">Ніша</div>
+            <div class="case-meta__value">Стоматологія</div>
+        </div>
+        <div class="case-meta__item">
+            <div class="case-meta__label">Тип</div>
+            <div class="case-meta__value">Корпоративний сайт</div>
+        </div>
+        <div class="case-meta__item">
+            <div class="case-meta__label">Термін</div>
+            <div class="case-meta__value">3 дні</div>
+        </div>
+        <div class="case-meta__item">
+            <div class="case-meta__label">Технології</div>
+            <div class="case-meta__value">HTML · CSS · JS</div>
+        </div>
+    </div>
+
+    <h2>Завдання</h2>
+    <ul class="case-tasks">
+        <li>Підвищити довіру потенційних клієнтів</li>
+        <li>Показати послуги та лікарів клініки</li>
+        <li>Продемонструвати результати робіт (до/після)</li>
+        <li>Збільшити кількість онлайн-заявок</li>
+        <li>Створити сучасний преміальний дизайн</li>
+        <li>Забезпечити ідеальну роботу на мобільних</li>
+    </ul>
+
+    <h2>Що реалізували</h2>
+    <div class="case-features">
+        <div class="case-feature">✓<span>Адаптивний дизайн</span></div>
+        <div class="case-feature">✓<span>Онлайн запис</span></div>
+        <div class="case-feature">✓<span>Before/After slider</span></div>
+        <div class="case-feature">✓<span>Анімовані секції</span></div>
+        <div class="case-feature">✓<span>SEO-ready структура</span></div>
+        <div class="case-feature">✓<span>Mobile-first підхід</span></div>
+        <div class="case-feature">✓<span>FAQ блок</span></div>
+        <div class="case-feature">✓<span>Форма заявки з валідацією</span></div>
+    </div>
+
+    <h2>Галерея</h2>
+    <div class="case-gallery" id="gallery">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80" alt="Hero секція" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80" alt="Лікарі" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" alt="До/Після" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1581585090292-4b5e11e71704?w=800&q=80" alt="Результат" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80" alt="Команда" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80" alt="Відгуки" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="case-result">
+        <h3>Результат</h3>
+        <p>Сайт отримав сучасний преміальний дизайн, адаптивну верстку, інтерактивні елементи та повністю готовий до запуску з реальними даними клініки.</p>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="case-cta">
+    <h2>Хочете такий самий сайт?</h2>
+    <p>Ми створимо для вашого бізнесу сайт, який працює на результат</p>
+    <a href="/#contact" class="btn">Обговорити проєкт</a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Збільшене фото">
+</div>
+
+<script>
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>

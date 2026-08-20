@@ -26,6 +26,10 @@ init_db()
 def index():
     return render_template('index.html')
 
+@app.route('/case/smiledent')
+def case_smiledent():
+    return render_template('case_smiledent.html')
+
 @app.route('/api/lead', methods=['POST'])
 def submit_lead():
     data = request.get_json()

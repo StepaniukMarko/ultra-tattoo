@@ -70,7 +70,7 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between}
 .srv p{font-size:.8rem;color:var(--muted);line-height:1.6}
 
 /* Cases */
-.cases-grid{display:grid;gap:1.5rem}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
 .case{background:var(--card);border:1px solid rgba(255,255,255,.05);border-radius:var(--r);overflow:hidden;transition:all .3s}
 .case:hover{border-color:rgba(59,130,246,.15)}
 .case-preview{aspect-ratio:16/8;background:linear-gradient(135deg,#1e3a5f,#0f172a);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:rgba(255,255,255,.7)}
