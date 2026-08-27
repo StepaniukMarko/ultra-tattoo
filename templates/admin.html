@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin — MarkLabs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#f8fafc;color:#1e293b;min-height:100vh}
+        .container{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
+        h1{font-size:1.5rem;font-weight:700;margin-bottom:1.5rem}
+        .login-form{max-width:360px;margin:4rem auto;padding:2.5rem;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+        .login-form h2{font-size:1.2rem;margin-bottom:1.5rem;text-align:center}
+        .login-form input{width:100%;padding:0.85rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:0.9rem;margin-bottom:1rem;outline:none}
+        .login-form input:focus{border-color:#3b82f6}
+        .login-form button{width:100%;padding:0.85rem;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:600;cursor:pointer}
+        .login-form button:hover{background:#2563eb}
+        .error{color:#ef4444;font-size:0.82rem;margin-bottom:1rem;text-align:center}
+        .lead-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:1.25rem;margin-bottom:0.75rem}
+        .lead-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.4rem}
+        .lead-meta{font-size:0.8rem;color:#64748b;margin-bottom:0.5rem}
+        .lead-meta span{margin-right:1rem}
+        .lead-message{font-size:0.85rem;color:#475569;margin-bottom:0.75rem;line-height:1.5}
+        .lead-status{display:inline-block;font-size:0.7rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:4px;text-transform:uppercase;letter-spacing:0.04em}
+        .status-nova{background:#dbeafe;color:#1d4ed8}
+        .status-robota{background:#fef3c7;color:#92400e}
+        .status-peregovory{background:#d1fae5;color:#065f46}
+        .status-zakryto{background:#dcfce7;color:#166534}
+        .status-vidmova{background:#fee2e2;color:#991b1b}
+        .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin-bottom:2rem}
+        .stat-card{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:1rem;text-align:center}
+        .stat-card .num{font-size:1.5rem;font-weight:700;color:#3b82f6}
+        .stat-card .label{font-size:0.7rem;color:#64748b;margin-top:0.25rem}
+        @media(max-width:768px){.container{padding:1rem}.stats{grid-template-columns:repeat(2,1fr)}}
+    </style>
+</head>
+<body>
+<div class="container">
+    {% if not authenticated %}
+    <form class="login-form" method="POST">
+        <h2>🔒 MarkLabs Admin</h2>
+        {% if error %}<p class="error">{{ error }}</p>{% endif %}
+        <input type="password" name="password" placeholder="Пароль" required autofocus>
+        <button type="submit">Увійти</button>
+    </form>
+    {% else %}
+    <h1>📋 Заявки MarkLabs</h1>
+    
+    <div class="stats">
+        <div class="stat-card"><div class="num">{{ leads|length }}</div><div class="label">Всього</div></div>
+        <div class="stat-card"><div class="num">{{ leads|selectattr('5')|list|length if leads else 0 }}</div><div class="label">Сьогодні</div></div>
+    </div>
+
+    {% for lead in leads %}
+    <div class="lead-card">
+        <h3>{{ lead.name }}</h3>
+        <div class="lead-meta">
+            {% if lead.phone %}<span>📞 {{ lead.phone }}</span>{% endif %}
+            {% if lead.telegram %}<span>✈️ {{ lead.telegram }}</span>{% endif %}
+            <span>📅 {{ lead.date or '—' }}</span>
+        </div>
+        {% if lead.message %}<p class="lead-message">{{ lead.message }}</p>{% endif %}
+        <span class="lead-status status-nova">Нова</span>
+    </div>
+    {% endfor %}
+
+    {% if not leads %}<p style="text-align:center;color:#94a3b8;padding:3rem;">Заявок поки немає</p>{% endif %}
+    {% endif %}
+</div>
+</body>
+</html>

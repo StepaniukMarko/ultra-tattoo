@@ -24,8 +24,24 @@ def init_db():
         phone TEXT,
         telegram TEXT,
         message TEXT,
+        status TEXT DEFAULT 'Нова',
+        note TEXT DEFAULT '',
+        source TEXT DEFAULT '',
         created_at TEXT DEFAULT CURRENT_TIMESTAMP
     )''')
+    # Add columns if missing (migration)
+    try:
+        conn.execute('ALTER TABLE leads ADD COLUMN status TEXT DEFAULT "Нова"')
+    except Exception:
+        pass
+    try:
+        conn.execute('ALTER TABLE leads ADD COLUMN note TEXT DEFAULT ""')
+    except Exception:
+        pass
+    try:
+        conn.execute('ALTER TABLE leads ADD COLUMN source TEXT DEFAULT ""')
+    except Exception:
+        pass
     conn.commit()
     conn.close()
 
@@ -73,6 +89,35 @@ def case_smiledent():
 @app.route('/case/blackhorse')
 def case_blackhorse():
     return render_template('case_smiledent.html')
+
+@app.route('/admin', methods=['GET', 'POST'])
+def admin_panel():
+    if request.method == 'POST':
+        password = request.form.get('password', '')
+        if password == ADMIN_PASSWORD:
+            # Show leads
+            conn = sqlite3.connect(DB_PATH)
+            rows = conn.execute('SELECT * FROM leads ORDER BY id DESC').fetchall()
+            conn.close()
+            leads = [{'id': r[0], 'name': r[1], 'phone': r[2], 'telegram': r[3], 'message': r[4], 'date': r[5]} for r in rows]
+            return render_template('admin.html', leads=leads, authenticated=True)
+        return render_template('admin.html', error='Невірний пароль', authenticated=False)
+    return render_template('admin.html', authenticated=False)
+
+@app.route('/admin/status', methods=['POST'])
+def update_lead_status():
+    data = request.get_json()
+    password = data.get('key', '')
+    if password != ADMIN_PASSWORD:
+        return jsonify({'error': 'Unauthorized'}), 401
+    lead_id = data.get('id')
+    status = data.get('status', '')
+    note = data.get('note', '')
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute('UPDATE leads SET status=?, note=? WHERE id=?', (status, note, lead_id))
+    conn.commit()
+    conn.close()
+    return jsonify({'success': True})
 
 @app.route('/sitemap.xml')
 def sitemap():
