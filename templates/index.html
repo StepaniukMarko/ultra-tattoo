@@ -81,12 +81,17 @@
 <section class="hero">
     <div class="ctn">
         <div class="hero-content">
-            <div class="badge">Digital Agency</div>
-            <h1>Створюємо сайти, автоматизацію та AI-рішення для <em>бізнесу</em></h1>
-            <p class="hero-sub">Допомагаємо малому та середньому бізнесу отримувати більше клієнтів через сучасні сайти, інтернет-магазини та автоматизацію процесів.</p>
+            <div class="badge">Digital Agency · Вінниця</div>
+            <h1>Створюємо сайти та автоматизацію для <em>бізнесу</em></h1>
+            <p class="hero-sub">Сучасний сайт, який приводить клієнтів. Запуск за 2-4 тижні. Підтримка після здачі.</p>
             <div class="hero-btns">
-                <a href="#cases" class="btn btn-p">Переглянути кейси</a>
-                <a href="#contact" class="btn btn-o">Залишити заявку</a>
+                <a href="#contact" class="btn btn-p">Обговорити проєкт</a>
+                <a href="#cases" class="btn btn-o">Подивитися кейси</a>
+            </div>
+            <div class="hero-proof">
+                <span>✓ 3 завершених проєкти</span>
+                <span>✓ Запуск від 2 тижнів</span>
+                <span>✓ Підтримка 24/7</span>
             </div>
         </div>
     </div>
@@ -293,8 +298,8 @@
 <section class="sec" id="contact">
     <div class="ctn">
         <div class="sec-head">
-            <h2>Залишити <em>заявку</em></h2>
-            <p>Напишіть нам — відповімо протягом дня</p>
+            <h2>Обговорити <em>проєкт</em></h2>
+            <p>Безкоштовна консультація · Відповідь протягом 2 годин</p>
         </div>
         <div class="contact-grid">
             <div class="contact-info">
@@ -310,13 +315,27 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                     <div><span>Instagram</span><a href="https://instagram.com/stepaniuk_marko">@stepaniuk_marko</a></div>
                 </div>
+                <div class="contact-trust">
+                    <p>✓ Безкоштовна консультація</p>
+                    <p>✓ Без зобов'язань</p>
+                    <p>✓ Відповідь протягом 2 годин</p>
+                </div>
             </div>
             <form class="lead-form" id="leadForm">
-                <input name="name" placeholder="Ваше ім'я" required>
-                <input name="phone" placeholder="Телефон">
-                <input name="telegram" placeholder="Telegram нікнейм">
-                <textarea name="message" rows="3" placeholder="Опишіть вашу задачу..."></textarea>
-                <button type="submit" class="btn btn-p">Отримати консультацію</button>
+                <input name="name" placeholder="Ваше ім'я *" required>
+                <input name="phone" placeholder="Телефон *" required>
+                <input name="telegram" placeholder="Telegram (необов'язково)">
+                <select name="service">
+                    <option value="" disabled selected>Що вас цікавить?</option>
+                    <option>Створення сайту</option>
+                    <option>Інтернет-магазин</option>
+                    <option>Telegram бот</option>
+                    <option>AI автоматизація</option>
+                    <option>Редизайн сайту</option>
+                    <option>Інше</option>
+                </select>
+                <textarea name="message" rows="3" placeholder="Опишіть вашу задачу коротко..."></textarea>
+                <button type="submit" class="btn btn-p">Отримати безкоштовну консультацію</button>
                 <div id="formMsg" class="form-msg"></div>
             </form>
         </div>
@@ -361,8 +380,11 @@ document.getElementById('leadForm').onsubmit = function(e) {
         name: this.name.value,
         phone: this.phone.value,
         telegram: this.telegram.value,
-        message: this.message.value
+        message: (this.service ? this.service.value + '. ' : '') + this.message.value
     };
+    var btn = this.querySelector('button');
+    btn.disabled = true;
+    btn.textContent = 'Відправка...';
     fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -371,14 +393,17 @@ document.getElementById('leadForm').onsubmit = function(e) {
     .then(function(r) { return r.json(); })
     .then(function(r) {
         if (r.success) {
-            document.getElementById('formMsg').textContent = 'Дякуємо! Ми зв\'яжемося з вами.';
+            document.getElementById('formMsg').textContent = '✓ Дякуємо! Зв\'яжемося протягом 2 годин.';
             document.getElementById('formMsg').className = 'form-msg ok';
             document.getElementById('leadForm').reset();
+            btn.textContent = '✓ Відправлено';
         }
     })
     .catch(function() {
         document.getElementById('formMsg').textContent = 'Помилка. Спробуйте пізніше.';
         document.getElementById('formMsg').className = 'form-msg err';
+        btn.disabled = false;
+        btn.textContent = 'Отримати безкоштовну консультацію';
     });
 };
 

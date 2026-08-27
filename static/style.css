@@ -282,3 +282,22 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05)}
 .case{position:relative}
 .case-status--real{background:#10b981;color:#fff}
 .case-status--concept{background:rgba(59,130,246,0.15);color:#3b82f6;border:1px solid rgba(59,130,246,0.2)}
+
+
+/* Hero proof points */
+.hero-proof{display:flex;gap:1.5rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap}
+.hero-proof span{font-size:.72rem;color:var(--muted);letter-spacing:.02em}
+
+/* Contact trust */
+.contact-trust{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08)}
+.contact-trust p{font-size:.8rem;color:var(--muted);margin-bottom:.4rem}
+
+/* Form select */
+.lead-form select{padding:.75rem 1rem;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:8px;color:var(--w);font-family:inherit;font-size:.85rem;outline:0;transition:border-color .2s;width:100%;-webkit-appearance:none;appearance:none}
+.lead-form select:focus{border-color:var(--blue)}
+.lead-form select option{background:#1f2937;color:#fff}
+
+@media(max-width:768px){
+    .hero-proof{gap:.75rem}
+    .hero-proof span{font-size:.65rem}
+}
