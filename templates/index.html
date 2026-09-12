@@ -225,6 +225,44 @@
         </div>
     </div>
 </section>
+<!-- AI Конструктор Концептів -->
+<section class="sec ai-constructor" id="ai-constructor">
+    <div class="ctn">
+        <div class="sec-head">
+            <h2>AI Конструктор <em>Концептів</em></h2>
+            <p>Опишіть свій бізнес і отримайте концепт майбутнього сайту за кілька секунд</p>
+        </div>
+        <div class="ai-constructor__box">
+            <div class="ai-constructor__input-wrap">
+                <input
+                    type="text"
+                    id="ai-business-input"
+                    class="ai-constructor__input"
+                    placeholder="Наприклад: стоматологія, барбершоп, ресторан..."
+                    maxlength="200"
+                    aria-label="Тип бізнесу"
+                >
+                <button
+                    id="ai-generate-btn"
+                    class="btn btn-p ai-constructor__btn"
+                    onclick="generateConcept()"
+                >
+                    <span id="ai-btn-text">Згенерувати концепт</span>
+                    <span id="ai-btn-loader" style="display:none;">⟳</span>
+                </button>
+            </div>
+            <div id="ai-status" class="ai-constructor__status" style="display:none;"></div>
+            <div id="ai-result-wrap" class="ai-constructor__result" style="display:none;">
+                <div id="ai-result-content" class="ai-constructor__result-content"></div>
+                <div class="ai-constructor__cta">
+                    <p>Сподобався концепт?<br><strong>MarkLabs може реалізувати його для вас.</strong></p>
+                    <a href="#contact" class="btn btn-p" onclick="document.getElementById('ai-result-wrap').style.display='none'||true">Обговорити проєкт</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="sec" id="concepts">
     <div class="ctn">
         <div class="sec-head">
@@ -442,6 +480,81 @@ var obs = new IntersectionObserver(function(entries) {
     });
 }, { threshold: 0.1 });
 document.querySelectorAll('.sec,.hero').forEach(function(el) { obs.observe(el); });
+
+// === AI Concept Generator ===
+function generateConcept() {
+    var input = document.getElementById('ai-business-input');
+    var btn = document.getElementById('ai-generate-btn');
+    var btnText = document.getElementById('ai-btn-text');
+    var btnLoader = document.getElementById('ai-btn-loader');
+    var statusEl = document.getElementById('ai-status');
+    var resultWrap = document.getElementById('ai-result-wrap');
+    var resultContent = document.getElementById('ai-result-content');
+
+    var business = input.value.trim();
+    if (!business) {
+        input.focus();
+        input.classList.add('ai-constructor__input--error');
+        setTimeout(function() { input.classList.remove('ai-constructor__input--error'); }, 1500);
+        return;
+    }
+
+    // Loading state
+    btn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoader.style.display = 'inline';
+    btnLoader.style.animation = 'ai-spin 1s linear infinite';
+    statusEl.style.display = 'block';
+    statusEl.textContent = '✨ Генерую концепт для "' + business + '"...';
+    resultWrap.style.display = 'none';
+
+    fetch('/api/generate-concept', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ business: business })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        btn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoader.style.display = 'none';
+
+        if (data.error) {
+            statusEl.textContent = '⚠️ ' + data.error;
+            return;
+        }
+
+        statusEl.style.display = 'none';
+
+        // Format concept text: bold lines starting with number + dot
+        var formatted = data.concept
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/^(\d+\.\s.+)$/gm, '<div class="ai-concept-point"><span class="ai-concept-num">$1</span></div>')
+            .replace(/\n/g, '<br>');
+
+        resultContent.innerHTML = '<h4 class="ai-concept-title">Концепт сайту: ' + business + '</h4>' + formatted;
+        resultWrap.style.display = 'block';
+        resultWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    })
+    .catch(function(err) {
+        btn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoader.style.display = 'none';
+        statusEl.textContent = '⚠️ Помилка з\'єднання. Спробуйте ще раз.';
+        console.error('AI concept error:', err);
+    });
+}
+
+// Allow Enter key to trigger generation
+document.addEventListener('DOMContentLoaded', function() {
+    var input = document.getElementById('ai-business-input');
+    if (input) {
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') generateConcept();
+        });
+    }
+});
 </script>
 </body>
 </html>

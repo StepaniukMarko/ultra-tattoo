@@ -173,5 +173,66 @@ def get_leads():
     } for r in rows])
 
 
+@app.route('/api/generate-concept', methods=['POST'])
+def generate_concept():
+    """Generate site concept via Gemini API."""
+    data = request.get_json()
+    if not data or not data.get('business', '').strip():
+        return jsonify({'error': 'Вкажіть тип бізнесу'}), 400
+
+    business = data['business'].strip()[:200]
+
+    gemini_key = os.environ.get('GEMINI_API_KEY', '')
+    if not gemini_key:
+        return jsonify({'error': 'GEMINI_API_KEY не встановлено'}), 503
+
+    prompt = (
+        f"Створи концепт сайту для бізнесу: {business}\n\n"
+        "Напиши:\n"
+        "1. Назву сайту\n"
+        "2. УТП (унікальна торгова пропозиція)\n"
+        "3. Hero секцію (заголовок + підзаголовок + CTA)\n"
+        "4. Кольорову палітру (основний, акцент, фон)\n"
+        "5. Блоки сайту (перерахуй 6-8 секцій)\n"
+        "6. CTA-кнопки (тексти)\n"
+        "7. Дизайн-фішки (що виділить серед конкурентів)\n"
+        "8. Ідеї для конверсії (що підштовхне до дії)\n\n"
+        "Відповідь українською мовою. Форматуй відповідь з чіткими заголовками кожного пункту."
+    )
+
+    try:
+        url = (
+            'https://generativelanguage.googleapis.com/v1beta/models/'
+            f'gemini-1.5-flash:generateContent?key={gemini_key}'
+        )
+        resp = http_requests.post(
+            url,
+            json={
+                'contents': [{'parts': [{'text': prompt}]}],
+                'generationConfig': {
+                    'temperature': 0.8,
+                    'maxOutputTokens': 1500
+                }
+            },
+            timeout=30
+        )
+        resp.raise_for_status()
+        result = resp.json()
+        text = (
+            result
+            .get('candidates', [{}])[0]
+            .get('content', {})
+            .get('parts', [{}])[0]
+            .get('text', '')
+        )
+        if not text:
+            return jsonify({'error': 'Порожня відповідь від AI'}), 500
+        return jsonify({'success': True, 'concept': text})
+    except http_requests.exceptions.Timeout:
+        return jsonify({'error': 'Час очікування вичерпано. Спробуйте ще раз.'}), 504
+    except Exception as e:
+        return jsonify({'error': f'Помилка генерації: {str(e)}'}), 500
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
