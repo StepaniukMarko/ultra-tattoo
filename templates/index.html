@@ -526,14 +526,44 @@ function generateConcept() {
 
         statusEl.style.display = 'none';
 
-        // Format concept text: bold lines starting with number + dot
-        var formatted = data.concept
-            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-            .replace(/^(\d+\.\s.+)$/gm, '<div class="ai-concept-point"><span class="ai-concept-num">$1</span></div>')
-            .replace(/\n/g, '<br>');
+        // Convert Markdown to clean HTML
+        function mdToHtml(md) {
+            var html = md
+                // Escape HTML entities first
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                // ## Headings → <h2>
+                .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+                // **bold** → <strong>
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                // Split into lines for list/paragraph processing
+                ;
 
-        resultContent.innerHTML = '<h4 class="ai-concept-title">Концепт сайту: ' + business + '</h4>' + formatted;
+            var lines = html.split('\n');
+            var out = [];
+            var inList = false;
+
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i].trim();
+                if (!line) {
+                    if (inList) { out.push('</ul>'); inList = false; }
+                    continue;
+                }
+                if (line.startsWith('<h2>')) {
+                    if (inList) { out.push('</ul>'); inList = false; }
+                    out.push(line);
+                } else if (/^[-•*]\s/.test(line)) {
+                    if (!inList) { out.push('<ul>'); inList = true; }
+                    out.push('<li>' + line.replace(/^[-•*]\s/, '') + '</li>');
+                } else {
+                    if (inList) { out.push('</ul>'); inList = false; }
+                    out.push('<p>' + line + '</p>');
+                }
+            }
+            if (inList) out.push('</ul>');
+            return out.join('');
+        }
+
+        resultContent.innerHTML = '<h4 class="ai-concept-title">Концепт сайту: ' + business + '</h4>' + mdToHtml(data.concept);
         resultWrap.style.display = 'block';
         resultWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
     })
