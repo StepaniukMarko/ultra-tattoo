@@ -203,7 +203,7 @@ def generate_concept():
     try:
         url = (
             'https://generativelanguage.googleapis.com/v1beta/models/'
-            f'gemini-2.5-flash:generateContent?key={gemini_key}'
+            f'gemini-3.6-flash:generateContent?key={gemini_key}'
         )
         body = {
             'contents': [{'parts': [{'text': prompt}]}],
