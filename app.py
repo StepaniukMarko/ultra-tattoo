@@ -205,18 +205,27 @@ def generate_concept():
             'https://generativelanguage.googleapis.com/v1beta/models/'
             f'gemini-2.5-flash:generateContent?key={gemini_key}'
         )
-        resp = http_requests.post(
-            url,
-            json={
-                'contents': [{'parts': [{'text': prompt}]}],
-                'generationConfig': {
-                    'temperature': 0.8,
-                    'maxOutputTokens': 1500
-                }
-            },
-            timeout=30
-        )
-        resp.raise_for_status()
+        body = {
+            'contents': [{'parts': [{'text': prompt}]}],
+            'generationConfig': {
+                'temperature': 0.8,
+                'maxOutputTokens': 1500
+            }
+        }
+
+        print(f'[Gemini] POST {url[:80]}...', flush=True)
+
+        resp = http_requests.post(url, json=body, timeout=30)
+
+        print(f'[Gemini] Status: {resp.status_code}', flush=True)
+        print(f'[Gemini] Response: {resp.text[:500]}', flush=True)
+
+        if not resp.ok:
+            return jsonify({
+                'error': f'Gemini API error {resp.status_code}',
+                'details': resp.text[:300]
+            }), 502
+
         result = resp.json()
         text = (
             result
@@ -226,12 +235,14 @@ def generate_concept():
             .get('text', '')
         )
         if not text:
+            print(f'[Gemini] Empty text, full response: {result}', flush=True)
             return jsonify({'error': 'Порожня відповідь від AI'}), 500
         return jsonify({'success': True, 'concept': text})
     except http_requests.exceptions.Timeout:
         return jsonify({'error': 'Час очікування вичерпано. Спробуйте ще раз.'}), 504
     except Exception as e:
-        return jsonify({'error': f'Помилка генерації: {str(e)}'}), 500
+        print(f'[Gemini] Exception: {type(e).__name__}: {e}', flush=True)
+        return jsonify({'error': f'Помилка генерації: {type(e).__name__}: {e}'}), 500
 
 
 if __name__ == '__main__':
