@@ -223,7 +223,7 @@ def generate_concept():
             'contents': [{'parts': [{'text': prompt}]}],
             'generationConfig': {
                 'temperature': 0.8,
-                'maxOutputTokens': 1500
+                'maxOutputTokens': 3000
             }
         }
 
@@ -252,13 +252,17 @@ def generate_concept():
             print(f'[Gemini] Empty text, full response: {result}', flush=True)
             return jsonify({'error': 'Порожня відповідь від AI'}), 500
 
-        # Strip any internal service blocks Gemini may leak into output
+        # Strip any internal service blocks Gemini may leak into output.
+        # Only strip lines that START with a service keyword (safe, won't eat real content).
         import re as _re
-        service_pattern = _re.compile(
-            r'(Formatting|Completeness|Final Polish|Internal Notes)\s*:.*?(?=\n##|\Z)',
-            flags=_re.IGNORECASE | _re.DOTALL
-        )
-        text = service_pattern.sub('', text).strip()
+        text = _re.sub(
+            r'^(Formatting|Completeness|Final Polish|Internal Notes)\s*:.*$',
+            '',
+            text,
+            flags=_re.IGNORECASE | _re.MULTILINE
+        ).strip()
+
+        print(f'[Gemini] concept len={len(text)}, tail={repr(text[-300:])}', flush=True)
 
         return jsonify({'success': True, 'concept': text})
     except http_requests.exceptions.Timeout:
