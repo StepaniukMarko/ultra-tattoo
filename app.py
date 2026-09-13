@@ -187,31 +187,69 @@ def generate_concept():
         return jsonify({'error': 'GEMINI_API_KEY не встановлено'}), 503
 
     prompt = (
-        f"Створи концепт сайту для бізнесу: {business}\n\n"
-        "Відповідай ТІЛЬКИ готовим концептом. Без вступів, без пояснень, без службових приміток.\n"
-        "Не пиши: Formatting, Completeness, Final Polish, Internal Notes, міркувань про якість.\n\n"
-        "Структура відповіді — рівно 8 пунктів:\n\n"
-        "## 1. Назва сайту\n"
-        "(назва)\n\n"
-        "## 2. УТП\n"
-        "(унікальна торгова пропозиція — 1-2 речення)\n\n"
-        "## 3. Hero секція\n"
-        "Заголовок: ...\n"
-        "Підзаголовок: ...\n"
-        "CTA: ...\n\n"
-        "## 4. Кольори\n"
-        "Основний: ...\n"
-        "Акцент: ...\n"
-        "Фон: ...\n\n"
-        "## 5. Блоки сайту\n"
-        "(перелік 6-8 секцій)\n\n"
-        "## 6. CTA-кнопки\n"
-        "(тексти кнопок)\n\n"
-        "## 7. Дизайн-фішки\n"
-        "(що виділить серед конкурентів)\n\n"
-        "## 8. Ідеї для конверсії\n"
-        "(що підштовхне відвідувача до дії)\n\n"
-        "Відповідай українською. Починай одразу з '## 1. Назва сайту'."
+        f"Створи HTML-макет головної сторінки сайту для бізнесу: {business}\n\n"
+        "ВАЖЛИВО: Поверни ТІЛЬКИ HTML-код. Без пояснень, без markdown, без коментарів поза HTML.\n"
+        "Починай одразу з <div class=\"site-preview\">\n\n"
+        "Вимоги до HTML:\n"
+        "1. Використовуй тільки inline styles — зовнішні CSS-файли недоступні.\n"
+        "2. Всі секції мають бути стилізовані inline.\n"
+        "3. Підбери кольорову палітру під нішу бізнесу.\n\n"
+        "Структура — рівно ці секції по порядку:\n\n"
+        "<div class=\"site-preview\">\n\n"
+        "  <!-- 1. NAV -->\n"
+        "  <nav style=\"...\">\n"
+        "    <div style=\"font-weight:700;font-size:1.2rem\">[Назва бренду]</div>\n"
+        "    <div style=\"display:flex;gap:1.5rem\">[3-4 пункти меню]</div>\n"
+        "    <button style=\"...\">[CTA кнопка]</button>\n"
+        "  </nav>\n\n"
+        "  <!-- 2. HERO -->\n"
+        "  <section style=\"min-height:420px;display:flex;align-items:center;background:[колір або градієнт];padding:4rem 3rem\">\n"
+        "    <div>\n"
+        "      <p style=\"font-size:0.85rem;opacity:0.7;margin-bottom:0.5rem\">[Ніша / категорія]</p>\n"
+        "      <h1 style=\"font-size:2.5rem;font-weight:800;margin-bottom:1rem;line-height:1.2\">[Головний заголовок]</h1>\n"
+        "      <p style=\"font-size:1.1rem;opacity:0.85;margin-bottom:2rem;max-width:500px\">[УТП — 1-2 речення]</p>\n"
+        "      <div style=\"display:flex;gap:1rem\">\n"
+        "        <button style=\"...\">[Головна CTA]</button>\n"
+        "        <button style=\"...\">[Вторинна CTA]</button>\n"
+        "      </div>\n"
+        "    </div>\n"
+        "  </section>\n\n"
+        "  <!-- 3. ПЕРЕВАГИ (3 картки) -->\n"
+        "  <section style=\"padding:3rem;background:[колір]\">\n"
+        "    <h2 style=\"text-align:center;margin-bottom:2rem\">[Заголовок секції]</h2>\n"
+        "    <div style=\"display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem\">\n"
+        "      [3 картки: іконка-емодзі + заголовок + текст]\n"
+        "    </div>\n"
+        "  </section>\n\n"
+        "  <!-- 4. ПОСЛУГИ / МЕНЮ (4-6 карток) -->\n"
+        "  <section style=\"padding:3rem;background:[колір]\">\n"
+        "    <h2 style=\"text-align:center;margin-bottom:2rem\">[Назва секції]</h2>\n"
+        "    <div style=\"display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem\">\n"
+        "      [4-6 карток з реальними послугами/товарами ніші]\n"
+        "    </div>\n"
+        "  </section>\n\n"
+        "  <!-- 5. ВІДГУК (1 цитата) -->\n"
+        "  <section style=\"padding:3rem;background:[колір];text-align:center\">\n"
+        "    <blockquote style=\"font-size:1.2rem;max-width:600px;margin:0 auto\">\n"
+        "      [Реалістичний відгук клієнта нішевого бізнесу]\n"
+        "    </blockquote>\n"
+        "    <p style=\"margin-top:1rem;font-weight:600\">[Ім'я клієнта]</p>\n"
+        "  </section>\n\n"
+        "  <!-- 6. CTA FOOTER -->\n"
+        "  <section style=\"padding:3rem;text-align:center;background:[акцентний колір]\">\n"
+        "    <h2 style=\"font-size:1.8rem;margin-bottom:1rem\">[Фінальний заклик]</h2>\n"
+        "    <p style=\"opacity:0.85;margin-bottom:1.5rem\">[Підзаголовок]</p>\n"
+        "    <button style=\"font-size:1rem;padding:1rem 2.5rem;border-radius:8px;cursor:pointer;border:none;font-weight:700\">[CTA]</button>\n"
+        "  </section>\n\n"
+        "</div>\n\n"
+        "Правила стилів:\n"
+        "- Підбери кольори під нішу (медицина — білий/синій, барбершоп — темний/золотий, ресторан — теплий/кремовий тощо)\n"
+        "- Всі тексти — тільки реальний контент для цього бізнесу, жодних плейсхолдерів 'Lorem ipsum'\n"
+        "- Font-family: inherit або system-ui\n"
+        "- Border-radius на картках: 12px\n"
+        "- Box-shadow: 0 2px 12px rgba(0,0,0,0.08)\n"
+        "- Кнопки: padding 0.75rem 1.75rem, border-radius 8px, cursor:pointer\n\n"
+        "Відповідай ТІЛЬКИ HTML без жодного тексту поза тегами."
     )
 
     try:
@@ -252,19 +290,15 @@ def generate_concept():
             print(f'[Gemini] Empty text, full response: {result}', flush=True)
             return jsonify({'error': 'Порожня відповідь від AI'}), 500
 
-        # Strip any internal service blocks Gemini may leak into output.
-        # Only strip lines that START with a service keyword (safe, won't eat real content).
+        # Strip markdown code fences if Gemini wraps HTML in ```html ... ```
         import re as _re
-        text = _re.sub(
-            r'^(Formatting|Completeness|Final Polish|Internal Notes)\s*:.*$',
-            '',
-            text,
-            flags=_re.IGNORECASE | _re.MULTILINE
-        ).strip()
+        text = _re.sub(r'^```[a-z]*\n?', '', text.strip(), flags=_re.IGNORECASE)
+        text = _re.sub(r'\n?```$', '', text.strip())
+        text = text.strip()
 
-        print(f'[Gemini] concept len={len(text)}, tail={repr(text[-300:])}', flush=True)
+        print(f'[Gemini] html len={len(text)}, tail={repr(text[-200:])}', flush=True)
 
-        return jsonify({'success': True, 'concept': text})
+        return jsonify({'success': True, 'html': text})
     except http_requests.exceptions.Timeout:
         return jsonify({'error': 'Час очікування вичерпано. Спробуйте ще раз.'}), 504
     except Exception as e:
