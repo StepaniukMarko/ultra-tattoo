@@ -187,54 +187,42 @@ def generate_concept():
         return jsonify({'error': 'GEMINI_API_KEY не встановлено'}), 503
 
     prompt = (
-        "Ти Senior UI/UX Designer та Frontend Developer.\n"
-        "Створи красивий HTML-лендинг — попередній перегляд майбутнього сайту.\n"
-        "Поверни ТІЛЬКИ HTML. Без markdown. Без пояснень. Без ```html.\n\n"
-        f"Ніша бізнесу: {business}\n\n"
-        "=== ПРАВИЛА ===\n"
-        "- Всі тексти українською\n"
-        "- Жодного Lorem Ipsum — тільки реальний маркетинговий контент\n"
+        "Поверни ТІЛЬКИ валідний HTML. Перший символ відповіді — '<', останній — '>'.\n"
+        "Не пиши пояснень. Не пиши markdown. Не пиши ```html. Нічого крім HTML.\n\n"
+        f"Створи одну повністю готову landing page для ніші: {business}\n\n"
+        "ВИМОГИ:\n"
+        "- Всі тексти українською, жодного Lorem Ipsum\n"
         "- Всі стилі тільки inline (style=\"...\")\n"
-        "- Hover на кнопках: onmouseover=\"this.style.opacity='0.85'\" onmouseout=\"this.style.opacity='1'\"\n"
-        "- Кольори підібрані під нішу\n"
-        "- Font-family: system-ui, -apple-system, sans-serif\n"
-        "- Весь контент у обгортці max-width:1200px; margin:0 auto; padding:0 1.5rem\n\n"
-        "=== СТРУКТУРА — РІВНО 6 СЕКЦІЙ ===\n\n"
-        "1. NAVBAR\n"
-        "   position:sticky; top:0; z-index:100; backdrop-filter:blur(12px)\n"
-        "   Логотип | 4 пункти меню | CTA кнопка\n\n"
-        "2. HERO (мінімум 560px висоти)\n"
-        "   Фон: насичений градієнт під нішу, position:relative, overflow:hidden\n"
-        "   Зверху: невеликий бейдж (emoji + категорія бізнесу)\n"
-        "   H1: font-size:3.8rem; font-weight:900; line-height:1.1; колір білий або контрастний\n"
-        "   Підзаголовок: font-size:1.2rem; max-width:560px; opacity:0.9\n"
-        "   2 кнопки поряд: головна (заповнена) + вторинна (прозора з рамкою)\n"
-        "   Рядок соціального доказу: ★★★★★ + текст типу '200+ задоволених клієнтів'\n\n"
-        "3. ПЕРЕВАГИ\n"
-        "   Фон: світлий (#f8f9fa або білий)\n"
-        "   Заголовок секції по центру\n"
-        "   4 картки grid 2×2: великий emoji (font-size:2.5rem), заголовок bold, 2 речення тексту\n"
-        "   Картки: border-radius:20px; box-shadow:0 2px 20px rgba(0,0,0,0.07); padding:2rem\n\n"
-        "4. ПОСЛУГИ\n"
-        "   Фон: злегка темніший (#f0f2f5 або акцентний)\n"
-        "   Заголовок секції по центру\n"
-        "   6 карток grid 3×2: назва послуги bold, 2 речення опису, знизу ціна або кнопка\n"
-        "   Картки: border-radius:16px; background:white; box-shadow:0 4px 24px rgba(0,0,0,0.08); padding:1.75rem\n\n"
-        "5. CTA СЕКЦІЯ\n"
-        "   Фон: яскравий градієнт або акцентний колір ніші\n"
-        "   По центру: великий заголовок (2rem+), підзаголовок, 1 велика кнопка\n"
-        "   padding:5rem 2rem\n\n"
-        "6. FOOTER\n"
-        "   Темний фон (#111 або #0f0f0f)\n"
-        "   Логотип + слоган ліворуч | 2 колонки посилань по центру | соцмережі праворуч\n"
-        "   Знизу: копірайт по центру\n\n"
-        "=== СТИЛІ ===\n"
-        "- Секції padding:5rem 0\n"
-        "- Кнопки: padding:0.9rem 2.2rem; border-radius:50px; font-weight:700; cursor:pointer; font-size:1rem; border:none\n"
-        "- Заголовки секцій: font-size:2.2rem; font-weight:800; text-align:center; margin-bottom:0.75rem\n"
-        "- Підзаголовки секцій: font-size:1rem; opacity:0.6; text-align:center; margin-bottom:3rem\n\n"
-        "Обгорни у: <div class=\"site-preview\" style=\"font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#1a1a1a;margin:0;padding:0\">\n"
-        "Починай ОДРАЗУ з <div class=\"site-preview\""
+        "- Кольори підібрані під нішу бізнесу\n"
+        "- Font-family: system-ui,-apple-system,sans-serif\n"
+        "- Контент обгорнути у div max-width:1200px;margin:0 auto;padding:0 1.5rem\n"
+        "- Кнопки: onmouseover=\"this.style.opacity='0.85'\" onmouseout=\"this.style.opacity='1'\"\n\n"
+        "СТРУКТУРА — рівно 6 блоків:\n\n"
+        "1. nav — sticky, backdrop-filter:blur(10px), логотип + 4 посилання + CTA кнопка\n\n"
+        "2. section hero — min-height:580px, display:flex, align-items:center\n"
+        "   фон: яскравий CSS gradient під нішу\n"
+        "   всередині: бейдж (emoji + назва ніші), H1 font-size:3.5rem font-weight:900 колір #fff\n"
+        "   підзаголовок font-size:1.15rem color:rgba(255,255,255,0.85) max-width:540px\n"
+        "   2 кнопки + рядок ★★★★★ з кількістю клієнтів\n\n"
+        "3. section — background:#f8f9fa, padding:5rem 0\n"
+        "   H2 по центру + підзаголовок\n"
+        "   4 картки display:grid grid-template-columns:repeat(2,1fr) gap:1.5rem\n"
+        "   картка: background:#fff border-radius:20px box-shadow:0 2px 20px rgba(0,0,0,0.07) padding:2rem\n"
+        "   emoji font-size:2.5rem + h3 + 2 речення тексту\n\n"
+        "4. section — background:#f0f2f5, padding:5rem 0\n"
+        "   H2 по центру + підзаголовок\n"
+        "   6 карток display:grid grid-template-columns:repeat(3,1fr) gap:1.25rem\n"
+        "   картка: background:#fff border-radius:16px box-shadow:0 4px 24px rgba(0,0,0,0.08) padding:1.75rem\n"
+        "   назва bold + 2 речення опису + ціна або кнопка внизу\n\n"
+        "5. section — 4 картки-кейси display:grid grid-template-columns:repeat(2,1fr) gap:1.5rem\n"
+        "   кожна картка: div висотою 180px з CSS gradient (унікальні кольори) + назва проєкту + результат\n\n"
+        "6. section — CTA, текст по центру, gradient фон під нішу\n"
+        "   H2 font-size:2.5rem color:#fff + підзаголовок + велика кнопка\n"
+        "   потім: footer темний (#111), логотип + копірайт\n\n"
+        "Обгорни весь HTML у:\n"
+        "<div class=\"site-preview\" style=\"font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#1a1a1a;margin:0;padding:0\">"
+        " [контент] </div>\n\n"
+        "Починай відповідь ОДРАЗУ з символу <"
     )
 
     try:
@@ -275,13 +263,18 @@ def generate_concept():
             print(f'[Gemini] Empty text, full response: {result}', flush=True)
             return jsonify({'error': 'Порожня відповідь від AI'}), 500
 
-        # Strip markdown code fences if Gemini wraps HTML in ```html ... ```
+        # Strip markdown fences and any leading/trailing non-HTML text
         import re as _re
         text = _re.sub(r'^```[a-z]*\n?', '', text.strip(), flags=_re.IGNORECASE)
         text = _re.sub(r'\n?```$', '', text.strip())
         text = text.strip()
+        # Ensure response starts with < and ends with >
+        start = text.find('<')
+        end = text.rfind('>')
+        if start != -1 and end != -1 and end > start:
+            text = text[start:end + 1]
 
-        print(f'[Gemini] html len={len(text)}, tail={repr(text[-200:])}', flush=True)
+        print(f'[Gemini] html len={len(text)}, starts={repr(text[:40])}, ends={repr(text[-40:])}', flush=True)
 
         return jsonify({'success': True, 'html': text})
     except http_requests.exceptions.Timeout:
