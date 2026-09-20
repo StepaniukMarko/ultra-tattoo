@@ -1327,3 +1327,204 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05)}
 }
 
 /* ===== END WOW MOBILE v4 ===== */
+
+/* =====================================================
+   FINAL POLISH v5 — layout fixes + stats ticker + depth
+   ===================================================== */
+
+/* Fix hero-showcase inner layout — content above, progress bottom */
+.hero-showcase {
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+}
+.hs-content {
+    padding: 0 20px 20px;
+    position: relative;
+    z-index: 10;
+}
+.hs-progress {
+    position: relative;
+    z-index: 10;
+    padding: 0 20px 24px;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Hero text — entry animation */
+.hs-title {
+    animation: hs-rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s both;
+}
+.hs-desc {
+    animation: hs-rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.28s both;
+}
+.hs-btns {
+    animation: hs-rise 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s both;
+}
+@keyframes hs-rise {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Stats ticker row — directly below hero */
+.stats-ticker {
+    display: flex;
+    gap: 0;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.stats-ticker__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 8px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    gap: 3px;
+}
+.stats-ticker__item:last-child { border-right: none; }
+.stats-ticker__num {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.stats-ticker__label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+/* Swipe cases — taller images for wow */
+.case-card__img {
+    height: 220px !important;
+}
+@media(max-width:768px) {
+    .case-card__img { height: 200px !important; }
+    .case-card { flex: 0 0 260px !important; }
+}
+@media(max-width:390px) {
+    .case-card__img { height: 175px !important; }
+    .case-card { flex: 0 0 230px !important; }
+}
+
+/* Cases section — no top padding, flows from stats */
+.sec[id="cases"] {
+    padding-top: 2rem;
+}
+.sec[id="cases"] .ctn { padding-bottom: 0; }
+
+/* BA section — full bleed on mobile */
+@media(max-width:768px) {
+    .ba-section { padding-left: 0 !important; padding-right: 0 !important; }
+    .ba-section .ctn { padding: 0 20px; }
+    .ba-wrap { margin-left: 0; margin-right: 0; }
+    .ba-slider { border-radius: 0 !important; }
+}
+
+/* Video grid — more compact on mobile */
+@media(max-width:768px) {
+    .video-grid { gap: 8px; }
+    .video-card { border-radius: 10px; }
+    .video-card--wide { aspect-ratio: 16/8; }
+}
+
+/* Mob menu — full-height, premium links */
+.mob {
+    gap: 0;
+    align-items: flex-start;
+    padding: 100px 28px 40px;
+    justify-content: flex-start;
+}
+.mob a {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: rgba(255,255,255,0.55);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    width: 100%;
+    transition: color 0.18s ease;
+}
+.mob a:hover, .mob a:active { color: #fff; }
+.mob a:last-child {
+    margin-top: 28px;
+    background: linear-gradient(135deg,#3b82f6,#1d4ed8);
+    color: #fff !important;
+    border-radius: 13px;
+    text-align: center;
+    padding: 18px 24px;
+    border-bottom: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 6px 28px rgba(59,130,246,0.4);
+}
+
+/* Nav tag on mobile — tighten */
+@media(max-width:768px) {
+    .hs-project-tag {
+        top: 68px;
+        right: 16px;
+        font-size: 0.68rem;
+        padding: 5px 12px 5px 9px;
+    }
+}
+
+/* Sec-head — flush, no centering on mobile for modern feel */
+@media(max-width:768px) {
+    .sec-head { text-align: left; }
+    .sec-head h2 { font-size: 1.85rem; letter-spacing: -0.04em; font-weight: 900; }
+    .sec-head p { font-size: 0.88rem; }
+    .sec-head h2::after { margin-left: 0; }
+}
+
+/* Concepts section — hide on mobile (keep only real cases) */
+@media(max-width:768px) {
+    #concepts { display: none; }
+}
+
+/* Reviews — 1 col on mobile */
+@media(max-width:768px) {
+    .review-cards { grid-template-columns: 1fr !important; }
+    .review-card { padding: 18px 16px; border-radius: 12px; }
+}
+
+/* Process steps — card style on mobile */
+@media(max-width:768px) {
+    .steps { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .step { background: var(--card); border-radius: 12px; padding: 16px 14px; border: 1px solid rgba(255,255,255,0.06); }
+    .step-n { font-size: 1.5rem; }
+    .step h4 { font-size: 0.9rem; font-weight: 700; }
+    .step p { font-size: 0.75rem; }
+}
+
+/* Why grid */
+@media(max-width:768px) {
+    .why-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .why { padding: 14px; border-radius: 12px; }
+    .why h4 { font-size: 0.88rem; font-weight: 700; }
+    .why p { font-size: 0.75rem; }
+}
+
+/* Srv grid */
+@media(max-width:768px) {
+    .srv-grid { grid-template-columns: 1fr; gap: 10px; }
+    .srv { padding: 18px 16px; border-radius: 12px; }
+    .srv h3 { font-size: 0.95rem; font-weight: 700; }
+}
+
+/* AI constructor — mobile */
+@media(max-width:768px) {
+    .ai-constructor__input-wrap { flex-direction: column; }
+    .ai-constructor__btn { width: 100%; min-height: 52px; }
+    .ai-constructor__cta { flex-direction: column; }
+    .ai-constructor__cta .btn { width: 100%; }
+}
+
+/* ===== END FINAL POLISH v5 ===== */
