@@ -212,77 +212,6 @@
   <div class="hv2-scroll"><div class="hv2-scroll-ln"></div></div>
 </section>
 
-<!-- ===== BEFORE / AFTER ===== -->
-<section class="sec ba-section" id="ba-showcase">
-    <div class="ctn">
-        <div class="sec-head">
-            <h2>До <em>і після</em></h2>
-            <p>Різниця видна відразу</p>
-        </div>
-    </div>
-    <div class="ba-wrap">
-        <div class="ba-slider" id="ba-slider" data-ba>
-            <!-- BEFORE -->
-            <div class="ba-before">
-                <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&q=80" alt="До — звичайний сайт" loading="lazy">
-                <div class="ba-label ba-label--before">До</div>
-            </div>
-            <!-- AFTER -->
-            <div class="ba-after" id="ba-after">
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" alt="Після — MarkLabs" loading="lazy">
-                <div class="ba-label ba-label--after">Після</div>
-            </div>
-            <!-- HANDLE -->
-            <div class="ba-handle" id="ba-handle">
-                <div class="ba-handle-line"></div>
-                <div class="ba-handle-btn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div class="ba-handle-line"></div>
-            </div>
-        </div>
-        <p class="ba-hint">← перетягни →</p>
-    </div>
-</section>
-
-<!-- ===== VIDEO PREVIEW ===== -->
-<section class="sec sec-alt video-section">
-    <div class="ctn">
-        <div class="sec-head">
-            <h2>Як виглядає <em>наша робота</em></h2>
-            <p>Деталі, які помічають клієнти</p>
-        </div>
-        <div class="video-grid">
-            <div class="video-card video-card--wide">
-                <video autoplay muted loop playsinline class="video-card__vid" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=70">
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-web-development-code-writing-close-up-42854-large.mp4" type="video/mp4">
-                </video>
-                <div class="video-card__overlay">
-                    <span class="video-card__tag">Розробка</span>
-                    <span class="video-card__title">Код та деталі</span>
-                </div>
-            </div>
-            <div class="video-card">
-                <video autoplay muted loop playsinline class="video-card__vid" poster="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=70">
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-smartphone-and-scrolling-42586-large.mp4" type="video/mp4">
-                </video>
-                <div class="video-card__overlay">
-                    <span class="video-card__tag">Mobile</span>
-                    <span class="video-card__title">iPhone досвід</span>
-                </div>
-            </div>
-            <div class="video-card">
-                <video autoplay muted loop playsinline class="video-card__vid" poster="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=70">
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-charts-and-graphs-on-a-screen-43047-large.mp4" type="video/mp4">
-                </video>
-                <div class="video-card__overlay">
-                    <span class="video-card__tag">Аналітика</span>
-                    <span class="video-card__title">Ріст трафіку</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Послуги -->
 <section class="sec" id="services">
@@ -770,46 +699,6 @@ function closeM() {
         });
         main.addEventListener('mouseleave', function(){ if(phone) phone.style.transform = ''; });
     }
-})();
-// ===== BEFORE/AFTER SLIDER =====
-(function(){
-    var slider = document.getElementById('ba-slider');
-    if(!slider) return;
-    var after = document.getElementById('ba-after');
-    var handle = document.getElementById('ba-handle');
-    var dragging = false;
-
-    function setPos(x){
-        var r = slider.getBoundingClientRect();
-        var pos = Math.max(0.04, Math.min(0.96, (x-r.left)/r.width));
-        after.style.clipPath = 'inset(0 0 0 '+(pos*100)+'%)';
-        handle.style.left = (pos*100)+'%';
-    }
-
-    setTimeout(function(){ var r=slider.getBoundingClientRect(); setPos(r.left+r.width*0.5); }, 100);
-
-    slider.addEventListener('mousedown', function(e){ dragging=true; setPos(e.clientX); e.preventDefault(); });
-    window.addEventListener('mousemove', function(e){ if(dragging) setPos(e.clientX); });
-    window.addEventListener('mouseup', function(){ dragging=false; });
-    slider.style.touchAction='none';
-    slider.addEventListener('touchstart', function(e){ dragging=true; setPos(e.touches[0].clientX); e.preventDefault(); }, {passive:false});
-    window.addEventListener('touchmove', function(e){ if(dragging){ e.preventDefault(); setPos(e.touches[0].clientX); } }, {passive:false});
-    window.addEventListener('touchend', function(){ dragging=false; });
-
-    var demonstrated = false;
-    var baObs = new IntersectionObserver(function(entries){
-        if(entries[0].isIntersecting && !demonstrated){
-            demonstrated = true;
-            var t=0.5, dir=-1, step=0;
-            var demo = setInterval(function(){
-                step++; t+=dir*0.018;
-                if(t<=0.15) dir=1; if(t>=0.85) dir=-1;
-                var r=slider.getBoundingClientRect(); setPos(r.left+r.width*t);
-                if(step>80){ clearInterval(demo); var r2=slider.getBoundingClientRect(); setPos(r2.left+r2.width*0.5); }
-            }, 20);
-        }
-    }, {threshold:0.5});
-    baObs.observe(slider);
 })();
 
 // ===== CASES TRACK DRAG =====
