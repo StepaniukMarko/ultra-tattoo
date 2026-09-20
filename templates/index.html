@@ -77,49 +77,139 @@
     <a href="#contact" onclick="closeM()">Обговорити проєкт →</a>
 </div>
 
-<!-- ===== HERO: FULLSCREEN SHOWCASE ===== -->
-<section class="hero-showcase" id="hero">
+<!-- ===== HERO v2: iPHONE 16 PRO CINEMATIC ===== -->
+<section class="hero-v2" id="hero">
 
-    <!-- BG SLIDES — fullscreen auto-cycling project screenshots -->
-    <div class="hs-slides" id="hs-slides">
-        <div class="hs-slide hs-slide--active" style="background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&q=80')"></div>
-        <div class="hs-slide" style="background-image:url('https://images.unsplash.com/photo-1621605815971-fbc98d665571?w=1200&q=80')"></div>
-        <div class="hs-slide" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80')"></div>
-        <div class="hs-slide" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80')"></div>
-        <div class="hs-slide" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80')"></div>
-    </div>
-    <div class="hs-overlay"></div>
+  <!-- AMBIENT BACKGROUND -->
+  <div class="hv2-bg">
+    <div class="hv2-bg-grad"></div>
+    <div class="hv2-orb hv2-orb--1"></div>
+    <div class="hv2-orb hv2-orb--2"></div>
+    <div class="hv2-orb hv2-orb--3"></div>
+    <div class="hv2-grid"></div>
+  </div>
 
-    <!-- PROJECT BADGE — changes with slide -->
-    <div class="hs-project-tag" id="hs-tag">
-        <span class="hs-tag-dot"></span>
-        <span id="hs-tag-text">SmileDent · Стоматологія</span>
+  <!-- TOP BADGE -->
+  <div class="hv2-top">
+    <div class="hv2-badge"><span class="hv2-badge-dot"></span>Відкриті для нових проєктів</div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="hv2-main">
+
+    <!-- TEXT -->
+    <div class="hv2-text">
+      <div class="hv2-eyebrow">Digital Agency · Вінниця</div>
+      <h1 class="hv2-title">Ми будуємо<br><span class="hv2-shine">цифрові продукти</span><br>що продають</h1>
+      <p class="hv2-desc">Преміальний дизайн. Запуск за 2–4 тижні.<br>Клієнти телефонують самі.</p>
+      <div class="hv2-btns">
+        <a href="#cases" class="hv2-btn-p">Дивитися роботи <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#contact" class="hv2-btn-g">Обговорити →</a>
+      </div>
+      <div class="hv2-stats">
+        <div class="hv2-stat"><span class="hv2-stat-n">7+</span><span class="hv2-stat-l">проєктів</span></div>
+        <div class="hv2-stat-div"></div>
+        <div class="hv2-stat"><span class="hv2-stat-n">14д</span><span class="hv2-stat-l">до запуску</span></div>
+        <div class="hv2-stat-div"></div>
+        <div class="hv2-stat"><span class="hv2-stat-n">4.9★</span><span class="hv2-stat-l">рейтинг</span></div>
+      </div>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="hs-content">
-        <div class="hs-eyebrow">Digital Agency · Вінниця</div>
-        <h1 class="hs-title">Ми будуємо<br><span class="hs-title-grad">сайти, які</span><br>продають</h1>
-        <p class="hs-desc">Преміальний дизайн за 2–4 тижні</p>
-        <div class="hs-btns">
-            <a href="#cases" class="hs-btn-primary">Дивитися роботи</a>
-            <a href="#contact" class="hs-btn-ghost">Обговорити проєкт</a>
-        </div>
-    </div>
+    <!-- PHONE SCENE -->
+    <div class="hv2-scene">
+      <div class="hv2-aura" id="hv2-aura"></div>
 
-    <!-- SLIDE PROGRESS BARS -->
-    <div class="hs-progress" id="hs-progress">
-        <div class="hs-prog-item hs-prog-item--active"><div class="hs-prog-fill" id="hs-fill-0"></div></div>
-        <div class="hs-prog-item"><div class="hs-prog-fill" id="hs-fill-1"></div></div>
-        <div class="hs-prog-item"><div class="hs-prog-fill" id="hs-fill-2"></div></div>
-        <div class="hs-prog-item"><div class="hs-prog-fill" id="hs-fill-3"></div></div>
-        <div class="hs-prog-item"><div class="hs-prog-fill" id="hs-fill-4"></div></div>
-    </div>
+      <!-- iPhone 16 Pro -->
+      <div class="hv2-phone" id="hv2-phone">
+        <div class="hv2-phone-frame">
+          <div class="hv2-btn-action"></div>
+          <div class="hv2-btn-vol1"></div>
+          <div class="hv2-btn-vol2"></div>
+          <div class="hv2-btn-power"></div>
+          <div class="hv2-bezel">
+            <div class="hv2-notch"></div>
+            <div class="hv2-screen" id="hv2-screen">
 
-    <!-- SCROLL CUE -->
-    <div class="hs-scroll">
-        <div class="hs-scroll-line"></div>
-    </div>
+              <div class="hv2-slide hv2-slide--on" data-i="0">
+                <div class="hv2-sh" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)">
+                  <div class="hv2-slogo">Smile<b>Dent</b></div><div class="hv2-stag">Стоматологія</div>
+                </div>
+                <div class="hv2-sb">
+                  <div class="hv2-simg" style="background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&q=80')"></div>
+                  <div class="hv2-scta" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)">Безкоштовна консультація →</div>
+                  <div class="hv2-schips"><span>🦷 Без болю</span><span>⭐ 4.9</span><span>500+</span></div>
+                  <div class="hv2-sreview"><div class="hv2-sstars">★★★★★</div><div>"Нарешті клініка, де не страшно"</div></div>
+                </div>
+              </div>
+
+              <div class="hv2-slide" data-i="1">
+                <div class="hv2-sh" style="background:#0A0A0A">
+                  <div class="hv2-slogo" style="color:#C8A654">BLACK<b style="color:#fff">HORSE</b></div><div class="hv2-stag" style="color:rgba(200,166,84,.6)">Men's Club</div>
+                </div>
+                <div class="hv2-sb" style="background:#0D0D0D">
+                  <div class="hv2-simg" style="background-image:url('https://images.unsplash.com/photo-1621605815971-fbc98d665571?w=500&q=80')"></div>
+                  <div class="hv2-scta" style="background:linear-gradient(135deg,#C8A654,#E8C87A);color:#000">Reserve Your Chair →</div>
+                  <div class="hv2-schips"><span style="background:rgba(200,166,84,.12);color:#C8A654;border-color:rgba(200,166,84,.25)">♞ Style Match</span><span style="background:rgba(200,166,84,.12);color:#C8A654;border-color:rgba(200,166,84,.25)">1800+</span></div>
+                </div>
+              </div>
+
+              <div class="hv2-slide" data-i="2">
+                <div class="hv2-sh" style="background:linear-gradient(135deg,#00D4FF,#006CE0)">
+                  <div class="hv2-slogo">Detail<b>Lab</b></div><div class="hv2-stag">Автодетейлінг</div>
+                </div>
+                <div class="hv2-sb">
+                  <div class="hv2-simg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80')"></div>
+                  <div class="hv2-scta" style="background:linear-gradient(135deg,#00D4FF,#006CE0)">Розрахувати вартість →</div>
+                  <div class="hv2-schips"><span>🔬 Кераміка</span><span>✓ PPF</span><span>100+ робіт</span></div>
+                </div>
+              </div>
+
+              <div class="hv2-slide" data-i="3">
+                <div class="hv2-sh" style="background:#0A0A0A">
+                  <div class="hv2-slogo" style="color:#7CFF6B">FIT<b style="color:#fff">CORE</b></div><div class="hv2-stag" style="color:rgba(124,255,107,.6)">Transformation</div>
+                </div>
+                <div class="hv2-sb" style="background:#0D0D0D">
+                  <div class="hv2-simg" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80')"></div>
+                  <div class="hv2-scta" style="background:linear-gradient(135deg,#7CFF6B,#39E0C9);color:#000">Почати трансформацію →</div>
+                  <div class="hv2-schips"><span style="background:rgba(124,255,107,.1);color:#7CFF6B;border-color:rgba(124,255,107,.25)">⚡ 92% досягають</span><span style="background:rgba(124,255,107,.1);color:#7CFF6B;border-color:rgba(124,255,107,.25)">1200+</span></div>
+                </div>
+              </div>
+
+              <div class="hv2-slide" data-i="4">
+                <div class="hv2-sh" style="background:linear-gradient(135deg,#1e3a5f,#0d2137)">
+                  <div class="hv2-slogo">URBAN<b>BUILD</b></div><div class="hv2-stag">Будівництво</div>
+                </div>
+                <div class="hv2-sb" style="background:#0f1a25">
+                  <div class="hv2-simg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=80')"></div>
+                  <div class="hv2-scta" style="background:linear-gradient(135deg,#2196F3,#1565C0)">Обговорити проєкт →</div>
+                  <div class="hv2-schips"><span style="background:rgba(33,150,243,.12);color:#60a5fa;border-color:rgba(33,150,243,.2)">🏗️ 150+ об'єктів</span><span style="background:rgba(33,150,243,.12);color:#60a5fa;border-color:rgba(33,150,243,.2)">250 000 м²</span></div>
+                </div>
+              </div>
+
+            </div><!-- /screen -->
+            <div class="hv2-reflection"></div>
+          </div><!-- /bezel -->
+        </div><!-- /frame -->
+      </div><!-- /phone -->
+
+      <!-- Floating cards -->
+      <div class="hv2-fc hv2-fc--1"><span class="hv2-fc-icon">📈</span><span class="hv2-fc-num">+340%</span><span class="hv2-fc-lbl">заявок</span></div>
+      <div class="hv2-fc hv2-fc--2"><span class="hv2-fc-icon">⚡</span><span class="hv2-fc-num">14 днів</span><span class="hv2-fc-lbl">до запуску</span></div>
+      <div class="hv2-fc hv2-fc--3"><span class="hv2-fc-icon">★</span><span class="hv2-fc-num">4.9 / 5</span><span class="hv2-fc-lbl">рейтинг</span></div>
+
+      <!-- Dots -->
+      <div class="hv2-dots" id="hv2-dots">
+        <span class="hv2-dot hv2-dot--on" data-i="0"></span>
+        <span class="hv2-dot" data-i="1"></span>
+        <span class="hv2-dot" data-i="2"></span>
+        <span class="hv2-dot" data-i="3"></span>
+        <span class="hv2-dot" data-i="4"></span>
+      </div>
+    </div><!-- /scene -->
+
+  </div><!-- /main -->
+
+  <div class="hv2-scroll"><div class="hv2-scroll-ln"></div></div>
 </section>
 
 <!-- ===== BEFORE / AFTER ===== -->
@@ -631,51 +721,56 @@ function closeM() {
     document.body.style.overflow = '';
 }
 
-// ===== FULLSCREEN HERO SHOWCASE SLIDER =====
+// ===== HERO V2 — iPhone slider + aura + tilt =====
 (function(){
-    var slides = document.querySelectorAll('.hs-slide');
-    var fills = document.querySelectorAll('.hs-prog-fill');
-    var progItems = document.querySelectorAll('.hs-prog-item');
-    var tagEl = document.getElementById('hs-tag-text');
-    var tags = ['SmileDent · Стоматологія','BlackHorse · Men\'s Club','FitCore · Фітнес','DetailLab · Детейлінг','Osteria Uno · Ресторан'];
-    var DURATION = 4000;
-    var cur = 0, timer;
-
-    function activate(idx) {
-        slides[cur].classList.remove('hs-slide--active');
-        fills[cur].style.transition = 'none';
-        fills[cur].style.width = '0%';
-        progItems[cur].classList.remove('hs-prog-item--active');
+    var slides = document.querySelectorAll('.hv2-slide');
+    var dots   = document.querySelectorAll('.hv2-dot');
+    var aura   = document.getElementById('hv2-aura');
+    if(!slides.length) return;
+    var DURATION = 4000, cur = 0, timer;
+    var auraColors = [
+        'radial-gradient(circle, rgba(14,165,233,.45) 0%, transparent 70%)',
+        'radial-gradient(circle, rgba(200,166,84,.35) 0%, transparent 70%)',
+        'radial-gradient(circle, rgba(0,212,255,.4)   0%, transparent 70%)',
+        'radial-gradient(circle, rgba(124,255,107,.35) 0%, transparent 70%)',
+        'radial-gradient(circle, rgba(33,150,243,.4)  0%, transparent 70%)'
+    ];
+    function activate(idx){
+        slides[cur].classList.add('hv2-slide--out');
+        slides[cur].classList.remove('hv2-slide--on');
+        dots[cur].classList.remove('hv2-dot--on');
+        var prev = cur;
         cur = (idx + slides.length) % slides.length;
-        slides[cur].classList.add('hs-slide--active');
-        progItems[cur].classList.add('hs-prog-item--active');
-        if(tagEl){ tagEl.style.opacity='0'; setTimeout(function(){ tagEl.textContent=tags[cur]; tagEl.style.opacity='1'; }, 250); }
-        fills[cur].style.transition = 'none';
-        fills[cur].style.width = '0%';
-        requestAnimationFrame(function(){
-            requestAnimationFrame(function(){
-                fills[cur].style.transition = 'width '+DURATION+'ms linear';
-                fills[cur].style.width = '100%';
-            });
-        });
+        setTimeout(function(){ slides[prev].classList.remove('hv2-slide--out'); }, 650);
+        slides[cur].classList.add('hv2-slide--on');
+        dots[cur].classList.add('hv2-dot--on');
+        if(aura) aura.style.background = auraColors[cur];
     }
-    function startTimer() { clearInterval(timer); timer = setInterval(function(){ activate(cur+1); }, DURATION); }
-
-    activate(0);
+    function startTimer(){ clearInterval(timer); timer = setInterval(function(){ activate(cur+1); }, DURATION); }
+    if(aura) aura.style.background = auraColors[0];
     startTimer();
-
-    var hsSec = document.querySelector('.hero-showcase');
+    dots.forEach(function(d,i){ d.addEventListener('click', function(){ activate(i); startTimer(); }); });
+    var phone = document.getElementById('hv2-phone');
     var tx0 = 0;
-    if(hsSec){
-        hsSec.addEventListener('touchstart', function(e){ tx0=e.touches[0].clientX; }, {passive:true});
-        hsSec.addEventListener('touchend', function(e){
-            var dx=e.changedTouches[0].clientX-tx0;
-            if(Math.abs(dx)>50){ activate(dx<0?cur+1:cur-1); startTimer(); }
+    if(phone){
+        phone.addEventListener('touchstart', function(e){ tx0 = e.touches[0].clientX; }, {passive:true});
+        phone.addEventListener('touchend', function(e){
+            var dx = e.changedTouches[0].clientX - tx0;
+            if(Math.abs(dx) > 40){ activate(dx < 0 ? cur+1 : cur-1); startTimer(); }
         }, {passive:true});
     }
-    progItems.forEach(function(item,i){ item.addEventListener('click', function(){ activate(i); startTimer(); }); });
+    var main = document.querySelector('.hv2-main');
+    var scene = document.querySelector('.hv2-scene');
+    if(main && scene && window.innerWidth > 768){
+        main.addEventListener('mousemove', function(e){
+            var r = scene.getBoundingClientRect();
+            var dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
+            var dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
+            if(phone) phone.style.transform = 'translateY(-8px) rotateX('+(-dy*5)+'deg) rotateY('+(dx*6)+'deg)';
+        });
+        main.addEventListener('mouseleave', function(){ if(phone) phone.style.transform = ''; });
+    }
 })();
-
 // ===== BEFORE/AFTER SLIDER =====
 (function(){
     var slider = document.getElementById('ba-slider');

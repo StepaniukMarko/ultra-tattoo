@@ -1528,3 +1528,989 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05)}
 }
 
 /* ===== END FINAL POLISH v5 ===== */
+
+
+/* =====================================================
+   HERO V2 — iPhone 16 Pro · Cinematic · Premium
+   Apple + Linear + Stripe inspiration
+   ===================================================== */
+
+/* ── Base ── */
+.hero-v2 {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #060912;
+    padding-top: 60px;
+}
+
+/* ── Ambient background ── */
+.hv2-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+.hv2-bg-grad {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 60% -10%, rgba(59,130,246,.22) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 10% 80%,  rgba(6,182,212,.1)  0%, transparent 55%),
+        radial-gradient(ellipse 40% 30% at 90% 90%,  rgba(124,58,237,.08) 0%, transparent 50%);
+}
+.hv2-bg-noise {
+    position: absolute;
+    inset: 0;
+    opacity: .025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px;
+}
+.hv2-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    will-change: transform;
+}
+.hv2-orb--1 {
+    width: 520px; height: 520px;
+    top: -140px; right: -100px;
+    background: rgba(59,130,246,.12);
+    animation: orb-drift-1 18s ease-in-out infinite;
+}
+.hv2-orb--2 {
+    width: 380px; height: 380px;
+    bottom: -80px; left: -80px;
+    background: rgba(6,182,212,.08);
+    animation: orb-drift-2 22s ease-in-out infinite;
+}
+.hv2-orb--3 {
+    width: 260px; height: 260px;
+    top: 40%; left: 30%;
+    background: rgba(124,58,237,.06);
+    animation: orb-drift-3 16s ease-in-out infinite;
+}
+@keyframes orb-drift-1 {
+    0%,100%{ transform:translate(0,0) scale(1); }
+    33%    { transform:translate(-40px,30px) scale(1.08); }
+    66%    { transform:translate(20px,-20px) scale(.94); }
+}
+@keyframes orb-drift-2 {
+    0%,100%{ transform:translate(0,0); }
+    50%    { transform:translate(30px,-40px); }
+}
+@keyframes orb-drift-3 {
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%    { transform:translate(-20px,20px) scale(1.1); }
+}
+.hv2-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(59,130,246,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 0%, transparent 100%);
+}
+
+/* ── Top badge ── */
+.hv2-top {
+    position: relative;
+    z-index: 10;
+    padding: 20px 24px 0;
+}
+.hv2-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    color: rgba(255,255,255,.7);
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 6px 14px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.hv2-badge-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #22C55E;
+    box-shadow: 0 0 8px rgba(34,197,94,.9);
+    flex-shrink: 0;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ── Main grid ── */
+.hv2-main {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 32px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ── Text column ── */
+.hv2-eyebrow {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+    margin-bottom: 18px;
+}
+.hv2-title {
+    font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+    font-weight: 900;
+    letter-spacing: -.045em;
+    line-height: .97;
+    color: #F0F4FF;
+    margin-bottom: 20px;
+    animation: hv2-rise .9s cubic-bezier(.16,1,.3,1) .1s both;
+}
+.hv2-title-shine {
+    background: linear-gradient(135deg, #60a5fa 0%, #06b6d4 50%, #a78bfa 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shine-move 4s linear infinite;
+}
+@keyframes shine-move {
+    0%  { background-position: 0% center; }
+    100%{ background-position: 200% center; }
+}
+@keyframes hv2-rise {
+    from { opacity:0; transform:translateY(28px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+.hv2-desc {
+    font-size: 1rem;
+    color: rgba(240,244,255,.5);
+    line-height: 1.75;
+    margin-bottom: 32px;
+    animation: hv2-rise .9s cubic-bezier(.16,1,.3,1) .25s both;
+}
+.hv2-btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    animation: hv2-rise .9s cubic-bezier(.16,1,.3,1) .38s both;
+}
+.hv2-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    padding: 15px 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 28px rgba(59,130,246,.45), 0 0 0 1px rgba(59,130,246,.2);
+    transition: transform .25s ease, box-shadow .25s ease;
+    letter-spacing: .01em;
+    min-height: 50px;
+}
+.hv2-btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 36px rgba(59,130,246,.55); }
+.hv2-btn-primary:active { transform:scale(.97); }
+.hv2-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    color: rgba(240,244,255,.75);
+    font-size: .95rem;
+    font-weight: 600;
+    padding: 15px 24px;
+    border-radius: 12px;
+    min-height: 50px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all .25s ease;
+}
+.hv2-btn-ghost:hover { background:rgba(255,255,255,.1); color:#F0F4FF; }
+
+/* Trust row */
+.hv2-trust {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: hv2-rise .9s cubic-bezier(.16,1,.3,1) .5s both;
+}
+.hv2-trust-item { text-align: center; }
+.hv2-trust-num {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: -.04em;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hv2-trust-label {
+    display: block;
+    font-size: .62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: rgba(240,244,255,.35);
+    margin-top: 2px;
+}
+.hv2-trust-divider {
+    width: 1px; height: 36px;
+    background: rgba(255,255,255,.1);
+}
+
+/* ── Phone scene ── */
+.hv2-phone-scene {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+/* Aura glow */
+.hv2-phone-aura {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59,130,246,.35) 0%, transparent 70%);
+    filter: blur(40px);
+    transition: background .8s ease;
+    will-change: background;
+    pointer-events: none;
+}
+
+/* iPhone 16 Pro frame */
+.hv2-phone {
+    position: relative;
+    width: 270px;
+    height: 560px;
+    border-radius: 50px;
+    background: linear-gradient(160deg, #2a2a2e 0%, #1a1a1e 40%, #111114 100%);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.12),
+        0 0 0 3px #1a1a1e,
+        0 0 0 4px rgba(255,255,255,.06),
+        0 40px 80px rgba(0,0,0,.8),
+        0 0 80px rgba(59,130,246,.15),
+        inset 0 1px 0 rgba(255,255,255,.08),
+        inset 0 -1px 0 rgba(0,0,0,.4);
+    animation: phone-float 6s ease-in-out infinite;
+    will-change: transform;
+    z-index: 2;
+}
+@keyframes phone-float {
+    0%,100%{ transform:translateY(0) rotateX(0) rotateY(0); }
+    25%    { transform:translateY(-12px) rotateX(1deg) rotateY(-1deg); }
+    75%    { transform:translateY(-6px) rotateX(-1deg) rotateY(1deg); }
+}
+
+/* Side buttons */
+.hv2-phone-side {
+    position: absolute;
+    top: 30%;
+    width: 3px;
+    height: 60px;
+    background: linear-gradient(to bottom, #3a3a3e, #2a2a2e);
+    border-radius: 0 2px 2px 0;
+}
+.hv2-phone-side--left  { left: -3px; top: 28%; border-radius: 2px 0 0 2px; height: 70px; }
+.hv2-phone-side--right { right: -3px; top: 32%; border-radius: 0 2px 2px 0; }
+
+.hv2-phone-btn {
+    position: absolute;
+    left: -3px;
+    width: 3px;
+    background: linear-gradient(to bottom, #3a3a3e, #2a2a2e);
+    border-radius: 2px 0 0 2px;
+}
+.hv2-phone-btn--vol1 { top: 22%; height: 32px; }
+.hv2-phone-btn--vol2 { top: 32%; height: 32px; }
+.hv2-phone-btn--power { left: auto; right: -3px; top: 28%; height: 48px; border-radius: 0 2px 2px 0; }
+
+/* Bezel */
+.hv2-phone-bezel {
+    position: absolute;
+    inset: 6px;
+    border-radius: 44px;
+    overflow: hidden;
+    background: #000;
+}
+
+/* Dynamic island */
+.hv2-phone-notch {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 26px;
+    background: #000;
+    border-radius: 20px;
+    z-index: 20;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.05);
+}
+
+/* Screen */
+.hv2-screen {
+    position: absolute;
+    inset: 0;
+    border-radius: 44px;
+    overflow: hidden;
+}
+
+/* Reflection shimmer */
+.hv2-phone-reflection {
+    position: absolute;
+    inset: 0;
+    border-radius: 44px;
+    background: linear-gradient(
+        125deg,
+        rgba(255,255,255,.07) 0%,
+        transparent 40%,
+        transparent 60%,
+        rgba(255,255,255,.03) 100%
+    );
+    pointer-events: none;
+    z-index: 30;
+}
+
+/* ── Screen slides ── */
+.hv2-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    opacity: 0;
+    transform: scale(.97);
+    transition:
+        opacity .6s cubic-bezier(.4,0,.2,1),
+        transform .6s cubic-bezier(.4,0,.2,1);
+    will-change: opacity, transform;
+}
+.hv2-slide--active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 5;
+}
+.hv2-slide--exit {
+    opacity: 0;
+    transform: scale(1.02);
+    z-index: 4;
+}
+
+.hv2-slide-head {
+    padding: 40px 14px 12px;
+    flex-shrink: 0;
+}
+.hv2-slide-logo {
+    font-size: .95rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.02em;
+}
+.hv2-slide-logo b { font-weight: 900; }
+.hv2-slide-tag {
+    font-size: .58rem;
+    color: rgba(255,255,255,.55);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+.hv2-slide-body {
+    flex: 1;
+    background: #f5f7fa;
+    padding: 12px 12px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    overflow: hidden;
+}
+.hv2-slide-img {
+    height: 105px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+.hv2-slide-cta {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: #fff;
+    font-size: .65rem;
+    font-weight: 700;
+    padding: 9px 12px;
+    border-radius: 8px;
+    text-align: center;
+    letter-spacing: .02em;
+    flex-shrink: 0;
+}
+.hv2-slide-chips {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+.hv2-slide-chips span {
+    font-size: .57rem;
+    font-weight: 600;
+    background: rgba(59,130,246,.08);
+    color: #3b82f6;
+    border: 1px solid rgba(59,130,246,.15);
+    padding: 3px 7px;
+    border-radius: 5px;
+}
+.hv2-slide-review {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    flex-shrink: 0;
+}
+.hv2-slide-stars {
+    color: #F59E0B;
+    font-size: .62rem;
+    margin-bottom: 3px;
+    letter-spacing: .04em;
+}
+.hv2-slide-review div:last-child {
+    font-size: .58rem;
+    color: #334155;
+    line-height: 1.4;
+}
+
+/* ── Floating cards ── */
+.hv2-float-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(15,20,35,.85);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+    padding: 10px 14px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0,0,0,.4), 0 0 0 1px rgba(59,130,246,.1);
+    z-index: 20;
+    white-space: nowrap;
+}
+.hv2-fc-icon { font-size: 1.1rem; flex-shrink: 0; }
+.hv2-fc-num {
+    font-size: .88rem;
+    font-weight: 800;
+    color: #F0F4FF;
+    letter-spacing: -.02em;
+    line-height: 1.1;
+}
+.hv2-fc-label {
+    font-size: .6rem;
+    color: rgba(240,244,255,.45);
+    font-weight: 500;
+}
+
+.hv2-float-card--1 {
+    top: 12%;
+    right: -10px;
+    animation: fc-float-1 7s ease-in-out infinite;
+}
+.hv2-float-card--2 {
+    bottom: 22%;
+    right: -14px;
+    animation: fc-float-2 8s ease-in-out infinite .5s;
+}
+.hv2-float-card--3 {
+    bottom: 10%;
+    left: -10px;
+    animation: fc-float-3 9s ease-in-out infinite 1s;
+}
+@keyframes fc-float-1 {
+    0%,100%{ transform:translateY(0); }
+    50%    { transform:translateY(-8px); }
+}
+@keyframes fc-float-2 {
+    0%,100%{ transform:translateY(0); }
+    50%    { transform:translateY(-6px); }
+}
+@keyframes fc-float-3 {
+    0%,100%{ transform:translateY(0); }
+    50%    { transform:translateY(-10px); }
+}
+
+/* Dots */
+.hv2-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 30;
+}
+.hv2-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.2);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.hv2-dot--active {
+    width: 16px;
+    border-radius: 3px;
+    background: rgba(255,255,255,.88);
+}
+
+/* ── Scroll cue ── */
+.hv2-scroll {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.hv2-scroll-line {
+    width: 1px;
+    height: 44px;
+    background: linear-gradient(to bottom, transparent, rgba(59,130,246,.5), transparent);
+    animation: scroll-pulse 2.2s ease-in-out infinite;
+}
+
+/* ── MOBILE ── */
+@media(max-width:768px) {
+    .hv2-main {
+        grid-template-columns: 1fr;
+        padding: 16px 20px 80px;
+        gap: 32px;
+    }
+
+    /* Text first, phone second */
+    .hv2-text { order: 1; text-align: center; }
+    .hv2-phone-scene { order: 2; }
+
+    .hv2-title {
+        font-size: clamp(2.6rem,10.5vw,3.5rem);
+        letter-spacing: -.045em;
+        line-height: .97;
+    }
+    .hv2-desc { font-size: .95rem; max-width: 100%; }
+
+    .hv2-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 28px;
+    }
+    .hv2-btn-primary,
+    .hv2-btn-ghost {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 17px 28px;
+        border-radius: 13px;
+        min-height: 54px;
+    }
+
+    .hv2-trust { justify-content: center; }
+    .hv2-trust-num { font-size: 1.2rem; }
+
+    /* Phone — smaller but still premium */
+    .hv2-phone { width: 220px; height: 454px; border-radius: 44px; }
+    .hv2-phone-bezel { border-radius: 38px; }
+    .hv2-phone-notch { width: 76px; height: 22px; }
+    .hv2-screen { border-radius: 38px; }
+    .hv2-phone-reflection { border-radius: 38px; }
+    .hv2-phone-aura { width: 220px; height: 220px; }
+
+    /* Floating cards — tuck closer */
+    .hv2-float-card { display: none; }
+    .hv2-float-card--1 { display: flex; top: -8px; right: -8px; padding: 8px 11px; border-radius: 11px; }
+    .hv2-float-card--2 { display: flex; bottom: -8px; right: -8px; padding: 8px 11px; border-radius: 11px; }
+    .hv2-fc-num { font-size: .78rem; }
+    .hv2-fc-label { font-size: .54rem; }
+    .hv2-fc-icon { font-size: .95rem; }
+
+    .hv2-scroll { display: none; }
+    .hv2-top { padding: 16px 20px 0; }
+}
+
+@media(max-width:390px) {
+    .hv2-title { font-size: clamp(2.4rem,10vw,3rem); }
+    .hv2-phone { width: 200px; height: 414px; border-radius: 40px; }
+    .hv2-phone-bezel { border-radius: 34px; }
+    .hv2-screen { border-radius: 34px; }
+    .hv2-phone-reflection { border-radius: 34px; }
+}
+@media(max-width:360px) {
+    .hv2-phone { width: 188px; height: 390px; }
+}
+
+/* ── DESKTOP ── */
+@media(min-width:769px) {
+    .hv2-main { align-items: center; min-height: calc(100svh - 120px); }
+    .hv2-phone-scene { padding: 60px 0; }
+}
+
+/* ===== END HERO V2 ===== */
+
+
+/* =====================================================
+   HERO V2 — FINAL CSS (matches hv2-* classes in HTML)
+   ===================================================== */
+
+/* Section */
+.hero-v2 {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #060912;
+    padding-top: 60px;
+}
+
+/* Background system */
+.hv2-bg { position:absolute; inset:0; pointer-events:none; z-index:0; }
+.hv2-bg-grad {
+    position:absolute; inset:0;
+    background:
+        radial-gradient(ellipse 80% 60% at 62% -5%,  rgba(59,130,246,.2) 0%, transparent 58%),
+        radial-gradient(ellipse 50% 40% at 8%  80%,  rgba(6,182,212,.1)  0%, transparent 55%),
+        radial-gradient(ellipse 40% 30% at 88% 90%,  rgba(124,58,237,.07) 0%, transparent 50%);
+}
+.hv2-orb {
+    position:absolute; border-radius:50%;
+    filter:blur(80px); will-change:transform;
+}
+.hv2-orb--1 { width:500px;height:500px;top:-120px;right:-80px; background:rgba(59,130,246,.12); animation:hv2o1 18s ease-in-out infinite; }
+.hv2-orb--2 { width:360px;height:360px;bottom:-80px;left:-80px; background:rgba(6,182,212,.08); animation:hv2o2 22s ease-in-out infinite; }
+.hv2-orb--3 { width:250px;height:250px;top:40%;left:28%; background:rgba(124,58,237,.06); animation:hv2o3 16s ease-in-out infinite; }
+@keyframes hv2o1 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(-40px,30px) scale(1.07)} 66%{transform:translate(20px,-20px) scale(.95)} }
+@keyframes hv2o2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-40px)} }
+@keyframes hv2o3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-20px,20px) scale(1.1)} }
+.hv2-grid {
+    position:absolute; inset:0;
+    background-image:
+        linear-gradient(rgba(59,130,246,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,.04) 1px, transparent 1px);
+    background-size:72px 72px;
+    mask-image:radial-gradient(ellipse 80% 70% at 50% 40%, black 0%, transparent 100%);
+}
+
+/* Badge */
+.hv2-top { position:relative; z-index:10; padding:20px 24px 0; }
+.hv2-badge {
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:.72rem; font-weight:600; letter-spacing:.04em;
+    color:rgba(255,255,255,.7);
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+    padding:6px 14px; border-radius:100px;
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+.hv2-badge-dot {
+    width:7px;height:7px;border-radius:50%;
+    background:#22C55E; box-shadow:0 0 8px rgba(34,197,94,.9);
+    flex-shrink:0; animation:pulse-dot 2s ease-in-out infinite;
+}
+
+/* Main layout */
+.hv2-main {
+    position:relative; z-index:10; flex:1;
+    display:grid; grid-template-columns:1fr 1fr; gap:40px;
+    align-items:center; padding:32px 40px 60px;
+    max-width:1200px; margin:0 auto; width:100%;
+}
+
+/* Text */
+.hv2-eyebrow {
+    font-size:.72rem; font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:18px;
+}
+.hv2-title {
+    font-size:clamp(2.6rem,4.5vw,4.4rem); font-weight:900;
+    letter-spacing:-.045em; line-height:.97; color:#F0F4FF;
+    margin-bottom:20px;
+    animation:hv2rise .9s cubic-bezier(.16,1,.3,1) .1s both;
+}
+.hv2-shine {
+    background:linear-gradient(135deg,#60a5fa 0%,#06b6d4 50%,#a78bfa 100%);
+    background-size:200% auto;
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    animation:hv2shine 4s linear infinite;
+}
+@keyframes hv2shine { 0%{background-position:0% center} 100%{background-position:200% center} }
+@keyframes hv2rise  { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
+
+.hv2-desc {
+    font-size:1rem; color:rgba(240,244,255,.5); line-height:1.75; margin-bottom:32px;
+    animation:hv2rise .9s cubic-bezier(.16,1,.3,1) .25s both;
+}
+.hv2-btns {
+    display:flex; gap:12px; flex-wrap:wrap; margin-bottom:40px;
+    animation:hv2rise .9s cubic-bezier(.16,1,.3,1) .38s both;
+}
+.hv2-btn-p {
+    display:inline-flex; align-items:center; gap:8px;
+    background:linear-gradient(135deg,#3b82f6,#1d4ed8); color:#fff;
+    font-size:.95rem; font-weight:700; padding:15px 28px; border-radius:12px;
+    box-shadow:0 6px 28px rgba(59,130,246,.45), 0 0 0 1px rgba(59,130,246,.2);
+    transition:transform .25s ease,box-shadow .25s ease; min-height:50px;
+}
+.hv2-btn-p:hover { transform:translateY(-2px); box-shadow:0 10px 36px rgba(59,130,246,.55); }
+.hv2-btn-p:active { transform:scale(.97); }
+.hv2-btn-g {
+    display:inline-flex; align-items:center; gap:6px;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+    color:rgba(240,244,255,.75); font-size:.95rem; font-weight:600;
+    padding:15px 24px; border-radius:12px; min-height:50px;
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    transition:all .25s ease;
+}
+.hv2-btn-g:hover { background:rgba(255,255,255,.1); color:#F0F4FF; }
+
+/* Stats */
+.hv2-stats {
+    display:flex; align-items:center; gap:20px;
+    animation:hv2rise .9s cubic-bezier(.16,1,.3,1) .5s both;
+}
+.hv2-stat { text-align:center; }
+.hv2-stat-n {
+    display:block; font-size:1.4rem; font-weight:900; letter-spacing:-.04em;
+    background:linear-gradient(135deg,#3b82f6,#06b6d4);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.hv2-stat-l {
+    display:block; font-size:.62rem; font-weight:600; text-transform:uppercase;
+    letter-spacing:.08em; color:rgba(240,244,255,.35); margin-top:2px;
+}
+.hv2-stat-div { width:1px; height:36px; background:rgba(255,255,255,.1); }
+
+/* Phone scene */
+.hv2-scene {
+    position:relative; display:flex; justify-content:center;
+    align-items:center; padding:40px 0;
+}
+
+/* Aura */
+.hv2-aura {
+    position:absolute; width:280px; height:280px; border-radius:50%;
+    background:radial-gradient(circle,rgba(59,130,246,.35) 0%,transparent 70%);
+    filter:blur(40px); transition:background .8s ease;
+    will-change:background; pointer-events:none;
+}
+
+/* iPhone 16 Pro */
+.hv2-phone {
+    position:relative; z-index:2;
+    animation:hv2float 6s ease-in-out infinite; will-change:transform;
+}
+@keyframes hv2float {
+    0%,100%{transform:translateY(0) rotateX(0) rotateY(0)}
+    25%    {transform:translateY(-12px) rotateX(1deg) rotateY(-1deg)}
+    75%    {transform:translateY(-6px) rotateX(-1deg) rotateY(1deg)}
+}
+.hv2-phone-frame {
+    width:270px; height:560px; border-radius:50px;
+    background:linear-gradient(160deg,#2a2a2e 0%,#1a1a1e 40%,#111114 100%);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.12),
+        0 0 0 3px #1a1a1e,
+        0 0 0 4px rgba(255,255,255,.06),
+        0 40px 80px rgba(0,0,0,.8),
+        0 0 80px rgba(59,130,246,.15),
+        inset 0 1px 0 rgba(255,255,255,.08),
+        inset 0 -1px 0 rgba(0,0,0,.4);
+    position:relative;
+}
+
+/* Physical buttons */
+.hv2-btn-vol1,.hv2-btn-vol2,.hv2-btn-action {
+    position:absolute; left:-3px; width:3px;
+    background:linear-gradient(to bottom,#3a3a3e,#2a2a2e);
+    border-radius:2px 0 0 2px;
+}
+.hv2-btn-action { top:18%; height:28px; }
+.hv2-btn-vol1   { top:30%; height:30px; }
+.hv2-btn-vol2   { top:40%; height:30px; }
+.hv2-btn-power  {
+    position:absolute; right:-3px; top:28%; height:48px; width:3px;
+    background:linear-gradient(to bottom,#3a3a3e,#2a2a2e);
+    border-radius:0 2px 2px 0;
+}
+
+/* Bezel */
+.hv2-bezel {
+    position:absolute; inset:5px; border-radius:46px;
+    overflow:hidden; background:#000;
+}
+
+/* Dynamic Island */
+.hv2-notch {
+    position:absolute; top:12px; left:50%; transform:translateX(-50%);
+    width:88px; height:26px; background:#000; border-radius:20px; z-index:20;
+    box-shadow:0 0 0 1px rgba(255,255,255,.05);
+}
+
+/* Screen */
+.hv2-screen {
+    position:absolute; inset:0; border-radius:46px; overflow:hidden;
+}
+
+/* Reflection */
+.hv2-reflection {
+    position:absolute; inset:0; border-radius:46px;
+    background:linear-gradient(125deg,rgba(255,255,255,.07) 0%,transparent 40%,transparent 60%,rgba(255,255,255,.03) 100%);
+    pointer-events:none; z-index:30;
+}
+
+/* Slides */
+.hv2-slide {
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; background:#fff;
+    opacity:0; transform:scale(.97);
+    transition:opacity .6s cubic-bezier(.4,0,.2,1), transform .6s cubic-bezier(.4,0,.2,1);
+    will-change:opacity,transform;
+}
+.hv2-slide--on  { opacity:1; transform:scale(1); z-index:5; }
+.hv2-slide--out { opacity:0; transform:scale(1.02); z-index:4; }
+
+/* Slide header */
+.hv2-sh { padding:40px 14px 12px; flex-shrink:0; }
+.hv2-slogo { font-size:.95rem; font-weight:700; color:#fff; letter-spacing:-.02em; }
+.hv2-slogo b { font-weight:900; }
+.hv2-stag { font-size:.58rem; color:rgba(255,255,255,.55); letter-spacing:.06em; text-transform:uppercase; margin-top:2px; }
+
+/* Slide body */
+.hv2-sb {
+    flex:1; background:#f5f7fa; padding:12px 12px 48px;
+    display:flex; flex-direction:column; gap:9px; overflow:hidden;
+}
+.hv2-simg {
+    height:105px; border-radius:10px;
+    background-size:cover; background-position:center; flex-shrink:0;
+}
+.hv2-scta {
+    background:linear-gradient(135deg,#3b82f6,#1d4ed8); color:#fff;
+    font-size:.65rem; font-weight:700; padding:9px 12px;
+    border-radius:8px; text-align:center; letter-spacing:.02em; flex-shrink:0;
+}
+.hv2-schips { display:flex; gap:5px; flex-wrap:wrap; flex-shrink:0; }
+.hv2-schips span {
+    font-size:.57rem; font-weight:600;
+    background:rgba(59,130,246,.08); color:#3b82f6;
+    border:1px solid rgba(59,130,246,.15); padding:3px 7px; border-radius:5px;
+}
+.hv2-sreview {
+    background:#fff; border-radius:8px; padding:8px 10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.07); flex-shrink:0;
+}
+.hv2-sstars { color:#F59E0B; font-size:.62rem; margin-bottom:3px; letter-spacing:.04em; }
+.hv2-sreview div:last-child { font-size:.58rem; color:#334155; line-height:1.4; }
+
+/* Floating cards */
+.hv2-fc {
+    position:absolute; display:flex; align-items:center; gap:8px;
+    background:rgba(10,15,28,.88); border:1px solid rgba(255,255,255,.1);
+    border-radius:12px; padding:9px 13px;
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    box-shadow:0 8px 32px rgba(0,0,0,.4),0 0 0 1px rgba(59,130,246,.08);
+    z-index:20; white-space:nowrap;
+}
+.hv2-fc-icon { font-size:1rem; flex-shrink:0; }
+.hv2-fc-num { font-size:.85rem; font-weight:800; color:#F0F4FF; letter-spacing:-.02em; }
+.hv2-fc-lbl { font-size:.58rem; color:rgba(240,244,255,.4); font-weight:500; display:block; }
+.hv2-fc--1 { top:8%; right:-16px; animation:hv2fc1 7s ease-in-out infinite; }
+.hv2-fc--2 { bottom:22%; right:-16px; animation:hv2fc2 8s ease-in-out infinite .5s; }
+.hv2-fc--3 { bottom:10%; left:-16px; animation:hv2fc3 9s ease-in-out infinite 1s; }
+@keyframes hv2fc1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes hv2fc2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+@keyframes hv2fc3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+/* Dots */
+.hv2-dots {
+    position:absolute; bottom:12px; left:50%; transform:translateX(-50%);
+    display:flex; gap:5px; z-index:30;
+}
+.hv2-dot {
+    width:5px; height:5px; border-radius:50%;
+    background:rgba(255,255,255,.2); cursor:pointer;
+    transition:all .3s ease;
+}
+.hv2-dot--on { width:16px; border-radius:3px; background:rgba(255,255,255,.88); }
+
+/* Scroll cue */
+.hv2-scroll { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); z-index:10; }
+.hv2-scroll-ln {
+    width:1px; height:42px;
+    background:linear-gradient(to bottom,transparent,rgba(59,130,246,.5),transparent);
+    animation:scroll-pulse 2.2s ease-in-out infinite;
+}
+
+/* ── MOBILE ── */
+@media(max-width:768px) {
+    .hero-v2 { padding-top:60px; }
+    .hv2-main {
+        grid-template-columns:1fr; padding:16px 20px 72px; gap:28px;
+    }
+    .hv2-text { order:1; text-align:center; }
+    .hv2-scene { order:2; }
+
+    .hv2-title { font-size:clamp(2.6rem,10.5vw,3.5rem); }
+    .hv2-desc  { font-size:.95rem; max-width:100%; }
+    .hv2-btns  { flex-direction:column; align-items:center; gap:10px; margin-bottom:28px; }
+    .hv2-btn-p,.hv2-btn-g {
+        width:100%; max-width:340px; justify-content:center;
+        font-size:1rem; padding:17px 28px; border-radius:13px; min-height:54px;
+    }
+    .hv2-stats { justify-content:center; }
+    .hv2-stat-n { font-size:1.2rem; }
+
+    .hv2-phone-frame { width:220px; height:454px; border-radius:44px; }
+    .hv2-bezel        { border-radius:39px; inset:5px; }
+    .hv2-notch        { width:76px; height:22px; }
+    .hv2-screen       { border-radius:39px; }
+    .hv2-reflection   { border-radius:39px; }
+    .hv2-aura         { width:220px; height:220px; }
+
+    .hv2-fc--3 { display:none; }
+    .hv2-fc--1 { top:-8px; right:-8px; padding:7px 10px; border-radius:10px; }
+    .hv2-fc--2 { bottom:-8px; right:-8px; padding:7px 10px; border-radius:10px; }
+    .hv2-fc-num { font-size:.78rem; }
+    .hv2-fc-lbl { font-size:.54rem; }
+    .hv2-scroll { display:none; }
+}
+
+@media(max-width:390px) {
+    .hv2-title { font-size:clamp(2.3rem,10vw,2.9rem); }
+    .hv2-phone-frame { width:200px; height:414px; border-radius:40px; }
+    .hv2-bezel { border-radius:35px; }
+    .hv2-screen,.hv2-reflection { border-radius:35px; }
+}
+@media(max-width:360px) {
+    .hv2-phone-frame { width:188px; height:390px; }
+}
+
+@media(min-width:769px) {
+    .hv2-main { min-height:calc(100svh - 100px); }
+    .hv2-scene { padding:60px 20px; }
+}
+
+/* ===== END HERO V2 FINAL CSS ===== */
