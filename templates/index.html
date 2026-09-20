@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -77,128 +77,121 @@
     <a href="#contact" onclick="closeM()">Контакти</a>
 </div>
 
-<!-- Hero -->
-<section class="hero">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
+<!-- ===== HERO: FULLSCREEN SHOWCASE ===== -->
+<section class="hero-showcase" id="hero">
+
+    <!-- BG SLIDES — fullscreen auto-cycling project screenshots -->
+    <div class="hs-slides" id="hs-slides">
+        <div class="hs-slide hs-slide--active" style="background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&q=80')"></div>
+        <div class="hs-slide" style="background-image:url('https://images.unsplash.com/photo-1621605815971-fbc98d665571?w=1200&q=80')"></div>
+        <div class="hs-slide" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80')"></div>
+        <div class="hs-slide" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80')"></div>
+        <div class="hs-slide" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80')"></div>
+    </div>
+    <div class="hs-overlay"></div>
+
+    <!-- PROJECT BADGE — changes with slide -->
+    <div class="hs-project-tag" id="hs-tag">
+        <span class="hs-tag-dot"></span>
+        <span id="hs-tag-text">SmileDent · Стоматологія</span>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="hs-content">
+        <div class="hs-eyebrow">Digital Agency · Вінниця</div>
+        <h1 class="hs-title">Ми будуємо<br><span class="hs-title-grad">сайти, які</span><br>продають</h1>
+        <p class="hs-desc">Преміальний дизайн за 2–4 тижні</p>
+        <div class="hs-btns">
+            <a href="#cases" class="hs-btn-primary">Дивитися роботи</a>
+            <a href="#contact" class="hs-btn-ghost">Обговорити проєкт</a>
+        </div>
+    </div>
+
+    <!-- SLIDE PROGRESS BARS -->
+    <div class="hs-progress" id="hs-progress">
+        <div class="hs-prog-item hs-prog-item--active"><div class="hs-prog-fill" id="hs-fill-0"></div></div>
+        <div class="hs-prog-item"><div class="hs-prog-fill" id="hs-fill-1"></div></div>
+        <div class="hs-prog-item"><div class="hs-prog-fill" id="hs-fill-2"></div></div>
+        <div class="hs-prog-item"><div class="hs-prog-fill" id="hs-fill-3"></div></div>
+        <div class="hs-prog-item"><div class="hs-prog-fill" id="hs-fill-4"></div></div>
+    </div>
+
+    <!-- SCROLL CUE -->
+    <div class="hs-scroll">
+        <div class="hs-scroll-line"></div>
+    </div>
+</section>
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section class="sec ba-section" id="ba-showcase">
     <div class="ctn">
-        <div class="hero-inner">
-            <!-- LEFT: TEXT -->
-            <div class="hero-content">
-                <div class="badge">Digital Agency · Вінниця</div>
-                <h1>Сайти,<br><em>що продають</em><br>самі</h1>
-                <p class="hero-sub">Преміальний дизайн. Запуск за 2–4 тижні. Клієнти починають телефонувати самі.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn btn-p">Обговорити проєкт</a>
-                    <a href="#cases" class="btn btn-o">Подивитися кейси</a>
+        <div class="sec-head">
+            <h2>До <em>і після</em></h2>
+            <p>Різниця видна відразу</p>
+        </div>
+    </div>
+    <div class="ba-wrap">
+        <div class="ba-slider" id="ba-slider" data-ba>
+            <!-- BEFORE -->
+            <div class="ba-before">
+                <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&q=80" alt="До — звичайний сайт" loading="lazy">
+                <div class="ba-label ba-label--before">До</div>
+            </div>
+            <!-- AFTER -->
+            <div class="ba-after" id="ba-after">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" alt="Після — MarkLabs" loading="lazy">
+                <div class="ba-label ba-label--after">Після</div>
+            </div>
+            <!-- HANDLE -->
+            <div class="ba-handle" id="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
-                <div class="hero-proof">
-                    <span>✓ 7 проєктів</span>
-                    <span>✓ Запуск від 2 тижнів</span>
-                    <span>✓ Підтримка 24/7</span>
+                <div class="ba-handle-line"></div>
+            </div>
+        </div>
+        <p class="ba-hint">← перетягни →</p>
+    </div>
+</section>
+
+<!-- ===== VIDEO PREVIEW ===== -->
+<section class="sec sec-alt video-section">
+    <div class="ctn">
+        <div class="sec-head">
+            <h2>Як виглядає <em>наша робота</em></h2>
+            <p>Деталі, які помічають клієнти</p>
+        </div>
+        <div class="video-grid">
+            <div class="video-card video-card--wide">
+                <video autoplay muted loop playsinline class="video-card__vid" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=70">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-web-development-code-writing-close-up-42854-large.mp4" type="video/mp4">
+                </video>
+                <div class="video-card__overlay">
+                    <span class="video-card__tag">Розробка</span>
+                    <span class="video-card__title">Код та деталі</span>
                 </div>
             </div>
-
-            <!-- RIGHT: PHONE MOCKUP -->
-            <div class="hero-phone-wrap">
-                <div class="hero-phone-glow"></div>
-                <div class="hero-phone" id="hero-phone">
-                    <div class="hero-phone-notch"></div>
-                    <div class="hero-phone-screen">
-
-                        <div class="phone-slide phone-slide--active" data-slide="0">
-                            <div class="ps-top" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)">
-                                <div class="ps-brand">Smile<b>Dent</b></div>
-                                <div class="ps-sub">Преміальна стоматологія</div>
-                            </div>
-                            <div class="ps-body">
-                                <div class="ps-img" style="background:linear-gradient(135deg,#e0f2fe,#bae6fd);background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=70');background-size:cover;background-position:center"></div>
-                                <div class="ps-cta" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)">Безкоштовна консультація →</div>
-                                <div class="ps-pills">
-                                    <span class="ps-pill">🦷 Без болю</span>
-                                    <span class="ps-pill">⭐ 4.9/5</span>
-                                    <span class="ps-pill">✓ 500+</span>
-                                </div>
-                                <div class="ps-review">
-                                    <div class="ps-stars">★★★★★</div>
-                                    <div class="ps-quote">"Нарешті клініка, де не страшно"</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="phone-slide" data-slide="1">
-                            <div class="ps-top" style="background:#0A0A0A">
-                                <div class="ps-brand" style="color:#C8A654">BLACK<b style="color:#fff">HORSE</b></div>
-                                <div class="ps-sub" style="color:rgba(255,255,255,0.45)">Men's Club Est. 2018</div>
-                            </div>
-                            <div class="ps-body" style="background:#0D0D0D">
-                                <div class="ps-img" style="background:#1a1a1a;background-image:url('https://images.unsplash.com/photo-1621605815971-fbc98d665571?w=400&q=70');background-size:cover;background-position:center"></div>
-                                <div class="ps-cta" style="background:linear-gradient(135deg,#C8A654,#E8C87A);color:#0A0A0A">Reserve Your Chair →</div>
-                                <div class="ps-pills">
-                                    <span class="ps-pill" style="background:rgba(200,166,84,.12);color:#C8A654;border-color:rgba(200,166,84,.2)">♞ Style Match</span>
-                                    <span class="ps-pill" style="background:rgba(200,166,84,.12);color:#C8A654;border-color:rgba(200,166,84,.2)">1800+</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="phone-slide" data-slide="2">
-                            <div class="ps-top" style="background:linear-gradient(135deg,#00D4FF,#006CE0)">
-                                <div class="ps-brand">Detail<b>Lab</b></div>
-                                <div class="ps-sub">Автодетейлінг</div>
-                            </div>
-                            <div class="ps-body">
-                                <div class="ps-img" style="background:linear-gradient(135deg,#e0f7ff,#b3eeff);background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70');background-size:cover;background-position:center"></div>
-                                <div class="ps-cta" style="background:linear-gradient(135deg,#00D4FF,#006CE0)">Розрахувати вартість →</div>
-                                <div class="ps-pills">
-                                    <span class="ps-pill">🔬 Кераміка</span>
-                                    <span class="ps-pill">✓ PPF</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="phone-slide" data-slide="3">
-                            <div class="ps-top" style="background:#0A0A0A">
-                                <div class="ps-brand" style="color:#7CFF6B">FIT<b style="color:#fff">CORE</b></div>
-                                <div class="ps-sub" style="color:rgba(255,255,255,0.45)">Transformation Experience</div>
-                            </div>
-                            <div class="ps-body" style="background:#0D0D0D">
-                                <div class="ps-img" style="background:#111;background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70');background-size:cover;background-position:center"></div>
-                                <div class="ps-cta" style="background:linear-gradient(135deg,#7CFF6B,#39E0C9);color:#0A0A0A">Почати трансформацію →</div>
-                                <div class="ps-pills">
-                                    <span class="ps-pill" style="background:rgba(124,255,107,.1);color:#7CFF6B;border-color:rgba(124,255,107,.2)">⚡ 92% досягають</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="phone-slide" data-slide="4">
-                            <div class="ps-top" style="background:linear-gradient(135deg,#1e3a5f,#0d2137)">
-                                <div class="ps-brand">URBAN<b>BUILD</b></div>
-                                <div class="ps-sub">Генеральний підрядник</div>
-                            </div>
-                            <div class="ps-body" style="background:#0f1a25">
-                                <div class="ps-img" style="background:#0f1a25;background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=70');background-size:cover;background-position:center"></div>
-                                <div class="ps-cta" style="background:linear-gradient(135deg,#2196F3,#1565C0)">Обговорити проєкт →</div>
-                                <div class="ps-pills">
-                                    <span class="ps-pill" style="background:rgba(33,150,243,.12);color:#60a5fa;border-color:rgba(33,150,243,.2)">🏗️ 150+ об'єктів</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div><!-- /screen -->
-                    <div class="phone-dots" id="phone-dots">
-                        <span class="phone-dot phone-dot--active" data-i="0"></span>
-                        <span class="phone-dot" data-i="1"></span>
-                        <span class="phone-dot" data-i="2"></span>
-                        <span class="phone-dot" data-i="3"></span>
-                        <span class="phone-dot" data-i="4"></span>
-                    </div>
-                </div><!-- /phone -->
-                <div class="hero-phone-label" id="phone-label">SmileDent · Стоматологія</div>
-            </div><!-- /phone-wrap -->
-
-        </div><!-- /hero-inner -->
-    </div><!-- /ctn -->
-    <div class="hero-scroll-hint"><div class="hero-scroll-line"></div></div>
+            <div class="video-card">
+                <video autoplay muted loop playsinline class="video-card__vid" poster="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=70">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-smartphone-and-scrolling-42586-large.mp4" type="video/mp4">
+                </video>
+                <div class="video-card__overlay">
+                    <span class="video-card__tag">Mobile</span>
+                    <span class="video-card__title">iPhone досвід</span>
+                </div>
+            </div>
+            <div class="video-card">
+                <video autoplay muted loop playsinline class="video-card__vid" poster="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=70">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-charts-and-graphs-on-a-screen-43047-large.mp4" type="video/mp4">
+                </video>
+                <div class="video-card__overlay">
+                    <span class="video-card__tag">Аналітика</span>
+                    <span class="video-card__title">Ріст трафіку</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Послуги -->
@@ -601,10 +594,10 @@
 </footer>
 
 <script>
+// ===== NAV =====
 window.addEventListener('scroll', function() {
     document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
 });
-
 var ham = document.getElementById('ham');
 var mob = document.getElementById('mob');
 ham.onclick = function() {
@@ -618,37 +611,90 @@ function closeM() {
     document.body.style.overflow = '';
 }
 
-// ===== PHONE MOCKUP SLIDER =====
+// ===== FULLSCREEN HERO SHOWCASE SLIDER =====
 (function(){
-    var slides = document.querySelectorAll('.phone-slide');
-    var dots = document.querySelectorAll('.phone-dot');
-    var lbl = document.getElementById('phone-label');
-    var labels = ['SmileDent · Стоматологія','BlackHorse · Men\'s Club','DetailLab · Детейлінг','FitCore · Фітнес','UrbanBuild · Будівництво'];
+    var slides = document.querySelectorAll('.hs-slide');
+    var fills = document.querySelectorAll('.hs-prog-fill');
+    var progItems = document.querySelectorAll('.hs-prog-item');
+    var tagEl = document.getElementById('hs-tag-text');
+    var tags = ['SmileDent · Стоматологія','BlackHorse · Men\'s Club','FitCore · Фітнес','DetailLab · Детейлінг','Osteria Uno · Ресторан'];
+    var DURATION = 4000;
     var cur = 0, timer;
 
-    function go(idx){
-        slides[cur].classList.remove('phone-slide--active');
-        dots[cur].classList.remove('phone-dot--active');
+    function activate(idx) {
+        slides[cur].classList.remove('hs-slide--active');
+        fills[cur].style.transition = 'none';
+        fills[cur].style.width = '0%';
+        progItems[cur].classList.remove('hs-prog-item--active');
         cur = (idx + slides.length) % slides.length;
-        slides[cur].classList.add('phone-slide--active');
-        dots[cur].classList.add('phone-dot--active');
-        if(lbl){ lbl.classList.add('phone-label--fade'); setTimeout(function(){ lbl.textContent = labels[cur]; lbl.classList.remove('phone-label--fade'); }, 200); }
+        slides[cur].classList.add('hs-slide--active');
+        progItems[cur].classList.add('hs-prog-item--active');
+        if(tagEl){ tagEl.style.opacity='0'; setTimeout(function(){ tagEl.textContent=tags[cur]; tagEl.style.opacity='1'; }, 250); }
+        fills[cur].style.transition = 'none';
+        fills[cur].style.width = '0%';
+        requestAnimationFrame(function(){
+            requestAnimationFrame(function(){
+                fills[cur].style.transition = 'width '+DURATION+'ms linear';
+                fills[cur].style.width = '100%';
+            });
+        });
     }
-    function start(){ timer = setInterval(function(){ go(cur+1); }, 3200); }
-    function reset(){ clearInterval(timer); start(); }
+    function startTimer() { clearInterval(timer); timer = setInterval(function(){ activate(cur+1); }, DURATION); }
 
-    dots.forEach(function(d){ d.addEventListener('click', function(){ go(parseInt(this.getAttribute('data-i'))); reset(); }); });
+    activate(0);
+    startTimer();
 
-    var phone = document.getElementById('hero-phone');
-    var tx0;
-    if(phone){
-        phone.addEventListener('touchstart', function(e){ tx0 = e.touches[0].clientX; }, {passive:true});
-        phone.addEventListener('touchend', function(e){
-            var dx = e.changedTouches[0].clientX - tx0;
-            if(Math.abs(dx)>40){ go(dx<0?cur+1:cur-1); reset(); }
+    var hsSec = document.querySelector('.hero-showcase');
+    var tx0 = 0;
+    if(hsSec){
+        hsSec.addEventListener('touchstart', function(e){ tx0=e.touches[0].clientX; }, {passive:true});
+        hsSec.addEventListener('touchend', function(e){
+            var dx=e.changedTouches[0].clientX-tx0;
+            if(Math.abs(dx)>50){ activate(dx<0?cur+1:cur-1); startTimer(); }
         }, {passive:true});
     }
-    start();
+    progItems.forEach(function(item,i){ item.addEventListener('click', function(){ activate(i); startTimer(); }); });
+})();
+
+// ===== BEFORE/AFTER SLIDER =====
+(function(){
+    var slider = document.getElementById('ba-slider');
+    if(!slider) return;
+    var after = document.getElementById('ba-after');
+    var handle = document.getElementById('ba-handle');
+    var dragging = false;
+
+    function setPos(x){
+        var r = slider.getBoundingClientRect();
+        var pos = Math.max(0.04, Math.min(0.96, (x-r.left)/r.width));
+        after.style.clipPath = 'inset(0 0 0 '+(pos*100)+'%)';
+        handle.style.left = (pos*100)+'%';
+    }
+
+    setTimeout(function(){ var r=slider.getBoundingClientRect(); setPos(r.left+r.width*0.5); }, 100);
+
+    slider.addEventListener('mousedown', function(e){ dragging=true; setPos(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', function(e){ if(dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup', function(){ dragging=false; });
+    slider.style.touchAction='none';
+    slider.addEventListener('touchstart', function(e){ dragging=true; setPos(e.touches[0].clientX); e.preventDefault(); }, {passive:false});
+    window.addEventListener('touchmove', function(e){ if(dragging){ e.preventDefault(); setPos(e.touches[0].clientX); } }, {passive:false});
+    window.addEventListener('touchend', function(){ dragging=false; });
+
+    var demonstrated = false;
+    var baObs = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting && !demonstrated){
+            demonstrated = true;
+            var t=0.5, dir=-1, step=0;
+            var demo = setInterval(function(){
+                step++; t+=dir*0.018;
+                if(t<=0.15) dir=1; if(t>=0.85) dir=-1;
+                var r=slider.getBoundingClientRect(); setPos(r.left+r.width*t);
+                if(step>80){ clearInterval(demo); var r2=slider.getBoundingClientRect(); setPos(r2.left+r2.width*0.5); }
+            }, 20);
+        }
+    }, {threshold:0.5});
+    baObs.observe(slider);
 })();
 
 // ===== CASES TRACK DRAG =====
@@ -664,145 +710,77 @@ function closeM() {
 // ===== FORM =====
 document.getElementById('leadForm').onsubmit = function(e) {
     e.preventDefault();
-    var d = {
-        name: this.name.value,
-        phone: this.phone.value,
-        telegram: this.telegram.value,
-        message: (this.service ? this.service.value + '. ' : '') + this.message.value
-    };
+    var d = { name:this.name.value, phone:this.phone.value, telegram:this.telegram.value, message:(this.service?this.service.value+'. ':'')+this.message.value };
     var btn = this.querySelector('button');
-    btn.disabled = true;
-    btn.textContent = 'Відправка...';
-    fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(d)
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(r) {
-        if (r.success) {
-            document.getElementById('formMsg').textContent = '✓ Дякуємо! Зв\'яжемося протягом 2 годин.';
-            document.getElementById('formMsg').className = 'form-msg ok';
+    btn.disabled=true; btn.textContent='Відправка...';
+    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+    .then(function(r){return r.json();})
+    .then(function(r){
+        if(r.success){
+            document.getElementById('formMsg').textContent='✓ Дякуємо! Зв\'яжемося протягом 2 годин.';
+            document.getElementById('formMsg').className='form-msg ok';
             document.getElementById('leadForm').reset();
-            btn.textContent = '✓ Відправлено';
+            btn.textContent='✓ Відправлено';
         }
     })
-    .catch(function() {
-        document.getElementById('formMsg').textContent = 'Помилка. Спробуйте пізніше.';
-        document.getElementById('formMsg').className = 'form-msg err';
-        btn.disabled = false;
-        btn.textContent = 'Отримати безкоштовну консультацію';
+    .catch(function(){
+        document.getElementById('formMsg').textContent='Помилка. Спробуйте пізніше.';
+        document.getElementById('formMsg').className='form-msg err';
+        btn.disabled=false; btn.textContent='Отримати безкоштовну консультацію';
     });
 };
 
 // ===== REVEAL =====
 var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(el) {
-        if (el.isIntersecting) el.target.classList.add('vis');
-    });
-}, { threshold: 0.1 });
-document.querySelectorAll('.sec,.hero').forEach(function(el) { obs.observe(el); });
+    entries.forEach(function(el){ if(el.isIntersecting) el.target.classList.add('vis'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.sec').forEach(function(el){ obs.observe(el); });
 
 // ===== STICKY CTA =====
 (function() {
     var stickyCta = document.getElementById('sticky-cta');
     var contact = document.getElementById('contact');
-    if (!stickyCta) return;
+    if(!stickyCta) return;
     document.body.classList.add('has-sticky-cta');
     window.addEventListener('scroll', function() {
-        var scrolled = window.scrollY > 300;
+        var scrolled = window.scrollY > window.innerHeight * 0.8;
         var nearContact = contact && contact.getBoundingClientRect().top < window.innerHeight * 0.8;
         stickyCta.style.transform = (scrolled && !nearContact) ? 'translateY(0)' : 'translateY(120%)';
-    }, { passive: true });
+    }, {passive:true});
     stickyCta.style.transform = 'translateY(120%)';
     stickyCta.style.transition = 'transform 0.4s cubic-bezier(.16,1,.3,1)';
 })();
 
 // ===== AI CONCEPT GENERATOR =====
 function generateConcept() {
-    var input = document.getElementById('ai-business-input');
-    var btn = document.getElementById('ai-generate-btn');
-    var btnText = document.getElementById('ai-btn-text');
-    var btnLoader = document.getElementById('ai-btn-loader');
-    var statusEl = document.getElementById('ai-status');
-    var resultWrap = document.getElementById('ai-result-wrap');
-    var resultContent = document.getElementById('ai-result-content');
-
-    var business = input.value.trim();
-    if (!business) {
-        input.focus();
-        input.classList.add('ai-constructor__input--error');
-        setTimeout(function() { input.classList.remove('ai-constructor__input--error'); }, 1500);
-        return;
-    }
-
-    btn.disabled = true;
-    btnText.style.display = 'none';
-    btnLoader.style.display = 'inline';
-    btnLoader.style.animation = 'ai-spin 1s linear infinite';
-    statusEl.style.display = 'block';
-    statusEl.textContent = '✨ Генерую концепт для "' + business + '"...';
-    resultWrap.style.display = 'none';
-
-    fetch('/api/generate-concept', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ business: business })
+    var input=document.getElementById('ai-business-input');
+    var btn=document.getElementById('ai-generate-btn');
+    var btnText=document.getElementById('ai-btn-text');
+    var btnLoader=document.getElementById('ai-btn-loader');
+    var statusEl=document.getElementById('ai-status');
+    var resultWrap=document.getElementById('ai-result-wrap');
+    var resultContent=document.getElementById('ai-result-content');
+    var business=input.value.trim();
+    if(!business){ input.focus(); input.classList.add('ai-constructor__input--error'); setTimeout(function(){ input.classList.remove('ai-constructor__input--error'); },1500); return; }
+    btn.disabled=true; btnText.style.display='none'; btnLoader.style.display='inline'; btnLoader.style.animation='ai-spin 1s linear infinite';
+    statusEl.style.display='block'; statusEl.textContent='✨ Генерую концепт для "'+business+'"...'; resultWrap.style.display='none';
+    fetch('/api/generate-concept',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({business:business})})
+    .then(function(r){return r.json();})
+    .then(function(data){
+        btn.disabled=false; btnText.style.display='inline'; btnLoader.style.display='none';
+        if(data.error){statusEl.textContent='⚠️ '+data.error;return;}
+        statusEl.style.display='none';
+        var iframe=document.getElementById('ai-preview-iframe');
+        if(!iframe){iframe=document.createElement('iframe');iframe.id='ai-preview-iframe';iframe.style.cssText='width:100%;border:none;border-radius:12px;display:block;min-height:600px;background:#fff;';iframe.title='Попередній перегляд';resultContent.innerHTML='';resultContent.appendChild(iframe);}
+        iframe.srcdoc='<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}body{color:#1a1a1a;line-height:1.6}</style></head><body>'+(data.html||data.concept||'')+'</body></html>';
+        iframe.onload=function(){try{var h=iframe.contentDocument.body.scrollHeight;iframe.style.height=Math.max(h+32,600)+'px';}catch(e){}};
+        resultWrap.style.display='block'; resultWrap.scrollIntoView({behavior:'smooth',block:'start'});
     })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-        btn.disabled = false;
-        btnText.style.display = 'inline';
-        btnLoader.style.display = 'none';
-
-        if (data.error) {
-            statusEl.textContent = '⚠️ ' + data.error;
-            return;
-        }
-
-        statusEl.style.display = 'none';
-
-        var iframe = document.getElementById('ai-preview-iframe');
-        if (!iframe) {
-            iframe = document.createElement('iframe');
-            iframe.id = 'ai-preview-iframe';
-            iframe.style.cssText = 'width:100%;border:none;border-radius:12px;display:block;min-height:600px;background:#fff;';
-            iframe.title = 'Попередній перегляд сайту';
-            resultContent.innerHTML = '';
-            resultContent.appendChild(iframe);
-        }
-
-        var previewHtml = '<!DOCTYPE html><html lang="uk"><head>'
-            + '<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            + '<style>*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif}body{color:#1a1a1a;line-height:1.6}</style>'
-            + '</head><body>'
-            + (data.html || data.concept || '')
-            + '</body></html>';
-
-        iframe.srcdoc = previewHtml;
-        iframe.onload = function() {
-            try { var h = iframe.contentDocument.body.scrollHeight; iframe.style.height = Math.max(h+32,600)+'px'; } catch(e) {}
-        };
-
-        resultWrap.style.display = 'block';
-        resultWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    })
-    .catch(function(err) {
-        btn.disabled = false;
-        btnText.style.display = 'inline';
-        btnLoader.style.display = 'none';
-        statusEl.textContent = '⚠️ Помилка з\'єднання. Спробуйте ще раз.';
-        console.error('AI concept error:', err);
-    });
+    .catch(function(){ btn.disabled=false; btnText.style.display='inline'; btnLoader.style.display='none'; statusEl.textContent='⚠️ Помилка з\'єднання.'; });
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    var input = document.getElementById('ai-business-input');
-    if (input) {
-        input.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') generateConcept();
-        });
-    }
+document.addEventListener('DOMContentLoaded', function(){
+    var input=document.getElementById('ai-business-input');
+    if(input) input.addEventListener('keydown',function(e){ if(e.key==='Enter') generateConcept(); });
 });
 </script>
 </body>
