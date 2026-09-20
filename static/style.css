@@ -2360,3 +2360,168 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05)}
 }
 
 /* ===== END HERO V2 FINAL CSS ===== */
+
+
+/* =====================================================
+   NEW SECTIONS — Founder · Transparency · FAQ · Footer v2
+   (matches site style, no color/design changes)
+   ===================================================== */
+
+/* ── Founder ── */
+.founder-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.founder-photo__placeholder {
+    aspect-ratio: 1;
+    border-radius: var(--r);
+    background: var(--card);
+    border: 1px dashed rgba(255,255,255,.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    color: var(--muted);
+}
+.founder-photo__placeholder svg { width: 64px; height: 64px; opacity: .5; }
+.founder-photo__placeholder span { font-size: .75rem; letter-spacing: .04em; }
+.founder-text p {
+    font-size: .95rem;
+    color: rgba(255,255,255,.75);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+.founder-text p:first-child {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--w);
+}
+.founder-cta { margin-top: .75rem; }
+
+/* ── Transparency ── */
+.transparency-box {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid rgba(59,130,246,.15);
+    border-radius: var(--r);
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+.transparency-icon {
+    width: 56px; height: 56px;
+    margin: 0 auto 1.5rem;
+    border-radius: 14px;
+    background: rgba(59,130,246,.1);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue);
+}
+.transparency-icon svg { width: 28px; height: 28px; }
+.transparency-box p {
+    font-size: .95rem;
+    color: rgba(255,255,255,.7);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+.transparency-box p:last-child { margin-bottom: 0; }
+
+/* ── FAQ ── */
+.faq-list { max-width: 720px; margin: 0 auto; }
+.faq-item {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: var(--r);
+    margin-bottom: .75rem;
+    overflow: hidden;
+    transition: border-color .25s;
+}
+.faq-item[open] { border-color: rgba(59,130,246,.25); }
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.15rem 1.35rem;
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--w);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: color .2s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--blue);
+    flex-shrink: 0;
+    transition: transform .3s;
+    line-height: 1;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item summary:hover { color: var(--blue); }
+.faq-body {
+    padding: 0 1.35rem 1.25rem;
+}
+.faq-body p {
+    font-size: .87rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ── Footer v2 ── */
+footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(255,255,255,.06); }
+.f-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.f-brand .logo { font-size: 1.25rem; font-weight: 700; margin-bottom: .75rem; }
+.f-brand .logo span { color: var(--blue); }
+.f-tagline { font-size: .82rem; color: var(--muted); line-height: 1.6; margin-bottom: .5rem; max-width: 320px; }
+.f-city { font-size: .8rem; color: rgba(255,255,255,.5); }
+.f-col h4 {
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--w);
+    margin-bottom: 1rem;
+}
+.f-col a {
+    display: block;
+    font-size: .82rem;
+    color: var(--muted);
+    padding: .3rem 0;
+    transition: color .2s;
+}
+.f-col a:hover { color: var(--w); }
+.f-bottom { text-align: center; }
+.f-bottom .f-copy { font-size: .72rem; color: rgba(255,255,255,.3); }
+
+/* ── Mobile ── */
+@media(max-width:768px) {
+    .founder-grid { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+    .founder-photo__placeholder { max-width: 220px; margin: 0 auto; }
+    .founder-text p:first-child { font-size: 1.1rem; }
+    .founder-cta { width: 100%; justify-content: center; }
+
+    .transparency-box { padding: 2rem 1.25rem; }
+
+    .faq-item summary { font-size: .9rem; padding: 1rem 1.15rem; }
+
+    .f-main { grid-template-columns: 1fr; gap: 1.75rem; text-align: center; }
+    .f-tagline { margin-left: auto; margin-right: auto; }
+}
+
+/* ===== END NEW SECTIONS ===== */
