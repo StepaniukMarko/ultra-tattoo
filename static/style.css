@@ -973,6 +973,9 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05)}
 /* ===== DESKTOP — keep phone + 2-col hero ===== */
 @media(min-width:769px) {
     .hero-phone-wrap { display: flex; }
+    .hero-phone { width: 260px; height: 530px; border-radius: 44px; }
+    .hero-phone-notch { width: 80px; height: 24px; }
+    .hero-inner { gap: 60px; align-items: center; }
     .cases-swipe-hint { display: none; }
     .cases-track { padding: 8px 0 20px; }
     .case-card { flex: 0 0 290px; }
