@@ -2525,3 +2525,157 @@ footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(255,255,255,.06); }
 }
 
 /* ===== END NEW SECTIONS ===== */
+
+
+/* =====================================================
+   PRICING SECTION + STEP TIME (matches dark/glass style)
+   ===================================================== */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+}
+.price-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.price-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59,130,246,0.3);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+.price-card--featured {
+    border-color: rgba(59,130,246,0.4);
+    box-shadow: 0 0 0 1px rgba(59,130,246,0.15), 0 16px 48px rgba(59,130,246,0.12);
+}
+.price-card__badge {
+    position: absolute;
+    top: -10px; left: 1.5rem;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+.price-card__head { flex: 1; margin-bottom: 1.25rem; }
+.price-card__head h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--w);
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+}
+.price-card__head p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+.price-card__val {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--w);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+.price-card__from {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.price-card__cur {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+.price-card__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59,130,246,0.12);
+    color: #60a5fa;
+    border: 1px solid rgba(59,130,246,0.25);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    min-height: 44px;
+}
+.price-card__btn:hover {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+}
+.price-card--featured .price-card__btn {
+    background: linear-gradient(135deg, var(--blue), #1d4ed8);
+    color: #fff;
+    border-color: transparent;
+}
+.pricing-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+}
+
+/* Process step time badge */
+.step-time {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--blue);
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.2);
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media(max-width:768px){
+    .pricing-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .price-card { padding: 1.5rem 1.25rem; }
+    .price-card__val { font-size: 1.5rem; }
+    .pricing-note { font-size: 0.82rem; padding: 1rem 1.25rem; }
+    .step-time { font-size: 0.66rem; }
+}
+@media(max-width:414px){
+    .price-card__head h3 { font-size: 1rem; overflow-wrap: break-word; }
+    .price-card__val { font-size: 1.4rem; }
+}
+@media(max-width:360px){
+    .price-card { padding: 1.25rem 1rem; }
+    .price-card__head h3 { font-size: 0.95rem; }
+    .price-card__val { font-size: 1.3rem; }
+    .price-card__btn { font-size: 0.78rem; }
+}
+@media(max-width:320px){
+    .price-card__val { font-size: 1.2rem; }
+    .pricing-note { font-size: 0.78rem; padding: 0.9rem 1rem; }
+}
+/* ===== END PRICING SECTION ===== */

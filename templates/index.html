@@ -59,8 +59,8 @@
         <a href="#" class="logo">Mark<span>Labs</span></a>
         <ul class="nav-links">
             <li><a href="#services">Послуги</a></li>
+            <li><a href="#pricing">Ціни</a></li>
             <li><a href="#cases">Проєкти</a></li>
-            <li><a href="#founder">Про нас</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Контакти</a></li>
         </ul>
@@ -70,11 +70,11 @@
 </nav>
 
 <div class="mob" id="mob">
-    <a href="#cases" onclick="closeM()">Проєкти</a>
     <a href="#services" onclick="closeM()">Послуги</a>
+    <a href="#pricing" onclick="closeM()">Ціни</a>
+    <a href="#cases" onclick="closeM()">Проєкти</a>
     <a href="#founder" onclick="closeM()">Про нас</a>
     <a href="#faq" onclick="closeM()">FAQ</a>
-    <a href="#contact" onclick="closeM()">Контакти</a>
     <a href="#contact" onclick="closeM()">Обговорити проєкт →</a>
 </div>
 
@@ -248,6 +248,52 @@
                 <p>CRM-інтеграції, нагадування, follow-up та зв'язка сервісів</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Вартість проєктів -->
+<section class="sec sec-alt" id="pricing">
+    <div class="ctn">
+        <div class="sec-head">
+            <h2>Вартість <em>проєктів</em></h2>
+            <p>Орієнтовні ціни. Точний розрахунок — після консультації</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="price-card__head">
+                    <h3>Landing Page</h3>
+                    <p>Односторінковий сайт для запуску продукту чи послуги</p>
+                </div>
+                <div class="price-card__val"><span class="price-card__from">від</span> 15 000 <span class="price-card__cur">грн</span></div>
+                <a href="#contact" class="price-card__btn">Обговорити</a>
+            </div>
+            <div class="price-card">
+                <div class="price-card__head">
+                    <h3>Корпоративний сайт</h3>
+                    <p>Багатосторінковий сайт компанії з SEO та формами</p>
+                </div>
+                <div class="price-card__val"><span class="price-card__from">від</span> 25 000 <span class="price-card__cur">грн</span></div>
+                <a href="#contact" class="price-card__btn">Обговорити</a>
+            </div>
+            <div class="price-card price-card--featured">
+                <div class="price-card__badge">Популярне</div>
+                <div class="price-card__head">
+                    <h3>Інтернет-магазин</h3>
+                    <p>E-commerce з каталогом, кошиком та системою замовлень</p>
+                </div>
+                <div class="price-card__val"><span class="price-card__from">від</span> 40 000 <span class="price-card__cur">грн</span></div>
+                <a href="#contact" class="price-card__btn">Обговорити</a>
+            </div>
+            <div class="price-card">
+                <div class="price-card__head">
+                    <h3>AI автоматизація та інтеграції</h3>
+                    <p>Чат-боти, CRM-інтеграції та автоматизація процесів</p>
+                </div>
+                <div class="price-card__val"><span class="price-card__from">від</span> 12 000 <span class="price-card__cur">грн</span></div>
+                <a href="#contact" class="price-card__btn">Обговорити</a>
+            </div>
+        </div>
+        <p class="pricing-note">💡 Кожен проєкт індивідуальний. Фінальна вартість залежить від обсягу, функціоналу та термінів — розраховуємо на безкоштовній консультації.</p>
     </div>
 </section>
 
@@ -496,23 +542,27 @@
         <div class="steps">
             <div class="step">
                 <div class="step-n">01</div>
-                <h4>Заявка</h4>
-                <p>Ви залишаєте заявку — ми відповідаємо протягом дня</p>
+                <h4>Бриф та аналіз</h4>
+                <span class="step-time">1 день</span>
+                <p>Вивчаємо ваш бізнес, задачі та конкурентів</p>
             </div>
             <div class="step">
                 <div class="step-n">02</div>
-                <h4>Обговорення</h4>
-                <p>Визначаємо задачі, обсяг робіт та терміни</p>
+                <h4>Прототип та дизайн</h4>
+                <span class="step-time">3–5 днів</span>
+                <p>Створюємо структуру та преміальний дизайн</p>
             </div>
             <div class="step">
                 <div class="step-n">03</div>
                 <h4>Розробка</h4>
-                <p>Створюємо проєкт, показуємо проміжні результати</p>
+                <span class="step-time">7–14 днів</span>
+                <p>Верстаємо, програмуємо, інтегруємо функціонал</p>
             </div>
             <div class="step">
                 <div class="step-n">04</div>
-                <h4>Запуск</h4>
-                <p>Тестуємо, запускаємо та допомагаємо з підтримкою</p>
+                <h4>Тестування та запуск</h4>
+                <span class="step-time">1–2 дні</span>
+                <p>Перевіряємо, запускаємо та передаємо проєкт</p>
             </div>
         </div>
     </div>
@@ -576,6 +626,26 @@
             <details class="faq-item">
                 <summary>Що потрібно від клієнта для старту?</summary>
                 <div class="faq-body"><p>Для старту достатньо описати ваш бізнес та задачу. Далі ми уточнимо деталі, а тексти, фото й матеріали зберемо разом у процесі — підкажемо, що саме потрібно.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>Чи укладаєте договір?</summary>
+                <div class="faq-body"><p>Так. Перед початком роботи фіксуємо обсяг, вартість та терміни в письмовій домовленості. Це захищає обидві сторони та гарантує прозорість співпраці.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>Чи можна оплачувати частинами?</summary>
+                <div class="faq-body"><p>Так, оплата поетапна: частина на старті, частина після затвердження дизайну та фінальна — перед запуском. Так ви завжди бачите проміжний результат перед наступним платежем.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>Що входить у підтримку?</summary>
+                <div class="faq-body"><p>Дрібні правки, оновлення контенту, моніторинг роботи сайту та консультації. Умови й обсяг підтримки узгоджуємо індивідуально під ваш проєкт.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>Чи допомагаєте з доменом і хостингом?</summary>
+                <div class="faq-body"><p>Так. Допоможемо підібрати та налаштувати домен і хостинг, підключити сайт та пошту. Ви отримуєте готовий робочий продукт без технічної метушні.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>Що якщо мені не сподобається дизайн?</summary>
+                <div class="faq-body"><p>Ми узгоджуємо дизайн на етапі прототипу — до початку розробки. Ви бачите макет і вносите правки, поки результат вас повністю не влаштує. Розробка стартує тільки після вашого затвердження.</p></div>
             </details>
         </div>
     </div>
