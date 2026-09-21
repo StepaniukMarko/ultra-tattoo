@@ -502,7 +502,8 @@
         </div>
         <div class="founder-grid">
             <div class="founder-photo">
-                <div class="founder-photo__placeholder">
+                <img src="{{ url_for('static', filename='founder.jpg') }}" alt="Марко — засновник MarkLabs" class="founder-photo__img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="founder-photo__placeholder" style="display:none;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
                     <span>Фото засновника</span>
                 </div>
