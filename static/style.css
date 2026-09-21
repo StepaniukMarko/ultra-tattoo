@@ -2376,6 +2376,19 @@ footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.05)}
     max-width: 900px;
     margin: 0 auto;
 }
+.founder-photo {
+    border-radius: 24px;
+    transition: all .3s ease;
+    box-shadow:
+        0 0 30px rgba(59,130,246,0.15),
+        0 0 60px rgba(59,130,246,0.08);
+}
+.founder-photo:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 40px rgba(59,130,246,0.22),
+        0 0 80px rgba(59,130,246,0.12);
+}
 .founder-photo__img {
     width: 100%;
     aspect-ratio: 4 / 5;
@@ -2521,6 +2534,7 @@ footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(255,255,255,.06); }
 /* ── Mobile ── */
 @media(max-width:768px) {
     .founder-grid { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+    .founder-photo { max-width: 280px; margin: 0 auto; }
     .founder-photo__img { max-width: 280px; margin: 0 auto; aspect-ratio: 4 / 5; }
     .founder-photo__placeholder { max-width: 220px; margin: 0 auto; }
     .founder-text p:first-child { font-size: 1.1rem; }
