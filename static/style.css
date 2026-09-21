@@ -2367,3 +2367,70 @@ footer { padding: 3rem 0 2rem; border-top: 1px solid rgba(255,255,255,.06); }
     .offer-card__text { font-size: 0.84rem; }
 }
 /* ===== END SPECIAL OFFER SECTION ===== */
+
+
+/* ===== GUARANTEES SECTION (#guarantees) ===== */
+.guarantees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.guarantee-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1.75rem 1.5rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.guarantee-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59,130,246,0.3);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+.guarantee-card__icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.25);
+    color: #60a5fa;
+}
+.guarantee-card__icon svg { width: 24px; height: 24px; }
+.guarantee-card__title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--w);
+    line-height: 1.3;
+    margin: 0;
+}
+.guarantee-card__text {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin: 0;
+}
+/* Tablet: 2 columns */
+@media(max-width:900px) {
+    .guarantees-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* Mobile: 1 column */
+@media(max-width:560px) {
+    .guarantees-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .guarantee-card { padding: 1.5rem 1.25rem; }
+}
+@media(max-width:360px) {
+    .guarantee-card { padding: 1.35rem 1.1rem; }
+    .guarantee-card__title { font-size: 0.94rem; }
+    .guarantee-card__text { font-size: 0.82rem; }
+}
+/* ===== END GUARANTEES SECTION ===== */
