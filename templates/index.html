@@ -562,44 +562,6 @@
         <div class="cases-swipe-hint">← свайп →</div>
     </div>
 </section>
-<!-- AI Конструктор Концептів -->
-<section class="sec ai-constructor" id="ai-constructor">
-    <div class="ctn">
-        <div class="sec-head">
-            <h2>AI Конструктор <em>Концептів</em></h2>
-            <p>Опишіть свій бізнес і отримайте концепт майбутнього сайту за кілька секунд</p>
-        </div>
-        <div class="ai-constructor__box">
-            <div class="ai-constructor__input-wrap">
-                <input
-                    type="text"
-                    id="ai-business-input"
-                    class="ai-constructor__input"
-                    placeholder="Наприклад: стоматологія, барбершоп, ресторан..."
-                    maxlength="200"
-                    aria-label="Тип бізнесу"
-                >
-                <button
-                    id="ai-generate-btn"
-                    class="btn btn-p ai-constructor__btn"
-                    onclick="generateConcept()"
-                >
-                    <span id="ai-btn-text">Згенерувати концепт</span>
-                    <span id="ai-btn-loader" style="display:none;">⟳</span>
-                </button>
-            </div>
-            <div id="ai-status" class="ai-constructor__status" style="display:none;"></div>
-            <div id="ai-result-wrap" class="ai-constructor__result" style="display:none;">
-                <div id="ai-result-content" class="ai-constructor__result-content"></div>
-                <div class="ai-constructor__cta">
-                    <p>Сподобався концепт?<br><strong>MarkLabs може реалізувати його для вас.</strong></p>
-                    <a href="#contact" class="btn btn-p" onclick="document.getElementById('ai-result-wrap').style.display='none'||true">Обговорити проєкт</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Про засновника -->
 <section class="sec" id="founder">
     <div class="ctn">
@@ -1019,38 +981,6 @@ document.querySelectorAll('.sec').forEach(function(el){ obs.observe(el); });
     stickyCta.style.transform = 'translateY(120%)';
     stickyCta.style.transition = 'transform 0.4s cubic-bezier(.16,1,.3,1)';
 })();
-
-// ===== AI CONCEPT GENERATOR =====
-function generateConcept() {
-    var input=document.getElementById('ai-business-input');
-    var btn=document.getElementById('ai-generate-btn');
-    var btnText=document.getElementById('ai-btn-text');
-    var btnLoader=document.getElementById('ai-btn-loader');
-    var statusEl=document.getElementById('ai-status');
-    var resultWrap=document.getElementById('ai-result-wrap');
-    var resultContent=document.getElementById('ai-result-content');
-    var business=input.value.trim();
-    if(!business){ input.focus(); input.classList.add('ai-constructor__input--error'); setTimeout(function(){ input.classList.remove('ai-constructor__input--error'); },1500); return; }
-    btn.disabled=true; btnText.style.display='none'; btnLoader.style.display='inline'; btnLoader.style.animation='ai-spin 1s linear infinite';
-    statusEl.style.display='block'; statusEl.textContent='✨ Генерую концепт для "'+business+'"...'; resultWrap.style.display='none';
-    fetch('/api/generate-concept',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({business:business})})
-    .then(function(r){return r.json();})
-    .then(function(data){
-        btn.disabled=false; btnText.style.display='inline'; btnLoader.style.display='none';
-        if(data.error){statusEl.textContent='⚠️ '+data.error;return;}
-        statusEl.style.display='none';
-        var iframe=document.getElementById('ai-preview-iframe');
-        if(!iframe){iframe=document.createElement('iframe');iframe.id='ai-preview-iframe';iframe.style.cssText='width:100%;border:none;border-radius:12px;display:block;min-height:600px;background:#fff;';iframe.title='Попередній перегляд';resultContent.innerHTML='';resultContent.appendChild(iframe);}
-        iframe.srcdoc='<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}body{color:#1a1a1a;line-height:1.6}</style></head><body>'+(data.html||data.concept||'')+'</body></html>';
-        iframe.onload=function(){try{var h=iframe.contentDocument.body.scrollHeight;iframe.style.height=Math.max(h+32,600)+'px';}catch(e){}};
-        resultWrap.style.display='block'; resultWrap.scrollIntoView({behavior:'smooth',block:'start'});
-    })
-    .catch(function(){ btn.disabled=false; btnText.style.display='inline'; btnLoader.style.display='none'; statusEl.textContent='⚠️ Помилка з\'єднання.'; });
-}
-document.addEventListener('DOMContentLoaded', function(){
-    var input=document.getElementById('ai-business-input');
-    if(input) input.addEventListener('keydown',function(e){ if(e.key==='Enter') generateConcept(); });
-});
 
 // ===== PROJECT COST CALCULATOR =====
 (function(){
