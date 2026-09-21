@@ -297,6 +297,88 @@
     </div>
 </section>
 
+<!-- Калькулятор вартості проєкту -->
+<section class="sec calc" id="calculator">
+    <div class="ctn">
+        <div class="sec-head">
+            <h2>Калькулятор <em>вартості</em> проєкту</h2>
+            <p>Дайте відповідь на кілька питань і отримайте орієнтовну вартість за секунду</p>
+        </div>
+
+        <div class="calc-box">
+            <form class="calc-form" id="calcForm" novalidate>
+                <!-- Тип проєкту -->
+                <div class="calc-field">
+                    <label class="calc-label" for="calc-type">Тип проєкту</label>
+                    <select class="calc-select" id="calc-type" name="type">
+                        <option value="" disabled selected>Оберіть тип проєкту</option>
+                        <option value="15000" data-min="2" data-max="3">Landing Page — від 15 000 грн</option>
+                        <option value="25000" data-min="3" data-max="5">Корпоративний сайт — від 25 000 грн</option>
+                        <option value="40000" data-min="4" data-max="7">Інтернет-магазин — від 40 000 грн</option>
+                        <option value="12000" data-min="2" data-max="4">AI-рішення — від 12 000 грн</option>
+                    </select>
+                    <span class="calc-error" id="calc-type-error">Оберіть тип проєкту</span>
+                </div>
+
+                <!-- Опції (Так/Ні) -->
+                <div class="calc-options">
+                    <div class="calc-toggle" data-add="5000">
+                        <span class="calc-toggle__name">Дизайн</span>
+                        <div class="calc-seg" role="group" aria-label="Дизайн">
+                            <button type="button" class="calc-seg__btn" data-val="yes">Так</button>
+                            <button type="button" class="calc-seg__btn is-active" data-val="no">Ні</button>
+                        </div>
+                    </div>
+                    <div class="calc-toggle" data-add="3000">
+                        <span class="calc-toggle__name">Онлайн запис</span>
+                        <div class="calc-seg" role="group" aria-label="Онлайн запис">
+                            <button type="button" class="calc-seg__btn" data-val="yes">Так</button>
+                            <button type="button" class="calc-seg__btn is-active" data-val="no">Ні</button>
+                        </div>
+                    </div>
+                    <div class="calc-toggle" data-add="10000">
+                        <span class="calc-toggle__name">Інтернет-магазин</span>
+                        <div class="calc-seg" role="group" aria-label="Інтернет-магазин">
+                            <button type="button" class="calc-seg__btn" data-val="yes">Так</button>
+                            <button type="button" class="calc-seg__btn is-active" data-val="no">Ні</button>
+                        </div>
+                    </div>
+                    <div class="calc-toggle" data-add="7000">
+                        <span class="calc-toggle__name">AI-функції</span>
+                        <div class="calc-seg" role="group" aria-label="AI-функції">
+                            <button type="button" class="calc-seg__btn" data-val="yes">Так</button>
+                            <button type="button" class="calc-seg__btn is-active" data-val="no">Ні</button>
+                        </div>
+                    </div>
+                    <div class="calc-toggle" data-add="5000">
+                        <span class="calc-toggle__name">Терміновий запуск</span>
+                        <div class="calc-seg" role="group" aria-label="Терміновий запуск">
+                            <button type="button" class="calc-seg__btn" data-val="yes">Так</button>
+                            <button type="button" class="calc-seg__btn is-active" data-val="no">Ні</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-p calc-submit">Розрахувати</button>
+            </form>
+
+            <!-- Результат -->
+            <div class="calc-result" id="calcResult" hidden>
+                <div class="calc-result__block">
+                    <span class="calc-result__cap">Орієнтовна вартість</span>
+                    <span class="calc-result__price" id="calcPrice">0 грн</span>
+                </div>
+                <div class="calc-result__block">
+                    <span class="calc-result__cap">Термін реалізації</span>
+                    <span class="calc-result__term" id="calcTerm">— тижнів</span>
+                </div>
+                <p class="calc-result__note">Це попередній розрахунок. Для точного кошторису залиште заявку.</p>
+                <a href="#contact" class="btn btn-p calc-result__cta">Обговорити проєкт</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- STATS TICKER -->
 <div class="stats-ticker">
     <div class="stats-ticker__item">
@@ -897,6 +979,84 @@ document.addEventListener('DOMContentLoaded', function(){
     var input=document.getElementById('ai-business-input');
     if(input) input.addEventListener('keydown',function(e){ if(e.key==='Enter') generateConcept(); });
 });
+
+// ===== PROJECT COST CALCULATOR =====
+(function(){
+    var form = document.getElementById('calcForm');
+    if(!form) return;
+
+    var typeSelect = document.getElementById('calc-type');
+    var typeError  = document.getElementById('calc-type-error');
+    var result     = document.getElementById('calcResult');
+    var priceEl    = document.getElementById('calcPrice');
+    var termEl     = document.getElementById('calcTerm');
+
+    // Segmented Так/Ні toggles
+    form.querySelectorAll('.calc-seg').forEach(function(seg){
+        seg.querySelectorAll('.calc-seg__btn').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                seg.querySelectorAll('.calc-seg__btn').forEach(function(b){ b.classList.remove('is-active'); });
+                btn.classList.add('is-active');
+            });
+        });
+    });
+
+    // Clear error on selection
+    typeSelect.addEventListener('change', function(){
+        typeSelect.classList.remove('calc-select--error');
+    });
+
+    function formatUAH(n){
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' грн';
+    }
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        // Validation: project type required
+        if(!typeSelect.value){
+            typeSelect.classList.add('calc-select--error');
+            typeSelect.focus();
+            return;
+        }
+
+        var base = parseInt(typeSelect.value, 10);
+        var opt  = typeSelect.options[typeSelect.selectedIndex];
+        var minW = parseInt(opt.getAttribute('data-min'), 10) || 2;
+        var maxW = parseInt(opt.getAttribute('data-max'), 10) || 4;
+
+        var total = base;
+        var extraWeeks = 0;
+        var urgent = false;
+
+        form.querySelectorAll('.calc-toggle').forEach(function(t){
+            var active = t.querySelector('.calc-seg__btn.is-active');
+            if(active && active.getAttribute('data-val') === 'yes'){
+                total += parseInt(t.getAttribute('data-add'), 10) || 0;
+                if(t.querySelector('.calc-toggle__name').textContent.indexOf('Терміновий') !== -1){
+                    urgent = true;
+                } else {
+                    extraWeeks += 1;
+                }
+            }
+        });
+
+        // Term: base range + ~1 week per added feature; urgent shortens it
+        var lo = minW + Math.floor(extraWeeks / 2);
+        var hi = maxW + Math.ceil(extraWeeks / 2);
+        if(urgent){ lo = Math.max(1, lo - 1); hi = Math.max(lo + 1, hi - 1); }
+
+        priceEl.textContent = formatUAH(total);
+        termEl.textContent  = lo + '–' + hi + ' тижнів';
+
+        // Smooth reveal
+        result.hidden = false;
+        result.classList.remove('is-visible');
+        void result.offsetWidth; // reflow to restart animation
+        result.classList.add('is-visible');
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+})();
 </script>
 </body>
 </html>
