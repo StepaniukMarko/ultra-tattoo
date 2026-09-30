@@ -1,0 +1,169 @@
+// Central site data — single source of truth for copy, contacts, nav.
+// All Ukrainian copy preserved from the existing MarkLabs site.
+
+export const site = {
+  name: 'MarkLabs',
+  legalName: 'MarkLabs Agency',
+  city: 'Вінниця',
+  country: 'UA',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.mark-labs.com.ua',
+  apiBase: process.env.NEXT_PUBLIC_API_BASE ?? '',
+  tagline: 'Сучасні сайти, UX/UI дизайн та AI-рішення для бізнесу.',
+  founder: 'Марко Степанюк',
+  contacts: {
+    email: 'stepaniukmarko@gmail.com',
+    phone: '+380731828248',
+    phoneDisplay: '+380 73 182 82 48',
+    telegram: 'https://t.me/MarkoStepaniuk',
+    instagram: 'https://www.instagram.com/marklabs.web',
+    instagramHandle: '@marklabs.web',
+  },
+} as const;
+
+export const nav = [
+  { href: '#services', label: 'Послуги' },
+  { href: '#projects', label: 'Проєкти' },
+  { href: '#process', label: 'Процес' },
+  { href: '#pricing', label: 'Ціни' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#contact', label: 'Контакти' },
+] as const;
+
+export type Metric = { value: string; label: string };
+
+export const heroMetrics: Metric[] = [
+  { value: '2–4', label: 'тижні до запуску' },
+  { value: '100%', label: 'фіксована ціна після ТЗ' },
+  { value: '2 год', label: 'середній час відповіді' },
+];
+
+export const services = [
+  {
+    slug: 'websites',
+    title: 'Створення сайтів',
+    short: 'Адаптивні сайти з SEO-оптимізацією та зрозумілою навігацією',
+    icon: 'monitor',
+  },
+  {
+    slug: 'ecommerce',
+    title: 'Інтернет-магазини',
+    short: 'E-commerce з каталогом, кошиком, системою замовлень та імпортом товарів',
+    icon: 'bag',
+  },
+  {
+    slug: 'ai',
+    title: 'AI автоматизація',
+    short: 'Чат-боти та AI-асистенти для обслуговування клієнтів',
+    icon: 'spark',
+  },
+  {
+    slug: 'telegram-bots',
+    title: 'Telegram боти',
+    short: 'Боти для запису, замовлень, підтримки та розсилок',
+    icon: 'send',
+  },
+  {
+    slug: 'automation',
+    title: 'Бізнес автоматизація',
+    short: 'CRM-інтеграції, нагадування, follow-up та зв\u2019язка сервісів',
+    icon: 'flow',
+  },
+] as const;
+
+export type Service = (typeof services)[number];
+
+export const projects = [
+  { slug: 'smiledent', name: 'SmileDent', niche: 'Стоматологія', accent: '#0EA5E9' },
+  { slug: 'blackhorse', name: 'BlackHorse', niche: "Men\u2019s Club", accent: '#C8A654' },
+  { slug: 'detaillab', name: 'DetailLab', niche: 'Автодетейлінг', accent: '#00D4FF' },
+  { slug: 'fitcore', name: 'FitCore', niche: 'Transformation', accent: '#7CFF6B' },
+  { slug: 'urbanbuild', name: 'UrbanBuild', niche: 'Будівництво', accent: '#2196F3' },
+  { slug: 'autofix', name: 'AutoFix Pro', niche: 'AI діагностика', accent: '#60a5fa' },
+  { slug: 'aura', name: 'Aura Studio', niche: 'Beauty & SPA', accent: '#a78bfa' },
+] as const;
+
+export type Project = (typeof projects)[number];
+
+export const pricing = [
+  {
+    tier: 'Landing Page',
+    price: 8000,
+    desc: 'Односторінковий сайт для запуску продукту чи послуги',
+    features: ['Адаптивна верстка', 'SEO-база', 'Форма заявки', 'Запуск за 2 тижні'],
+    featured: false,
+  },
+  {
+    tier: 'Корпоративний сайт',
+    price: 12000,
+    desc: 'Багатосторінковий сайт компанії з SEO та формами',
+    features: ['До 8 сторінок', 'SEO-оптимізація', 'Блог/новини', 'Інтеграції форм'],
+    featured: false,
+  },
+  {
+    tier: 'Інтернет-магазин',
+    price: 20000,
+    desc: 'E-commerce з каталогом, кошиком та системою замовлень',
+    features: ['Каталог + кошик', 'Онлайн-оплата', 'Імпорт товарів', 'Адмін-панель'],
+    featured: true,
+  },
+  {
+    tier: 'AI автоматизація',
+    price: 7000,
+    desc: 'Чат-боти, CRM-інтеграції та автоматизація процесів',
+    features: ['Telegram/веб-бот', 'CRM-інтеграція', 'Автовідповіді', 'Аналітика'],
+    featured: false,
+  },
+] as const;
+
+export const faq = [
+  {
+    q: 'Скільки коштує сайт?',
+    a: 'Орієнтовні ціни вказані в блоці «Ціни»: від 8 000 грн за лендинг до 20 000 грн за інтернет-магазин. Точна вартість фіксується після безкоштовного брифу та затвердження ТЗ.',
+  },
+  {
+    q: 'Як відбувається оплата та підтримка?',
+    a: 'Оплата поетапна: аванс після затвердження ТЗ і решта після здачі. Усі витрати обговорюються заздалегідь, без прихованих платежів. Після запуску допомагаємо з базовими питаннями та налаштуваннями.',
+  },
+  {
+    q: 'Скільки часу займає розробка?',
+    a: 'Типовий проєкт запускається за 2–4 тижні залежно від обсягу. Терміновий запуск можливий за окремою домовленістю.',
+  },
+  {
+    q: 'Чи можна вносити правки в дизайн?',
+    a: 'Так. Ми узгоджуємо дизайн на етапі прототипу — до початку розробки. Ви бачите макет і вносите правки, поки результат вас повністю не влаштує. Розробка стартує тільки після вашого затвердження.',
+  },
+  {
+    q: 'Ви допомагаєте з доменом і хостингом?',
+    a: 'Так — допомагаємо з реєстрацією домену, налаштуванням хостингу та запуском проєкту «під ключ».',
+  },
+] as const;
+
+export const guarantees = [
+  {
+    title: 'Фіксована вартість після затвердження ТЗ',
+    text: 'Після погодження обсягу робіт вартість не змінюється без додаткових погоджених задач.',
+  },
+  {
+    title: 'Без прихованих платежів',
+    text: 'Усі витрати обговорюються заздалегідь до початку роботи.',
+  },
+  {
+    title: 'Адаптація під мобільні пристрої',
+    text: "Сайт коректно працює на телефонах, планшетах та комп\u2019ютерах.",
+  },
+  {
+    title: 'Допомога з доменом та хостингом',
+    text: 'Допомагаємо з реєстрацією домену, налаштуванням хостингу та запуском проєкту.',
+  },
+  {
+    title: 'Підтримка після запуску',
+    text: 'Після здачі проєкту допомагаємо з базовими питаннями та налаштуваннями.',
+  },
+] as const;
+
+export const processSteps = [
+  { n: '01', title: 'Бриф', text: 'Безкоштовна консультація: розбираємо задачу, цілі та референси.' },
+  { n: '02', title: 'Дизайн', text: 'Прототип і візуал. Узгоджуємо до старту розробки.' },
+  { n: '03', title: 'Розробка', text: 'Верстка, інтеграції, наповнення. Адаптив і швидкість.' },
+  { n: '04', title: 'Запуск', text: 'Домен, хостинг, тести. Передаємо проєкт і підтримуємо.' },
+] as const;
