@@ -1,6 +1,8 @@
 import Navbar from '@/components/Navbar';
 import StickyCta from '@/components/StickyCta';
 import Hero from '@/sections/Hero';
+import Marquee from '@/sections/Marquee';
+import Services from '@/sections/Services';
 
 export default function Home() {
   return (
@@ -10,9 +12,10 @@ export default function Home() {
 
       <main>
         <Hero />
+        <Marquee />
+        <Services />
 
-        {/* Anchor stubs — filled in Slices 3–6 */}
-        <section id="services" className="min-h-[40vh]" />
+        {/* Anchor stubs — filled in Slices 4–6 */}
         <section id="projects" className="min-h-[40vh]" />
         <section id="process" className="min-h-[40vh]" />
         <section id="pricing" className="min-h-[40vh]" />
