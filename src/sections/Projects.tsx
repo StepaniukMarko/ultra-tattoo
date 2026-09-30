@@ -51,21 +51,29 @@ export default function Projects() {
   const [progress, setProgress] = useState(0);
   const [horizontal, setHorizontal] = useState(false);
 
+  // Step 1: decide layout mode on mount (desktop + motion-friendly → horizontal).
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const wide = window.matchMedia('(min-width: 1024px)').matches;
-    if (reduced || !wide) return; // mobile / reduced-motion → vertical cards
-    setHorizontal(true);
+    if (!reduced && wide) setHorizontal(true);
+  }, []);
+
+  // Step 2: wire GSAP only AFTER the horizontal track is actually in the DOM.
+  useEffect(() => {
+    if (!horizontal) return;
+    const t = track.current;
+    const w = wrap.current;
+    if (!t || !w) return;
 
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
-      const t = track.current!;
       const distance = t.scrollWidth - window.innerWidth;
-      const tween = gsap.to(t, {
+      if (distance <= 0) return;
+      gsap.to(t, {
         x: -distance,
         ease: 'none',
         scrollTrigger: {
-          trigger: wrap.current,
+          trigger: w,
           start: 'top top',
           end: () => `+=${distance}`,
           scrub: 1,
@@ -75,12 +83,9 @@ export default function Projects() {
           invalidateOnRefresh: true,
         },
       });
-      return () => {
-        tween.kill();
-      };
-    }, wrap);
+    }, w);
     return () => ctx.revert();
-  }, []);
+  }, [horizontal]);
 
   return (
     <section id="projects" className="relative">
