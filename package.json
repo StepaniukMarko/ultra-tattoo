@@ -6,8 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "build:win": "node -r ./scripts/readlink-shim.js ./node_modules/next/dist/bin/next build",
-    "start": "next start",
+    "start": "next start -p ${PORT:-3000}",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "dependencies": {
     "@react-three/drei": "9.114.0",
