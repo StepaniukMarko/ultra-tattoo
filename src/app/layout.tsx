@@ -6,6 +6,7 @@ import SmoothScroll from '@/components/SmoothScroll';
 import Preloader from '@/components/Preloader';
 import Cursor from '@/components/Cursor';
 import ScrollProgress from '@/components/ScrollProgress';
+import JsonLd from '@/components/JsonLd';
 
 // Unbounded: geometric display face with full Cyrillic support.
 const display = Unbounded({
@@ -70,6 +71,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="uk" className={`${display.variable} ${sans.variable}`}>
       <body className="grain">
+        <JsonLd />
+        <a
+          href="#hero"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[110] focus:rounded-lg focus:bg-electric focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+        >
+          Перейти до вмісту
+        </a>
         <Preloader />
         <ScrollProgress />
         <Cursor />
