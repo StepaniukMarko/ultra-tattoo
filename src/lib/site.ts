@@ -146,6 +146,62 @@ export const projects = [
 
 export type Project = (typeof projects)[number];
 
+// Extended per-project content for /projects/[slug]. All are concepts.
+export const projectDetails: Record<
+  string,
+  { name: string; niche: string; accent: string; summary: string; features: string[] }
+> = {
+  smiledent: {
+    name: 'SmileDent',
+    niche: 'Стоматологія',
+    accent: '#0EA5E9',
+    summary: 'Концепт сайту стоматологічної клініки: онлайн-запис, довіра через відгуки та зручна навігація послугами.',
+    features: ['Онлайн-запис', 'Каталог послуг', 'Блок довіри', 'Адаптив'],
+  },
+  blackhorse: {
+    name: 'BlackHorse',
+    niche: "Men\u2019s Club",
+    accent: '#C8A654',
+    summary: 'Концепт барбершопу преміум-класу: атмосферний дизайн, бронювання крісла та стиль-меч.',
+    features: ['Бронювання', 'Преміум-візуал', 'Прайс-меню', 'Галерея'],
+  },
+  detaillab: {
+    name: 'DetailLab',
+    niche: 'Автодетейлінг',
+    accent: '#00D4FF',
+    summary: 'Концепт студії детейлінгу: калькулятор вартості, портфоліо робіт і онлайн-заявка.',
+    features: ['Калькулятор', 'Before/After', 'Портфоліо', 'Заявка'],
+  },
+  fitcore: {
+    name: 'FitCore',
+    niche: 'Transformation',
+    accent: '#7CFF6B',
+    summary: 'Концепт фітнес-платформи: програми трансформації, мотиваційний контент і запис на консультацію.',
+    features: ['Програми', 'Прогрес', 'Тарифи', 'Запис'],
+  },
+  urbanbuild: {
+    name: 'UrbanBuild',
+    niche: 'Будівництво',
+    accent: '#2196F3',
+    summary: 'Концепт сайту будівельної компанії: обʼєкти, етапи робіт і форма прорахунку проєкту.',
+    features: ['Обʼєкти', 'Етапи', 'Прорахунок', 'Контакти'],
+  },
+  autofix: {
+    name: 'AutoFix Pro',
+    niche: 'AI діагностика',
+    accent: '#60a5fa',
+    summary: 'Концепт сервісу автодіагностики з AI: попередня оцінка вартості та розумний підбір рішень.',
+    features: ['AI-діагностика', 'Оцінка вартості', 'Запис', 'Історія'],
+  },
+  aura: {
+    name: 'Aura Studio',
+    niche: 'Beauty & SPA',
+    accent: '#a78bfa',
+    summary: 'Концепт сайту салону краси та SPA: послуги, майстри, онлайн-запис і подарункові сертифікати.',
+    features: ['Онлайн-запис', 'Майстри', 'Сертифікати', 'Галерея'],
+  },
+};
+
 export const pricing = [
   {
     tier: 'Landing Page',

@@ -3,6 +3,7 @@ import StickyCta from '@/components/StickyCta';
 import Hero from '@/sections/Hero';
 import Marquee from '@/sections/Marquee';
 import Services from '@/sections/Services';
+import Projects from '@/sections/Projects';
 
 export default function Home() {
   return (
@@ -14,9 +15,9 @@ export default function Home() {
         <Hero />
         <Marquee />
         <Services />
+        <Projects />
 
-        {/* Anchor stubs — filled in Slices 4–6 */}
-        <section id="projects" className="min-h-[40vh]" />
+        {/* Anchor stubs — filled in Slices 5–6 */}
         <section id="process" className="min-h-[40vh]" />
         <section id="pricing" className="min-h-[40vh]" />
         <section id="faq" className="min-h-[40vh]" />
