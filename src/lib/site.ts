@@ -279,6 +279,22 @@ export const guarantees = [
   },
 ] as const;
 
+// Calculator config — mirrors the existing site's pricing logic.
+export const calcTypes = [
+  { value: 8000, label: 'Landing Page — від 8 000 грн', min: 2, max: 3 },
+  { value: 12000, label: 'Корпоративний сайт — від 12 000 грн', min: 3, max: 5 },
+  { value: 20000, label: 'Інтернет-магазин — від 20 000 грн', min: 4, max: 7 },
+  { value: 7000, label: 'AI-рішення — від 7 000 грн', min: 2, max: 4 },
+] as const;
+
+export const calcOptions = [
+  { key: 'design', label: 'Дизайн', add: 5000 },
+  { key: 'booking', label: 'Онлайн запис', add: 3000 },
+  { key: 'shop', label: 'Інтернет-магазин', add: 10000 },
+  { key: 'ai', label: 'AI-функції', add: 7000 },
+  { key: 'urgent', label: 'Терміновий запуск', add: 5000 },
+] as const;
+
 export const processSteps = [
   { n: '01', title: 'Бриф', text: 'Безкоштовна консультація: розбираємо задачу, цілі та референси.' },
   { n: '02', title: 'Дизайн', text: 'Прототип і візуал. Узгоджуємо до старту розробки.' },

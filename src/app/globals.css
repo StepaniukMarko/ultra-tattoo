@@ -98,6 +98,46 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Rotating conic gradient border (featured pricing card) */
+@property --ml-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.rotating-border {
+  position: relative;
+}
+.rotating-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--ml-angle),
+    transparent 0deg,
+    #3b82f6 90deg,
+    #06b6d4 180deg,
+    #7c3aed 270deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ml-rotate 6s linear infinite;
+  pointer-events: none;
+}
+@keyframes ml-rotate {
+  to {
+    --ml-angle: 360deg;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rotating-border::before {
+    animation: none;
+  }
+}
+
 /* Focus ring */
 :focus-visible {
   outline: 2px solid rgba(96, 165, 250, 0.9);

@@ -46,3 +46,30 @@ if (fs.promises && fs.promises.readlink) {
     });
   };
 }
+
+// --- readFile UNKNOWN (-4094) retry -------------------------------------
+// Node 24 on some Windows / removable volumes intermittently throws
+// { code: 'UNKNOWN', errno: -4094, syscall: 'read' } during Next's build
+// trace collection (@vercel/nft). Retry a few times before giving up.
+function isTransient(err) {
+  return err && err.code === 'UNKNOWN' && (err.syscall === 'read' || err.syscall === 'open');
+}
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+if (fs.promises && fs.promises.readFile) {
+  const origRF = fs.promises.readFile;
+  fs.promises.readFile = async function (path, options) {
+    let lastErr;
+    for (let attempt = 0; attempt < 6; attempt++) {
+      try {
+        return await origRF.call(fs.promises, path, options);
+      } catch (err) {
+        if (!isTransient(err)) throw err;
+        lastErr = err;
+        await sleep(60 * (attempt + 1));
+      }
+    }
+    throw lastErr;
+  };
+}

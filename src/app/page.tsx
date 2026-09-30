@@ -4,6 +4,9 @@ import Hero from '@/sections/Hero';
 import Marquee from '@/sections/Marquee';
 import Services from '@/sections/Services';
 import Projects from '@/sections/Projects';
+import Process from '@/sections/Process';
+import Pricing from '@/sections/Pricing';
+import Calculator from '@/sections/Calculator';
 
 export default function Home() {
   return (
@@ -16,10 +19,11 @@ export default function Home() {
         <Marquee />
         <Services />
         <Projects />
+        <Process />
+        <Pricing />
+        <Calculator />
 
-        {/* Anchor stubs — filled in Slices 5–6 */}
-        <section id="process" className="min-h-[40vh]" />
-        <section id="pricing" className="min-h-[40vh]" />
+        {/* Anchor stubs — filled in Slice 6 */}
         <section id="faq" className="min-h-[40vh]" />
         <section id="contact" className="flex min-h-[60vh] items-center justify-center">
           <p className="text-muted">Секція контактів — Slice 6</p>
